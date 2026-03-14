@@ -1,0 +1,106 @@
+/* ── EXPERIENCE — marrón oscuro cálido, no negro puro ── */
+.section {
+  padding: 5rem 0 0;
+  background: #3a2b20;
+  color: var(--paper);
+}
+
+.kicker {
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #ffb899;
+  background: rgba(255, 77, 46, 0.22);
+  border-radius: 999px;
+  border: 1px solid rgba(255, 77, 46, 0.42);
+  padding: 0.25rem 0.78rem;
+  width: fit-content;
+  margin-bottom: 0.7rem;
+}
+
+.heading {
+  font-size: clamp(2.2rem, 6vw, 5.5rem);
+  margin-bottom: 2rem;
+  border-bottom: 1px solid rgba(255, 240, 220, 0.14);
+  padding-bottom: 1rem;
+  color: #f7ede3;
+}
+
+.heading em {
+  font-style: italic;
+  color: var(--orange);
+}
+
+.bullets {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-bottom: 3rem;
+  border: 1px solid rgba(255, 240, 220, 0.12);
+  border-radius: 14px;
+  background: rgba(255, 240, 220, 0.05);
+  overflow: hidden;
+}
+
+.bullets li {
+  padding: 0.95rem 1.2rem;
+  border-bottom: 1px solid rgba(255, 240, 220, 0.1);
+  font-size: clamp(1rem, 1.9vw, 1.15rem);
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  color: #f0e8df;
+}
+
+.bullets li::before {
+  content: '';
+  flex-shrink: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: var(--orange);
+}
+
+/* band naranja como remate de la sección oscura */
+.band {
+  background: var(--orange);
+  border-top: none;
+  padding: 1.2rem 0 1.1rem;
+  overflow: hidden;
+}
+
+.bandLabel {
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
+  padding: 0 1.2rem;
+  margin-bottom: 0.55rem;
+}
+
+.marqueeWrap {
+  overflow: hidden;
+}
+
+.marquee {
+  display: flex;
+  gap: 1.4rem;
+  width: max-content;
+  align-items: center;
+}
+
+.mitem {
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: #fff;
+}
+
+.mdot {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.7rem;
+}

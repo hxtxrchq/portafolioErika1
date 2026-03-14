@@ -1,0 +1,81 @@
+.footer {
+  border-top: 1px solid var(--border);
+  padding: 3rem 0 2rem;
+  background: var(--paper);
+}
+
+.inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  gap: 1.5rem 2rem;
+  align-items: start;
+}
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.logo {
+  font-family: 'Didot', 'Bodoni MT', serif;
+  font-size: 1.6rem;
+  font-style: italic;
+  letter-spacing: -0.02em;
+  color: var(--orange-deep);
+  font-weight: 400;
+}
+
+.sub {
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+  letter-spacing: 0.04em;
+}
+
+.location {
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  color: var(--orange);
+  text-transform: uppercase;
+  margin-top: 0.3rem;
+}
+
+.links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  font-size: 0.9rem;
+}
+
+.links a {
+  color: var(--ink-soft);
+  transition: color 0.2s ease;
+}
+
+.links a:hover {
+  color: var(--orange);
+  text-decoration: underline;
+}
+
+.copy {
+  font-size: 0.75rem;
+  color: var(--ink-soft);
+  align-self: end;
+  white-space: nowrap;
+}
+
+@media (max-width: 900px) {
+  .inner {
+    grid-template-columns: 1fr 1fr;
+  }
+  .copy {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 560px) {
+  .inner {
+    grid-template-columns: 1fr;
+  }
+}

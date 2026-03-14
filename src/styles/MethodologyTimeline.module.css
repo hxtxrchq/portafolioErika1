@@ -1,0 +1,123 @@
+/* ── METHODOLOGY — contraste suave tras sección oscura ── */
+.section {
+  padding: 6rem 0;
+  background: var(--bg);
+  /* sin border-top: el cambio de color de Experience ya separa */
+  position: relative;
+  overflow: hidden;
+}
+
+/* número gigante fantasma en el fondo */
+.section::before {
+  content: '01';
+  position: absolute;
+  right: -0.5rem;
+  top: -1rem;
+  font-family: 'Didot', 'Bodoni MT', serif;
+  font-size: clamp(14rem, 28vw, 26rem);
+  font-style: italic;
+  line-height: 1;
+  color: var(--orange);
+  opacity: 0.045;
+  pointer-events: none;
+  user-select: none;
+  letter-spacing: -0.06em;
+}
+
+.eyebrow {
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--orange-deep);
+  background: color-mix(in srgb, var(--orange-soft) 62%, var(--paper));
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--orange) 36%, #fff);
+  padding: 0.25rem 0.78rem;
+  width: fit-content;
+  margin-bottom: 0.5rem;
+}
+
+.heading {
+  font-size: clamp(2.2rem, 5.5vw, 4.7rem);
+  margin-bottom: 3rem;
+}
+
+.heading em {
+  font-style: italic;
+  color: var(--orange);
+}
+
+.timeline {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0;
+}
+
+.step {
+  padding: 1.6rem 1.2rem 1.2rem 0;
+  position: relative;
+  /* borde superior naranja grueso en lugar del gris fino */
+  border-top: 3px solid var(--orange);
+}
+
+/* separador vertical entre pasos */
+.step:not(:last-child) {
+  border-right: 1px solid var(--border);
+  padding-right: 1.2rem;
+}
+
+.step:not(:first-child) {
+  padding-left: 1.2rem;
+}
+
+.number {
+  font-family: 'Didot', 'Bodoni MT', serif;
+  font-size: clamp(2.8rem, 5.5vw, 5.2rem);
+  font-style: italic;
+  color: var(--orange);
+  line-height: 1;
+  display: block;
+  margin-bottom: 0.9rem;
+  opacity: 0.9;
+}
+
+.content h3 {
+  font-size: clamp(1rem, 1.7vw, 1.2rem);
+  margin-bottom: 0.45rem;
+  line-height: 1.2;
+}
+
+.content p {
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  line-height: 1.6;
+  max-width: 28ch;
+}
+
+@media (max-width: 900px) {
+  .timeline {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .step:nth-child(2n) {
+    border-right: none;
+  }
+
+  .step {
+    padding: 1.2rem 1rem 1rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+}
+
+@media (max-width: 560px) {
+  .timeline {
+    grid-template-columns: 1fr;
+  }
+
+  .step {
+    border-right: none;
+    padding-right: 0;
+    padding-left: 0;
+  }
+}

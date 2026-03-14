@@ -1,0 +1,246 @@
+.section {
+  padding-top: 2rem;
+  padding-bottom: 5.5rem;
+}
+
+.blueBlock {
+  background: var(--orange);
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.blueInner {
+  display: grid;
+  grid-template-columns: 1fr 0.9fr;
+  gap: 1.5rem;
+  padding: 3rem 0;
+}
+
+.copyCol {
+  max-width: 54ch;
+}
+
+.copyCol p {
+  font-size: 1.03rem;
+  line-height: 1.6;
+  margin-bottom: 1.2rem;
+}
+
+.copyCol strong {
+  color: #fff5ee;
+}
+
+.copyCol h3 {
+  margin-top: 1.4rem;
+  font-size: clamp(3.2rem, 7vw, 6rem);
+  line-height: 0.85;
+  color: rgba(255, 255, 255, 0.82);
+  letter-spacing: -0.02em;
+}
+
+.collageCol {
+  position: relative;
+  min-height: 540px;
+}
+
+.collageTop,
+.collageCenter {
+  position: absolute;
+  overflow: hidden;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.36);
+}
+
+.collageTop {
+  width: 86%;
+  left: 0;
+  top: 0;
+}
+
+.collageCenter {
+  width: 62%;
+  right: 0;
+  bottom: 0;
+}
+
+.collageTop img,
+.collageCenter img {
+  aspect-ratio: 4 / 3;
+}
+
+.tagBlack,
+.tagPink {
+  position: absolute;
+  right: 0.8rem;
+  bottom: 0.9rem;
+  font-size: 0.76rem;
+  font-weight: 700;
+  padding: 0.3rem 0.75rem;
+  border-radius: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.tagBlack {
+  background: color-mix(in srgb, #6e4c3d 84%, var(--orange));
+}
+
+.tagPink {
+  background: color-mix(in srgb, var(--orange-deep) 72%, #ad6f56);
+}
+
+.sideName {
+  position: absolute;
+  right: -0.8rem;
+  top: 50%;
+  transform: translateY(-50%) rotate(180deg);
+  writing-mode: vertical-rl;
+  font-family: 'Didot', 'Bodoni MT', serif;
+  font-size: clamp(1.5rem, 3.5vw, 2.3rem);
+  letter-spacing: 0.01em;
+}
+
+.blurAccent {
+  position: absolute;
+  width: 240px;
+  height: 240px;
+  right: 18%;
+  bottom: 14%;
+  border-radius: 50%;
+  background: rgba(255, 242, 233, 0.44);
+  filter: blur(40px);
+  pointer-events: none;
+}
+
+.gridSection {
+  padding-top: 2.8rem;
+}
+
+.gridLabel {
+  width: fit-content;
+  margin: 0 auto 1.2rem;
+  font-family: 'Didot', 'Bodoni MT', serif;
+  font-size: clamp(1.9rem, 4vw, 3rem);
+  font-style: italic;
+  color: var(--orange-deep);
+  border: 1.5px solid color-mix(in srgb, var(--orange) 45%, transparent);
+  border-radius: 999px;
+  padding: 0.22rem 1.3rem;
+}
+
+.sliderMask {
+  position: relative;
+  overflow: hidden;
+  border-radius: 14px;
+}
+
+.sliderMask::before,
+.sliderMask::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  z-index: 2;
+  width: min(7vw, 90px);
+  height: 100%;
+  pointer-events: none;
+}
+
+.sliderMask::before {
+  left: 0;
+  background: linear-gradient(to right, var(--bg), transparent);
+}
+
+.sliderMask::after {
+  right: 0;
+  background: linear-gradient(to left, var(--bg), transparent);
+}
+
+.capsuleTrack {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.9rem;
+  width: max-content;
+  animation: sliderMove 38s linear infinite;
+  will-change: transform;
+}
+
+.capsule {
+  width: clamp(210px, 18vw, 260px);
+  flex: 0 0 auto;
+  display: grid;
+  grid-template-rows: auto auto auto auto auto;
+}
+
+.capsule img {
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  aspect-ratio: 4 / 5;
+}
+
+.typeBadge {
+  margin-top: 0.52rem;
+  width: fit-content;
+  font-size: 0.6rem;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--orange-deep);
+  border: 1px solid color-mix(in srgb, var(--orange) 40%, transparent);
+  border-radius: 999px;
+  padding: 0.22rem 0.55rem;
+  background: color-mix(in srgb, var(--orange-soft) 45%, var(--paper));
+}
+
+.capsule h4 {
+  font-size: 0.95rem;
+  letter-spacing: 0.01em;
+  margin-top: 0.4rem;
+  text-transform: none;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+.subtitle {
+  margin-top: 0.2rem;
+  color: var(--orange-deep);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.capsule p {
+  margin-top: 0.35rem;
+  color: var(--ink-soft);
+  font-size: 0.83rem;
+  line-height: 1.45;
+}
+
+@keyframes sliderMove {
+  from {
+    transform: translateX(-50%);
+  }
+
+  to {
+    transform: translateX(0%);
+  }
+}
+
+@media (max-width: 900px) {
+  .blueInner {
+    grid-template-columns: 1fr;
+  }
+
+  .collageCol {
+    min-height: 420px;
+  }
+
+  .sideName {
+    display: none;
+  }
+
+  .capsuleTrack {
+    animation-duration: 30s;
+  }
+}

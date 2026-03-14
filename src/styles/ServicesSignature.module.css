@@ -1,0 +1,258 @@
+.section {
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 0;
+}
+
+/* ── WALLPAPER ── */
+.wallpaper {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0;
+  pointer-events: none;
+  user-select: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.wallpaper p {
+  font-family: 'Didot', 'Bodoni MT', 'Playfair Display', serif;
+  font-size: clamp(3rem, 11vw, 9rem);
+  font-weight: 700;
+  line-height: 1;
+  white-space: nowrap;
+  color: var(--orange);
+  opacity: 0.06;
+  letter-spacing: -0.03em;
+}
+
+.wallItalic {
+  font-style: italic !important;
+}
+
+/* ── TWO-COLUMN ── */
+.twoCol {
+  display: grid;
+  grid-template-columns: 0.85fr 1fr;
+  gap: 0;
+  position: relative;
+  z-index: 1;
+  background: var(--bg);
+  margin-top: 6rem;
+}
+
+.bigPhoto {
+  position: relative;
+  overflow: hidden;
+}
+
+.bigPhoto img {
+  aspect-ratio: 3/4;
+  height: 100%;
+  object-position: center;
+}
+
+/* ── WALLPAPER ── */
+.wallpaper {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0;
+  pointer-events: none;
+  user-select: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.wallpaper p {
+  font-family: 'Didot', 'Bodoni MT', 'Playfair Display', serif;
+  font-size: clamp(3rem, 11vw, 9rem);
+  font-weight: 700;
+  line-height: 1;
+  white-space: nowrap;
+  color: var(--orange);
+  opacity: 0.07;
+  letter-spacing: -0.03em;
+}
+
+.wallItalic {
+  font-style: italic !important;
+}
+
+/* ── CENTRE DARK BLOCK ── */
+.centreBlock {
+  background: var(--ink);
+  position: relative;
+  z-index: 1;
+  padding: 5rem 0;
+  margin-top: 6rem;
+}
+
+.centreInner {
+  display: grid;
+  grid-template-columns: 0.9fr 1fr;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.centreFoto {
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.centreFoto img {
+  aspect-ratio: 4/5;
+}
+
+.centreText {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  color: rgba(255,255,255,0.88);
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  max-width: 48ch;
+}
+
+/* ── TWO-COLUMN ── */
+.twoCol {
+  display: grid;
+  grid-template-columns: 0.85fr 1fr;
+  gap: 0;
+  position: relative;
+  z-index: 1;
+  background: var(--bg);
+  margin-top: 0;
+}
+
+.bigPhoto {
+  position: relative;
+  overflow: hidden;
+}
+
+.bigPhoto img {
+  aspect-ratio: 3/4;
+  height: 100%;
+  object-position: center;
+}
+
+/* ── ACCORDION ── */
+.accordion {
+  padding: 2.5rem 1.5rem 2.5rem 2rem;
+  border-left: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+}
+
+.item {
+  border-bottom: 1px solid var(--border);
+}
+
+.trigger {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: none;
+  border: 0;
+  padding: 1.1rem 0;
+  cursor: pointer;
+  color: var(--ink);
+  font-family: 'Didot', 'Bodoni MT', serif;
+  font-size: clamp(1.1rem, 2.1vw, 1.5rem);
+  text-align: left;
+}
+
+.icon {
+  color: var(--orange);
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  margin-left: 0.5rem;
+}
+
+.panel {
+  overflow: hidden;
+  padding-bottom: 1rem;
+}
+
+.panel ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.panel li {
+  position: relative;
+  padding-left: 1.1rem;
+  font-size: 0.96rem;
+  color: var(--ink-soft);
+}
+
+.panel li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.52rem;
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--orange);
+}
+
+.getCustom {
+  font-size: 0.82rem;
+  padding: 0.55rem 1.1rem;
+}
+
+/* ── MARQUEE BAND ── */
+.band {
+  background: var(--orange);
+  overflow: hidden;
+  padding: 0.9rem 0;
+  position: relative;
+  z-index: 1;
+}
+
+.bandTrack {
+  display: flex;
+  gap: 1.4rem;
+  width: max-content;
+  align-items: center;
+}
+
+.bandItem {
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: #fff;
+}
+
+.bandDot {
+  color: var(--orange);
+  font-size: 1rem;
+}
+
+@media (max-width: 900px) {
+  .centreInner {
+    grid-template-columns: 1fr;
+  }
+  .twoCol {
+    grid-template-columns: 1fr;
+  }
+  .bigPhoto img {
+    aspect-ratio: 4/3;
+  }
+  .accordion {
+    border-left: 0;
+    border-top: 1px solid var(--border);
+    padding: 1.5rem 0;
+  }
+}

@@ -1,0 +1,62 @@
+.section {
+  padding: 7rem 0 6rem;
+  background: var(--orange);
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.eyebrow {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: #fff3ea;
+  margin-bottom: 1.2rem;
+}
+
+.heading {
+  font-size: clamp(2.5rem, 7vw, 6rem);
+  color: #fff;
+  line-height: 1.05;
+  margin-bottom: 1.4rem;
+  max-width: 18ch;
+}
+
+.heading em {
+  font-style: italic;
+  color: #fff3ea;
+}
+
+.sub {
+  font-size: 1.05rem;
+  color: rgba(255,255,255,0.86);
+  max-width: 48ch;
+  line-height: 1.65;
+  margin-bottom: 2.4rem;
+}
+
+.actions {
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.bgWord {
+  position: absolute;
+  right: -2rem;
+  bottom: -3rem;
+  font-family: 'Didot', 'Bodoni MT', serif;
+  font-size: clamp(6rem, 20vw, 18rem);
+  font-weight: 700;
+  color: rgba(255,255,255,0.14);
+  pointer-events: none;
+  user-select: none;
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 4.5rem 0;
+  }
+}

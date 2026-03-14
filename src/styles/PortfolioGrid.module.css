@@ -1,0 +1,86 @@
+.section {
+  padding: 5.5rem 0;
+}
+
+.categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.4rem;
+}
+
+.categories span {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  border: 1px solid var(--border);
+  padding: 0.36rem 0.7rem;
+  border-radius: 999px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  overflow: hidden;
+  background: #fcfaf6;
+}
+
+.imageWrap {
+  position: relative;
+  overflow: hidden;
+}
+
+.imageWrap img {
+  height: 240px;
+  transition: transform 0.45s ease;
+}
+
+.overlay {
+  position: absolute;
+  inset: auto 0 0;
+  padding: 0.9rem;
+  color: #fff;
+  background: linear-gradient(180deg, transparent, #111111cc 70%);
+  opacity: 0;
+  transform: translateY(8px);
+  transition: all 0.35s ease;
+  font-size: 0.9rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.card:hover .imageWrap img {
+  transform: scale(1.06);
+}
+
+.card:hover .overlay {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.body {
+  padding: 1rem;
+  display: grid;
+  gap: 0.42rem;
+}
+
+.body h3 {
+  font-size: 1.8rem;
+  color: var(--accent-red);
+}
+
+.body p {
+  font-size: 0.95rem;
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

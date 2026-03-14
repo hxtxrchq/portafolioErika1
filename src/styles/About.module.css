@@ -1,0 +1,39 @@
+.about {
+  padding: 3rem 0 5.5rem;
+}
+
+.wrapper {
+  border-top: 1px solid var(--border);
+  padding-top: 2rem;
+}
+
+.copy {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.1rem;
+}
+
+.copy p {
+  font-size: 1rem;
+}
+
+.tags {
+  margin-top: 1.4rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.62rem;
+}
+
+.tags span {
+  border-radius: 999px;
+  border: 1px solid var(--text);
+  padding: 0.35rem 0.8rem;
+  font-size: 0.85rem;
+  background: #ffffff7e;
+}
+
+@media (max-width: 900px) {
+  .copy {
+    grid-template-columns: 1fr;
+  }
+}

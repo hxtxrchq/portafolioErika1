@@ -1,0 +1,178 @@
+:root {
+  --bg:          #f4efe7;
+  --paper:       #fffaf3;
+  --ink:         #121114;
+  --ink-soft:    #464046;
+  --text:        #121114;
+  --orange:      #ff4d2e;
+  --orange-deep: #db3518;
+  --orange-soft: #ffd4c8;
+  --border:      rgba(18,17,20,0.14);
+  --container:   min(1200px, calc(100% - 2.4rem));
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Inter', 'Helvetica Neue', 'Segoe UI', sans-serif;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  background-image:
+    radial-gradient(circle at 16% -12%, rgba(255,255,255,0.72), transparent 42%),
+    radial-gradient(circle at 85% 8%, rgba(255,77,46,0.09), transparent 30%);
+}
+
+main {
+  overflow: clip;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+p {
+  margin: 0;
+}
+
+/* === TYPOGRAPHY === */
+h1, h2, h3, h4 {
+  font-family: 'Didot', 'Bodoni MT', 'Playfair Display', 'Times New Roman', serif;
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  line-height: 0.9;
+}
+
+section {
+  scroll-margin-top: 72px;
+}
+
+/* === CONTAINER === */
+.container {
+  width: var(--container);
+  margin-inline: auto;
+}
+
+/* === BUTTONS === */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0.78rem 1.45rem;
+  border-radius: 999px;
+  border: 1.5px solid transparent;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: transform 0.22s ease, background 0.22s ease, color 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+  white-space: nowrap;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(18,17,20,0.15);
+}
+
+.btn:focus-visible,
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--orange);
+  outline-offset: 3px;
+}
+
+/* Black primary */
+.btnBlack {
+  background: color-mix(in srgb, var(--orange-deep) 68%, #6f4a3a);
+  color: var(--paper);
+  border-color: color-mix(in srgb, var(--orange-deep) 68%, #6f4a3a);
+}
+.btnBlack:hover {
+  background: var(--orange);
+  border-color: var(--orange);
+}
+
+/* Orange outline */
+.btnOrange {
+  background: transparent;
+  color: var(--orange-deep);
+  border-color: color-mix(in srgb, var(--orange) 72%, #fff);
+}
+.btnOrange:hover {
+  background: var(--orange);
+  color: #fff;
+}
+
+/* Orange filled */
+.btnOrangeFill {
+  background: var(--orange);
+  color: #fff;
+  border-color: var(--orange);
+}
+.btnOrangeFill:hover {
+  background: var(--orange-deep);
+  border-color: var(--orange-deep);
+}
+
+/* Cream on dark bg */
+.btnCream {
+  background: transparent;
+  color: var(--paper);
+  border-color: var(--paper);
+}
+.btnCream:hover {
+  background: var(--paper);
+  color: var(--ink);
+}
+
+/* === SECTION DIVIDER === */
+.sectionLine {
+  width: 100%;
+  height: 1px;
+  background: var(--border);
+}
+
+/* === SPARKLE === */
+.sparkle {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  background: var(--orange);
+  clip-path: polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%);
+  filter: drop-shadow(0 0 8px #ff4d2e88);
+}
+
+@media (max-width: 768px) {
+  :root {
+    --container: min(100%, calc(100% - 1.6rem));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -1,0 +1,41 @@
+.section {
+  padding: 5.5rem 0;
+}
+
+.timeline {
+  border-left: 1px solid var(--border);
+  margin-left: 0.6rem;
+}
+
+.step {
+  padding: 0.1rem 0 1.4rem 1.3rem;
+  position: relative;
+}
+
+.step::before {
+  content: '';
+  position: absolute;
+  left: -5px;
+  top: 0.3rem;
+  width: 9px;
+  height: 9px;
+  border-radius: 999px;
+  background: var(--accent-red);
+}
+
+.number {
+  margin-bottom: 0.4rem;
+  color: #6d665f;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.step h3 {
+  font-size: clamp(1.4rem, 3vw, 2.3rem);
+  margin-bottom: 0.4rem;
+}
+
+.step p {
+  max-width: 62ch;
+}

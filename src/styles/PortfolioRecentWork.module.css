@@ -1,0 +1,161 @@
+/* ─── PORTFOLIO — grid editorial 2 columnas ─── */
+.section {
+  padding: 5.5rem 0 6.8rem;
+  background: var(--bg);
+  position: relative;
+  overflow: hidden;
+}
+
+/* texto fantasma de fondo — ruptura visual respecto al resto */
+.section::before {
+  content: 'WORK';
+  position: absolute;
+  right: -0.4rem;
+  bottom: -1rem;
+  font-family: 'Didot', 'Bodoni MT', serif;
+  font-size: clamp(10rem, 22vw, 20rem);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.05em;
+  color: var(--ink);
+  opacity: 0.03;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* ─── HEADER ─── */
+.header {
+  margin-bottom: 3rem;
+}
+
+.eyebrow {
+  display: inline-block;
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--orange-deep);
+  background: color-mix(in srgb, var(--orange-soft) 62%, var(--paper));
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--orange) 36%, #fff);
+  padding: 0.25rem 0.78rem;
+  margin-bottom: 0.7rem;
+}
+
+.heading {
+  font-size: clamp(2rem, 5vw, 4.5rem);
+  line-height: 0.95;
+  margin: 0;
+  color: var(--ink);
+}
+
+.heading em {
+  font-style: italic;
+  color: var(--orange-deep);
+}
+
+/* ─── GRID ─── */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.6rem;
+}
+
+/* ─── CARD ─── */
+.card {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  transition: box-shadow 0.35s ease, transform 0.35s ease;
+}
+
+.card:hover {
+  box-shadow: 0 16px 48px rgba(18, 17, 20, 0.12);
+  transform: translateY(-6px);
+}
+
+/* ─── IMAGEN ─── */
+.imageWrap {
+  position: relative;
+  overflow: hidden;
+}
+
+.imageWrap img {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.55s ease;
+}
+
+.card:hover .imageWrap img {
+  transform: scale(1.05);
+}
+
+.categoryBadge {
+  position: absolute;
+  top: 0.9rem;
+  left: 0.9rem;
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 700;
+  background: rgba(255, 250, 243, 0.96);
+  color: var(--ink);
+  padding: 0.28rem 0.78rem;
+  border-radius: 999px;
+}
+
+/* ─── BODY ─── */
+.body {
+  padding: 1.4rem 1.6rem 1.6rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  border-top: 3px solid var(--orange);
+}
+
+.title {
+  font-size: clamp(1.05rem, 2vw, 1.3rem);
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--ink);
+  margin-bottom: 0.55rem;
+}
+
+.result {
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+  line-height: 1.6;
+  flex: 1;
+  margin-bottom: 1.2rem;
+}
+
+.cta {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--orange);
+  text-decoration: none;
+  align-self: flex-start;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: color 0.2s, gap 0.2s;
+}
+
+.cta:hover {
+  color: var(--orange-deep);
+  gap: 0.6rem;
+}
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 720px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
