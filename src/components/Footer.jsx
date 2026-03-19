@@ -16,7 +16,7 @@ function Footer() {
           <p className={styles.logo}>
             Erika
           </p>
-          <p className={styles.sub}>Estrategia · Marketing · Voz en off</p>
+          <p className={styles.sub}>Estrategia · Marketing · Comercial</p>
           <p className={styles.location}>{config.location}</p>
         </div>
         <ul className={styles.links}>

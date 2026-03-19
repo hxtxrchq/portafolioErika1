@@ -2,10 +2,11 @@ import { useState, useEffect } from 'react';
 import styles from '../styles/Header.module.css';
 
 const navItems = [
-  { label: 'Acerca', href: '#about' },
-  { label: 'Servicios', href: '#services' },
-  { label: 'Portafolio', href: '#portfolio' },
-  { label: 'Voz', href: '#voice' },
+  { label: 'Enfoque', href: '#enfoque' },
+  { label: 'Metodología', href: '#metodologia' },
+  { label: 'Casos', href: '#portfolio' },
+  { label: 'Servicios', href: '#servicios' },
+  { label: 'Sobre mí', href: '#sobre-mi' },
 ];
 
 function Header() {
@@ -30,7 +31,7 @@ function Header() {
             </a>
           ))}
         </nav>
-        <a href="#contact" className={styles.bookNow}>
+        <a href="#contacto" className={styles.bookNow}>
           Contacto
         </a>
       </div>

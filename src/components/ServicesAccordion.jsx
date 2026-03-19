@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { AnimatePresence, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { services } from '../data/services';
 import { fadeUp } from '../utils/motion';
 import styles from '../styles/ServicesAccordion.module.css';
@@ -9,7 +9,7 @@ function ServicesAccordion() {
 
   return (
     <motion.section
-      id="services"
+      id="servicios"
       className={styles.section}
       variants={fadeUp}
       initial="hidden"
@@ -18,15 +18,16 @@ function ServicesAccordion() {
     >
       <div className="container">
         <div className={styles.headlineWrap}>
-          <p className={styles.kicker}>SERVICIOS ESTRATÉGICOS</p>
-          <h2>
-            Servicios para crecimiento
-            <em> sostenible</em>
-          </h2>
-          <p className={styles.intro}>
-            Diseño e implementación de soluciones comerciales y de comunicación para
-            marcas que necesitan estructura, claridad y resultados medibles.
-          </p>
+          <div className={styles.headerPanel}>
+            <span className={styles.sectionDivider} aria-hidden="true" />
+            <h2>
+              Cómo puedo ayudarte
+            </h2>
+            <p className={styles.intro}>
+              Servicios estratégicos para empresas que necesitan claridad comercial,
+              dirección y crecimiento sostenible.
+            </p>
+          </div>
         </div>
 
         <div className={styles.list}>
@@ -37,13 +38,9 @@ function ServicesAccordion() {
             );
 
             return (
-              <motion.article
+              <article
                 key={service.title}
                 className={styles.item}
-                initial={{ opacity: 0, y: 28 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.35 }}
-                transition={{ duration: 0.45, ease: 'easeOut', delay: index * 0.08 }}
               >
                 <button
                   className={styles.trigger}
@@ -54,37 +51,30 @@ function ServicesAccordion() {
                     {String(index + 1).padStart(2, '0')}
                   </span>
                   <span>{service.title}</span>
-                  <motion.span
+                  <span
                     className={styles.icon}
                     aria-hidden="true"
-                    animate={{ rotate: isOpen ? 45 : 0 }}
-                    transition={{ duration: 0.2, ease: 'easeOut' }}
                   >
                     +
-                  </motion.span>
+                  </span>
                 </button>
 
-                <AnimatePresence initial={false}>
-                  {isOpen && (
-                    <motion.div
-                      className={styles.content}
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: 'auto', opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.35, ease: 'easeInOut' }}
-                    >
-                      <ul>
-                        {visibleItems.map((point) => (
-                          <li key={point}>{point}</li>
-                        ))}
-                      </ul>
-                      <a href="#contact" className={styles.cta}>
-                        Solicitar propuesta
-                      </a>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </motion.article>
+                <div className={`${styles.content} ${isOpen ? styles.open : ''}`}>
+                  <ul>
+                    {visibleItems.map((point) => {
+                      const isSubheading = point.endsWith(':');
+                      return (
+                        <li
+                          key={point}
+                          className={isSubheading ? styles.subheading : ''}
+                        >
+                          {point}
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </div>
+              </article>
             );
           })}
         </div>

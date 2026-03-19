@@ -4,26 +4,34 @@ import styles from '../styles/MethodologyTimeline.module.css';
 
 const steps = [
   {
-    title: 'Diagnóstico estratégico',
-    desc: 'Análisis del negocio, mercado, data y procesos actuales.',
+    title: 'Diagnóstico',
+    intro: 'Analizo el negocio desde tres dimensiones:',
+    points: ['operación', 'ventas', 'marketing'],
+    desc: 'El objetivo es identificar qué está frenando el crecimiento.',
   },
   {
-    title: 'Diseño de estrategia',
-    desc: 'Definición de roadmap comercial y de marketing.',
+    title: 'Plan de acción',
+    intro: 'A partir del diagnóstico desarrollo un plan que define:',
+    points: [
+      'objetivos comerciales',
+      'prioridades estratégicas',
+      'acciones de marketing',
+      'mejoras en procesos',
+    ],
+    desc: '',
   },
   {
-    title: 'Implementación y gestión',
-    desc: 'Ejecución con equipos internos o externos.',
-  },
-  {
-    title: 'Medición y optimización',
-    desc: 'KPIs, dashboards y toma de decisiones basada en data.',
+    title: 'Implementación',
+    intro: '',
+    points: [],
+    desc: 'Dependiendo de lo que el negocio necesite, acompaño la ejecución en estrategia comercial, optimización de procesos o marketing. Cuando el plan requiere implementación en marketing, trabajo junto a mi equipo en la agencia.',
   },
 ];
 
 function MethodologyTimeline() {
   return (
     <motion.section
+      id="metodologia"
       className={styles.section}
       variants={fadeUp}
       initial="hidden"
@@ -31,10 +39,12 @@ function MethodologyTimeline() {
       viewport={{ once: true, amount: 0.15 }}
     >
       <div className="container">
-        <p className={styles.eyebrow}>CÓMO TRABAJO</p>
-        <h2 className={styles.heading}>
-          Mi <em>metodología</em>
-        </h2>
+        <div className={styles.headerPanel}>
+          <span className={styles.sectionDivider} aria-hidden="true" />
+          <h2 className={styles.heading}>
+            Cómo trabajo con las empresas
+          </h2>
+        </div>
         <div className={styles.timeline}>
           {steps.map((step, i) => (
             <motion.article
@@ -48,7 +58,15 @@ function MethodologyTimeline() {
               <span className={styles.number}>{String(i + 1).padStart(2, '0')}</span>
               <div className={styles.content}>
                 <h3>{step.title}</h3>
-                <p>{step.desc}</p>
+                {step.intro ? <p>{step.intro}</p> : null}
+                {step.points.length > 0 ? (
+                  <ul>
+                    {step.points.map((point) => (
+                      <li key={point}>{point}</li>
+                    ))}
+                  </ul>
+                ) : null}
+                {step.desc ? <p>{step.desc}</p> : null}
               </div>
             </motion.article>
           ))}

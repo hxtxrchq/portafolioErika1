@@ -1,138 +1,175 @@
 .section {
-  padding-top: 2rem;
-  padding-bottom: 5.5rem;
-}
-
-.blueBlock {
-  background: var(--orange);
-  color: #fff;
   position: relative;
-  overflow: hidden;
+  padding: 3rem 0 5.4rem;
 }
 
-.blueInner {
+.aboutShell {
+  position: relative;
   display: grid;
-  grid-template-columns: 1fr 0.9fr;
-  gap: 1.5rem;
-  padding: 3rem 0;
+  grid-template-columns: minmax(0, 1.06fr) minmax(320px, 0.94fr);
+  gap: clamp(0.7rem, 2vw, 1.6rem);
+  align-items: stretch;
+  background: transparent;
+  border-radius: 0;
+  overflow: visible;
+  border: 1px solid var(--border-soft);
+  box-shadow: none;
 }
 
-.copyCol {
-  max-width: 54ch;
-}
-
-.copyCol p {
-  font-size: 1.03rem;
-  line-height: 1.6;
-  margin-bottom: 1.2rem;
-}
-
-.copyCol strong {
-  color: #fff5ee;
-}
-
-.copyCol h3 {
-  margin-top: 1.4rem;
-  font-size: clamp(3.2rem, 7vw, 6rem);
-  line-height: 0.85;
-  color: rgba(255, 255, 255, 0.82);
-  letter-spacing: -0.02em;
-}
-
-.collageCol {
-  position: relative;
-  min-height: 540px;
-}
-
-.collageTop,
-.collageCenter {
+.aboutShell::after {
+  content: '';
   position: absolute;
-  overflow: hidden;
-  border-radius: 14px;
-  border: 1px solid rgba(255, 255, 255, 0.36);
-}
-
-.collageTop {
-  width: 86%;
-  left: 0;
-  top: 0;
-}
-
-.collageCenter {
-  width: 62%;
-  right: 0;
-  bottom: 0;
-}
-
-.collageTop img,
-.collageCenter img {
-  aspect-ratio: 4 / 3;
-}
-
-.tagBlack,
-.tagPink {
-  position: absolute;
-  right: 0.8rem;
-  bottom: 0.9rem;
-  font-size: 0.76rem;
-  font-weight: 700;
-  padding: 0.3rem 0.75rem;
-  border-radius: 6px;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-}
-
-.tagBlack {
-  background: color-mix(in srgb, #6e4c3d 84%, var(--orange));
-}
-
-.tagPink {
-  background: color-mix(in srgb, var(--orange-deep) 72%, #ad6f56);
-}
-
-.sideName {
-  position: absolute;
-  right: -0.8rem;
-  top: 50%;
-  transform: translateY(-50%) rotate(180deg);
-  writing-mode: vertical-rl;
-  font-family: 'Didot', 'Bodoni MT', serif;
-  font-size: clamp(1.5rem, 3.5vw, 2.3rem);
-  letter-spacing: 0.01em;
-}
-
-.blurAccent {
-  position: absolute;
-  width: 240px;
-  height: 240px;
-  right: 18%;
-  bottom: 14%;
-  border-radius: 50%;
-  background: rgba(255, 242, 233, 0.44);
-  filter: blur(40px);
+  inset: 0;
   pointer-events: none;
+  background: none;
+}
+
+.introCard,
+.visualCard {
+  position: relative;
+  z-index: 2;
+}
+
+.introCard {
+  color: var(--ink);
+  padding: clamp(1.6rem, 3.2vw, 2.4rem) clamp(1rem, 2.2vw, 1.8rem);
+}
+
+.sectionDivider {
+  display: block;
+  width: 72px;
+  height: 2px;
+  border-radius: 999px;
+  margin-bottom: 1.1rem;
+  background: linear-gradient(90deg, var(--orange), color-mix(in srgb, var(--orange-soft) 72%, #fff));
+}
+
+.kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-bottom: 0.85rem;
+  font-size: 0.66rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 700;
+}
+
+.kicker::before {
+  content: '';
+  width: 20px;
+  height: 1px;
+  background: var(--line-soft);
+}
+
+.heading {
+  font-family: 'Bodoni MT', 'Didot', 'Iowan Old Style', 'Baskerville', serif;
+  font-size: clamp(2.65rem, 5.2vw, 5.7rem);
+  line-height: 0.9;
+  letter-spacing: -0.045em;
+  max-width: 8.8ch;
+  color: var(--ink);
+  margin: 0;
+}
+
+.copy {
+  margin-top: 0.92rem;
+  max-width: 52ch;
+  font-size: 1rem;
+  line-height: 1.74;
+  color: var(--ink-soft);
+}
+
+.copy + .copy {
+  margin-top: 0.66rem;
+}
+
+.bigWord {
+  margin: 0.9rem 0 0;
+  font-family: 'Bodoni MT', 'Didot', 'Baskerville', serif;
+  font-size: clamp(3.4rem, 9.2vw, 7.4rem);
+  line-height: 0.78;
+  letter-spacing: -0.04em;
+  color: color-mix(in srgb, var(--orange) 30%, #efe5d6);
+}
+
+.visualCard {
+  padding: clamp(0.9rem, 2vw, 1.4rem) clamp(0.7rem, 1.6vw, 1.2rem);
+  display: flex;
+  align-items: center;
+}
+
+.mediaPanel {
+  position: relative;
+  width: 100%;
+  display: grid;
+  grid-template-rows: minmax(44px, 0.18fr) minmax(240px, 0.68fr) minmax(44px, 0.14fr);
+  gap: 0.55rem;
+}
+
+.stripTop,
+.stripBottom,
+.cardMain {
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  border: 1px solid var(--border-soft);
+}
+
+.stripTop,
+.stripBottom {
+  background: #ece2d4;
+}
+
+.stripTop img,
+.stripBottom img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(1) contrast(1.08) brightness(0.94);
+  opacity: 0.68;
+}
+
+.stripTop img {
+  object-position: center 56%;
+}
+
+.stripBottom img {
+  object-position: center 22%;
+}
+
+.cardMain {
+  background: #efe5d6;
+}
+
+.cardMain img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center bottom;
+  image-rendering: auto;
+  filter: contrast(1.08) saturate(1.03) brightness(1.02);
 }
 
 .gridSection {
-  padding-top: 2.8rem;
+  padding-top: 2.7rem;
 }
 
 .gridLabel {
   width: fit-content;
-  margin: 0 auto 1.2rem;
-  font-family: 'Didot', 'Bodoni MT', serif;
-  font-size: clamp(1.9rem, 4vw, 3rem);
+  margin: 0 0 1rem;
+  font-family: 'Cormorant Garamond', 'Iowan Old Style', 'Baskerville', serif;
+  font-size: clamp(1.9rem, 4vw, 2.9rem);
   font-style: italic;
-  color: var(--orange-deep);
-  border: 1.5px solid color-mix(in srgb, var(--orange) 45%, transparent);
-  border-radius: 999px;
-  padding: 0.22rem 1.3rem;
+  color: var(--orange);
+  letter-spacing: -0.02em;
 }
 
 .sliderMask {
   position: relative;
   overflow: hidden;
-  border-radius: 14px;
+  border-radius: 18px;
 }
 
 .sliderMask::before,
@@ -173,9 +210,10 @@
 }
 
 .capsule img {
-  border-radius: 8px;
+  border-radius: 12px;
   border: 1px solid var(--border);
   aspect-ratio: 4 / 5;
+  object-fit: cover;
 }
 
 .typeBadge {
@@ -186,10 +224,10 @@
   text-transform: uppercase;
   font-weight: 700;
   color: var(--orange-deep);
-  border: 1px solid color-mix(in srgb, var(--orange) 40%, transparent);
+  border: 1px solid color-mix(in srgb, var(--lime-deep) 64%, transparent);
   border-radius: 999px;
   padding: 0.22rem 0.55rem;
-  background: color-mix(in srgb, var(--orange-soft) 45%, var(--paper));
+  background: color-mix(in srgb, var(--lime-accent) 52%, var(--paper));
 }
 
 .capsule h4 {
@@ -228,16 +266,26 @@
 }
 
 @media (max-width: 900px) {
-  .blueInner {
+  .aboutShell {
     grid-template-columns: 1fr;
+    gap: 0.95rem;
   }
 
-  .collageCol {
-    min-height: 420px;
+  .heading {
+    max-width: 100%;
+    font-size: clamp(2.3rem, 9vw, 4.2rem);
   }
 
-  .sideName {
-    display: none;
+  .bigWord {
+    font-size: clamp(2.8rem, 11vw, 5.2rem);
+  }
+
+  .visualCard {
+    padding-top: 0.2rem;
+  }
+
+  .mediaPanel {
+    grid-template-rows: minmax(38px, 0.14fr) minmax(240px, 0.72fr) minmax(38px, 0.14fr);
   }
 
   .capsuleTrack {

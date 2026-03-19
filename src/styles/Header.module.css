@@ -2,20 +2,20 @@
   position: fixed;
   top: 0;
   width: 100%;
-  background: color-mix(in srgb, var(--paper) 90%, transparent);
+  background: color-mix(in srgb, var(--paper) 92%, transparent);
   border-bottom: 1px solid transparent;
   z-index: 100;
-  backdrop-filter: blur(12px);
+  backdrop-filter: blur(10px);
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .scrolled {
-  border-bottom-color: var(--border);
+  border-bottom-color: var(--line-soft);
   box-shadow: 0 8px 26px rgba(18,17,20,0.08);
 }
 
 .inner {
-  height: 70px;
+  height: 62px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -24,12 +24,12 @@
 
 .logo {
   font-family: 'Didot', 'Bodoni MT', serif;
-  font-size: 1.52rem;
+  font-size: 2rem;
   font-style: italic;
   line-height: 1;
   color: var(--orange-deep);
-  letter-spacing: -0.02em;
-  font-weight: 500;
+  letter-spacing: -0.03em;
+  font-weight: 400;
 }
 
 .nav {
@@ -38,9 +38,9 @@
 }
 
 .navLink {
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   color: var(--ink-soft);
-  letter-spacing: 0.06em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   position: relative;
   padding-bottom: 2px;
@@ -52,7 +52,7 @@
   left: 0;
   bottom: -3px;
   width: 100%;
-  height: 1.5px;
+  height: 2px;
   background: var(--orange);
   transform: scaleX(0);
   transform-origin: right;
@@ -69,21 +69,21 @@
 }
 
 .bookNow {
-  background: color-mix(in srgb, var(--orange-deep) 66%, #6f4a3a);
-  color: #fff;
+  background: var(--lime-accent);
+  color: var(--ink);
   border-radius: 999px;
-  padding: 0.5rem 1.05rem;
-  font-size: 0.78rem;
+  padding: 0.42rem 0.95rem;
+  font-size: 0.72rem;
   font-weight: 700;
-  letter-spacing: 0.06em;
-  border: 1.5px solid color-mix(in srgb, var(--orange-deep) 66%, #6f4a3a);
+  letter-spacing: 0.09em;
+  border: 1.5px solid var(--lime-deep);
   transition: background 0.22s ease, color 0.22s ease, border-color 0.22s ease;
 }
 
 .bookNow:hover {
   background: var(--orange);
   color: #fff;
-  border-color: var(--orange);
+  border-color: var(--orange-deep);
 }
 
 @media (max-width: 768px) {
@@ -91,6 +91,10 @@
     display: none;
   }
   .inner {
-    height: 60px;
+    height: 56px;
+  }
+
+  .logo {
+    font-size: 1.8rem;
   }
 }

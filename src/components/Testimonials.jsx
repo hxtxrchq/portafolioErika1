@@ -10,7 +10,7 @@ function Testimonials() {
   return (
     <section className={styles.section}>
       <div className="container">
-        <p className={styles.eyebrow}>DICEN DE MI TRABAJO</p>
+        <span className={styles.sectionDivider} aria-hidden="true" />
 
         <AnimatePresence mode="wait">
           <motion.blockquote

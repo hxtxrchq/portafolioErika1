@@ -1,12 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
-  --bg:          #f4efe7;
-  --paper:       #fffaf3;
+  --bg:          #efe5d6;
+  --paper:       #f8efe2;
   --ink:         #121114;
   --ink-soft:    #464046;
   --text:        #121114;
-  --orange:      #ff4d2e;
-  --orange-deep: #db3518;
-  --orange-soft: #ffd4c8;
+  --orange:      #e05b2d;
+  --orange-deep: #bd4218;
+  --orange-soft: #f5c5b0;
+  --lime-accent: #dfe57b;
+  --lime-deep:   #bdc55f;
+  --line-soft:   color-mix(in srgb, var(--lime-accent) 48%, rgba(18,17,20,0.18));
+  --border-soft: color-mix(in srgb, var(--lime-accent) 34%, rgba(18,17,20,0.22));
   --border:      rgba(18,17,20,0.14);
   --container:   min(1200px, calc(100% - 2.4rem));
 }
@@ -25,13 +33,10 @@ html {
 body {
   background: var(--bg);
   color: var(--ink);
-  font-family: 'Inter', 'Helvetica Neue', 'Segoe UI', sans-serif;
+  font-family: 'Sora', 'Avenir Next', 'Segoe UI', sans-serif;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
-  background-image:
-    radial-gradient(circle at 16% -12%, rgba(255,255,255,0.72), transparent 42%),
-    radial-gradient(circle at 85% 8%, rgba(255,77,46,0.09), transparent 30%);
 }
 
 main {
@@ -116,7 +121,7 @@ button:focus-visible {
 .btnOrange {
   background: transparent;
   color: var(--orange-deep);
-  border-color: color-mix(in srgb, var(--orange) 72%, #fff);
+  border-color: color-mix(in srgb, var(--orange) 76%, #fff);
 }
 .btnOrange:hover {
   background: var(--orange);
@@ -134,6 +139,17 @@ button:focus-visible {
   border-color: var(--orange-deep);
 }
 
+/* Lime filled */
+.btnLime {
+  background: transparent;
+  color: var(--ink);
+  border-color: var(--lime-deep);
+}
+.btnLime:hover {
+  background: var(--lime-accent);
+  border-color: var(--lime-deep);
+}
+
 /* Cream on dark bg */
 .btnCream {
   background: transparent;
@@ -149,7 +165,7 @@ button:focus-visible {
 .sectionLine {
   width: 100%;
   height: 1px;
-  background: var(--border);
+  background: var(--line-soft);
 }
 
 /* === SPARKLE === */

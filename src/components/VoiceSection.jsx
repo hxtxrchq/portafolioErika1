@@ -90,7 +90,7 @@ function VoiceSection() {
     >
       <div className={`container ${styles.layout}`}>
         <div className={styles.left}>
-          <p className={styles.eyebrow}>VOZ EN OFF CORPORATIVA</p>
+          <span className={styles.sectionDivider} aria-hidden="true" />
           <h2>
             Una firma de voz
             <em> memorable</em> para tu marca
