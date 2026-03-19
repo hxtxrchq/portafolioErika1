@@ -20,15 +20,41 @@
 
 .headlineWrap {
   text-align: center;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.headerPanel {
+  width: 100%;
+  max-width: none;
+  min-height: clamp(138px, 16vw, 196px);
+  margin: 0;
+  border: 1px solid color-mix(in srgb, var(--border) 80%, #fff);
+  border-radius: 20px;
+  border-left: 6px solid var(--orange);
+  background: linear-gradient(180deg, color-mix(in srgb, var(--paper) 92%, #fff), color-mix(in srgb, var(--paper) 84%, #fff));
+  box-shadow: 0 18px 42px -34px rgba(20, 17, 21, 0.36);
+  padding: clamp(1.05rem, 2.4vw, 1.85rem) clamp(1rem, 2.3vw, 2rem);
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.sectionDivider {
+  display: block;
+  width: 132px;
+  height: 4px;
+  border-radius: 999px;
+  margin: 0 0 1.05rem;
+  background: linear-gradient(90deg, transparent 2%, var(--orange) 34%, color-mix(in srgb, var(--orange-soft) 68%, #fff));
 }
 
 .intro {
-  margin: 0.9rem auto 0;
+  margin: 0.9rem 0 0;
   max-width: 62ch;
   color: var(--ink-soft);
   font-size: 0.96rem;
-  line-height: 1.65;
+  line-height: 1.72;
 }
 
 .kicker {
@@ -48,6 +74,8 @@
 .headlineWrap h2 {
   font-size: clamp(2rem, 5.2vw, 4.3rem);
   line-height: 0.9;
+  margin: 0;
+  max-width: 13ch;
 }
 
 .headlineWrap em {
@@ -64,6 +92,7 @@
     color-mix(in srgb, var(--paper) 90%, #fff);
   backdrop-filter: blur(6px);
   box-shadow: 0 20px 54px -38px rgba(21, 19, 23, 0.4);
+  margin-top: 1.3rem;
 }
 
 .item {
@@ -115,10 +144,24 @@
   font-size: 1.35rem;
   margin-left: auto;
   line-height: 1;
+  transition: transform 0.2s ease;
+}
+
+.trigger[aria-expanded='true'] .icon {
+  transform: rotate(45deg);
 }
 
 .content {
   overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  padding: 0 1rem 0 3.75rem;
+  transition: max-height 0.3s ease, opacity 0.2s ease, padding 0.2s ease;
+}
+
+.open {
+  max-height: 1200px;
+  opacity: 1;
   padding: 0 1rem 1rem 3.75rem;
 }
 
@@ -133,6 +176,17 @@
   list-style: none;
   position: relative;
   padding-left: 1rem;
+}
+
+.content li.subheading {
+  padding-left: 0;
+  margin-top: 0.35rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.content li.subheading::before {
+  display: none;
 }
 
 .content li::before {
@@ -167,6 +221,18 @@
 }
 
 @media (max-width: 860px) {
+  .headerPanel {
+    border-left-width: 4px;
+    border-radius: 16px;
+    padding: 1rem 0.9rem;
+  }
+
+  .sectionDivider {
+    width: 108px;
+    height: 3px;
+    margin-bottom: 0.9rem;
+  }
+
   .trigger {
     padding: 1rem 0.9rem;
     font-size: clamp(1rem, 4.9vw, 1.28rem);

@@ -1,6 +1,6 @@
 /* ── METHODOLOGY — contraste suave tras sección oscura ── */
 .section {
-  padding: 6rem 0;
+  padding: 6.4rem 0;
   background: var(--bg);
   /* sin border-top: el cambio de color de Experience ya separa */
   position: relative;
@@ -24,6 +24,31 @@
   letter-spacing: -0.06em;
 }
 
+.sectionDivider {
+  display: block;
+  width: 132px;
+  height: 4px;
+  border-radius: 999px;
+  margin-bottom: 1.05rem;
+  background: linear-gradient(90deg, var(--orange), color-mix(in srgb, var(--orange-soft) 68%, #fff));
+}
+
+.headerPanel {
+  width: 100%;
+  max-width: none;
+  min-height: clamp(130px, 16vw, 190px);
+  margin-bottom: 2.2rem;
+  border: 1px solid color-mix(in srgb, var(--border) 80%, #fff);
+  border-radius: 20px;
+  border-left: 6px solid var(--orange);
+  background: linear-gradient(180deg, color-mix(in srgb, var(--paper) 92%, #fff), color-mix(in srgb, var(--paper) 84%, #fff));
+  box-shadow: 0 18px 42px -34px rgba(20, 17, 21, 0.36);
+  padding: clamp(1.05rem, 2.4vw, 1.85rem) clamp(1rem, 2.3vw, 2rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .eyebrow {
   font-size: 0.7rem;
   letter-spacing: 0.14em;
@@ -40,7 +65,8 @@
 
 .heading {
   font-size: clamp(2.2rem, 5.5vw, 4.7rem);
-  margin-bottom: 3rem;
+  margin-bottom: 0;
+  max-width: 14ch;
 }
 
 .heading em {
@@ -50,25 +76,19 @@
 
 .timeline {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 0;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.1rem;
 }
 
 .step {
-  padding: 1.6rem 1.2rem 1.2rem 0;
+  padding: 1.45rem 1.2rem 1.25rem;
   position: relative;
-  /* borde superior naranja grueso en lugar del gris fino */
   border-top: 3px solid var(--orange);
-}
-
-/* separador vertical entre pasos */
-.step:not(:last-child) {
-  border-right: 1px solid var(--border);
-  padding-right: 1.2rem;
-}
-
-.step:not(:first-child) {
-  padding-left: 1.2rem;
+  border: 1px solid color-mix(in srgb, var(--border) 82%, #fff);
+  border-top: 3px solid var(--orange);
+  border-radius: 14px;
+  background: color-mix(in srgb, var(--paper) 90%, #fff);
+  box-shadow: 0 16px 34px -28px rgba(20, 17, 21, 0.38);
 }
 
 .number {
@@ -95,29 +115,61 @@
   max-width: 28ch;
 }
 
+.content ul {
+  margin: 0.35rem 0 0.65rem;
+  padding-left: 0;
+  display: grid;
+  gap: 0.32rem;
+}
+
+.content li {
+  position: relative;
+  list-style: none;
+  padding-left: 1.1rem;
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+.content li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.6rem;
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: var(--orange);
+}
+
 @media (max-width: 900px) {
+  .headerPanel {
+    border-left-width: 4px;
+    border-radius: 16px;
+    margin-bottom: 1.6rem;
+  }
+
+  .sectionDivider {
+    width: 108px;
+    height: 3px;
+  }
+
   .timeline {
     grid-template-columns: 1fr 1fr;
   }
 
-  .step:nth-child(2n) {
-    border-right: none;
-  }
-
   .step {
-    padding: 1.2rem 1rem 1rem 0;
-    border-bottom: 1px solid var(--border);
+    padding: 1.2rem 1rem 1rem;
   }
 }
 
 @media (max-width: 560px) {
   .timeline {
     grid-template-columns: 1fr;
+    gap: 0.75rem;
   }
 
   .step {
-    border-right: none;
-    padding-right: 0;
-    padding-left: 0;
+    padding: 1.05rem 0.9rem 0.95rem;
   }
 }

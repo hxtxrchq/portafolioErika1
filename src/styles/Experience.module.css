@@ -1,106 +1,153 @@
-/* ── EXPERIENCE — marrón oscuro cálido, no negro puro ── */
+/* ── EXPERIENCE / ENFOQUE + MARCAS UNIFICADO ── */
 .section {
-  padding: 5rem 0 0;
-  background: #3a2b20;
-  color: var(--paper);
+  padding: 5.8rem 0 3rem;
+  background: var(--bg);
+  color: var(--ink);
 }
 
-.kicker {
-  font-size: 0.7rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: #ffb899;
-  background: rgba(255, 77, 46, 0.22);
+.unifiedPanel {
+  border: 1px solid color-mix(in srgb, var(--border) 78%, #fff);
+  border-left: 6px solid var(--orange);
+  border-radius: 24px;
+  padding: clamp(1.2rem, 2.6vw, 2.3rem);
+  background: linear-gradient(180deg, color-mix(in srgb, var(--paper) 93%, #fff), color-mix(in srgb, var(--paper) 85%, #fff));
+  box-shadow: 0 24px 52px -38px rgba(20, 17, 21, 0.4);
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: clamp(1rem, 2.4vw, 2rem);
+  align-items: stretch;
+}
+
+.leftCol {
+  min-width: 0;
+}
+
+.sectionDivider {
+  display: block;
+  width: 132px;
+  height: 4px;
   border-radius: 999px;
-  border: 1px solid rgba(255, 77, 46, 0.42);
-  padding: 0.25rem 0.78rem;
-  width: fit-content;
-  margin-bottom: 0.7rem;
+  margin-bottom: 1.1rem;
+  background: linear-gradient(90deg, var(--orange), color-mix(in srgb, var(--orange-soft) 65%, #fff));
 }
 
 .heading {
-  font-size: clamp(2.2rem, 6vw, 5.5rem);
-  margin-bottom: 2rem;
-  border-bottom: 1px solid rgba(255, 240, 220, 0.14);
-  padding-bottom: 1rem;
-  color: #f7ede3;
+  font-size: clamp(2.2rem, 6vw, 5.2rem);
+  margin-bottom: 1.1rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 1.05rem;
+  color: var(--ink);
 }
 
-.heading em {
-  font-style: italic;
-  color: var(--orange);
+.aboutCopy {
+  max-width: 66ch;
+  color: var(--ink-soft);
+  line-height: 1.8;
+  margin-bottom: 1rem;
 }
 
-.bullets {
-  list-style: none;
+.brandsBlock {
+  min-width: 0;
+  border: 1px solid color-mix(in srgb, var(--border) 82%, #fff);
+  border-radius: 18px;
+  padding: 1rem;
+  background:
+    radial-gradient(circle at 18% 10%, rgba(255, 77, 46, 0.12), transparent 34%),
+    color-mix(in srgb, var(--paper) 94%, #fff);
   display: flex;
   flex-direction: column;
-  gap: 0;
-  margin-bottom: 3rem;
-  border: 1px solid rgba(255, 240, 220, 0.12);
-  border-radius: 14px;
-  background: rgba(255, 240, 220, 0.05);
-  overflow: hidden;
+  justify-content: space-between;
+  gap: 0.9rem;
 }
 
-.bullets li {
-  padding: 0.95rem 1.2rem;
-  border-bottom: 1px solid rgba(255, 240, 220, 0.1);
-  font-size: clamp(1rem, 1.9vw, 1.15rem);
-  display: flex;
-  align-items: center;
-  gap: 0.85rem;
-  color: #f0e8df;
-}
-
-.bullets li::before {
-  content: '';
-  flex-shrink: 0;
-  width: 8px;
-  height: 8px;
-  border-radius: 999px;
-  background: var(--orange);
-}
-
-/* band naranja como remate de la sección oscura */
-.band {
-  background: var(--orange);
-  border-top: none;
-  padding: 1.2rem 0 1.1rem;
-  overflow: hidden;
-}
-
-.bandLabel {
-  font-size: 0.7rem;
-  letter-spacing: 0.12em;
+.brandsLabel {
+  margin: 0;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.7);
-  padding: 0 1.2rem;
-  margin-bottom: 0.55rem;
-}
-
-.marqueeWrap {
-  overflow: hidden;
-}
-
-.marquee {
-  display: flex;
-  gap: 1.4rem;
-  width: max-content;
-  align-items: center;
-}
-
-.mitem {
-  font-size: 0.85rem;
+  color: var(--orange-deep);
   font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  white-space: nowrap;
-  color: #fff;
 }
 
-.mdot {
-  color: rgba(255, 255, 255, 0.6);
-  font-size: 0.7rem;
+.brandsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.95rem 0.8rem;
+}
+
+.brandCard {
+  min-height: 74px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.2rem;
+}
+
+.brandCard img {
+  width: 168px;
+  height: 62px;
+  object-fit: contain;
+  filter: saturate(0.98) contrast(1.04);
+}
+
+.brandsNote {
+  margin: 0;
+  padding-top: 0.4rem;
+  border-top: 1px solid color-mix(in srgb, var(--border) 86%, #fff);
+  color: var(--ink-soft);
+  font-size: 0.83rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 1000px) {
+  .unifiedPanel {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .brandsGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .brandCard {
+    min-height: 68px;
+  }
+
+  .brandCard img {
+    width: 144px;
+    height: 54px;
+  }
+}
+
+@media (max-width: 640px) {
+  .section {
+    padding-top: 4.2rem;
+  }
+
+  .unifiedPanel {
+    border-left-width: 4px;
+    border-radius: 16px;
+    padding: 0.95rem;
+  }
+
+  .sectionDivider {
+    width: 102px;
+    height: 3px;
+    margin-bottom: 0.9rem;
+  }
+
+  .brandsGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.55rem;
+  }
+
+  .brandCard {
+    min-height: 60px;
+    padding: 0.2rem;
+  }
+
+  .brandCard img {
+    width: 124px;
+    height: 46px;
+  }
 }

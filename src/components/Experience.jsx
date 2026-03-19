@@ -2,47 +2,18 @@ import { motion } from 'framer-motion';
 import { fadeUp } from '../utils/motion';
 import styles from '../styles/Experience.module.css';
 
-const bullets = [
-  'Liderazgo de equipos multidisciplinarios por proyecto',
-  'Gestión de campañas comerciales integrales (digital + offline)',
-  'Implementación de herramientas de análisis y reporting ejecutivo',
-  'Acompañamiento estratégico en toma de decisiones de negocio',
-];
-
-const industries = [
-  'Retail',
-  '✦',
-  'Educación',
-  '✦',
-  'Salud',
-  '✦',
-  'Servicios B2B',
-  '✦',
-  'Consumo masivo',
-  '✦',
-  'Tecnología',
-  '✦',
-  'Industria',
-  '✦',
-  'Retail',
-  '✦',
-  'Educación',
-  '✦',
-  'Salud',
-  '✦',
-  'Servicios B2B',
-  '✦',
-  'Consumo masivo',
-  '✦',
-  'Tecnología',
-  '✦',
-  'Industria',
-  '✦',
+const brands = [
+  { name: 'Barbarian Bar', logo: '/Barbarian Bar.png' },
+  { name: 'Design Market', logo: '/Design Market.png' },
+  { name: 'Elevaria', logo: '/Elevaria Logo.png' },
+  { name: 'GMS', logo: '/GMS.png' },
+  { name: 'Kanagawa Nikkei', logo: '/Kanagawa Nikkei.png' },
 ];
 
 function Experience() {
   return (
     <motion.section
+      id="enfoque"
       className={styles.section}
       variants={fadeUp}
       initial="hidden"
@@ -50,43 +21,42 @@ function Experience() {
       viewport={{ once: true, amount: 0.15 }}
     >
       <div className="container">
-        <p className={styles.kicker}>TRAYECTORIA / RESULTADOS</p>
-        <h2 className={styles.heading}>
-          Experiencia con<em> impacto real</em>
-        </h2>
-        <ul className={styles.bullets}>
-          {bullets.map((item, i) => (
-            <motion.li
-              key={item}
-              initial={{ opacity: 0, x: -16 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, amount: 0.5 }}
-              transition={{ duration: 0.45, delay: i * 0.08 }}
-            >
-              {item}
-            </motion.li>
-          ))}
-        </ul>
-      </div>
+        <div className={styles.unifiedPanel}>
+          <div className={styles.leftCol}>
+            <span className={styles.sectionDivider} aria-hidden="true" />
+            <h2 className={styles.heading}>Una mirada estratégica del negocio</h2>
+            <p className={styles.aboutCopy}>
+              Mi formación como ingeniera empresarial me permite analizar una empresa
+              más allá del marketing.
+            </p>
+            <p className={styles.aboutCopy}>
+              Antes de plantear campañas o comunicación, reviso cómo funcionan los
+              procesos, la operación comercial y la estructura de ventas.
+            </p>
+            <p className={styles.aboutCopy}>
+              Esto permite entender qué está frenando el crecimiento y dónde realmente
+              se deben tomar decisiones.
+            </p>
+          </div>
 
-      {/* marquee band */}
-      <div className={styles.band}>
-        <p className={styles.bandLabel}>Marcas / industrias</p>
-        <div className={styles.marqueeWrap}>
-          <motion.div
-            className={styles.marquee}
-            animate={{ x: ['0%', '-50%'] }}
-            transition={{ duration: 22, repeat: Infinity, ease: 'linear' }}
-          >
-            {industries.map((item, i) => (
-              <span
-                key={i}
-                className={item === '✦' ? styles.mdot : styles.mitem}
-              >
-                {item}
-              </span>
-            ))}
-          </motion.div>
+          <div className={styles.brandsBlock}>
+            <p className={styles.brandsLabel}>Marcas con las que he trabajado</p>
+            <div className={styles.brandsGrid}>
+              {brands.map((brand, index) => (
+                <motion.div
+                  key={brand.name}
+                  className={styles.brandCard}
+                  initial={{ opacity: 0, y: 18 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.5 }}
+                  transition={{ duration: 0.4, delay: index * 0.06 }}
+                >
+                  <img src={brand.logo} alt={`Logo de ${brand.name}`} loading="lazy" />
+                </motion.div>
+              ))}
+            </div>
+            <p className={styles.brandsNote}>+ proyectos en sectores gastronómicos, retail y servicios.</p>
+          </div>
         </div>
       </div>
     </motion.section>
