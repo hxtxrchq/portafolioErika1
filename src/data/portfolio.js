@@ -1,45 +1,30 @@
+// Edita en este archivo el contenido de cada caso:
+// - problem: Problema
+// - strategy: Solución
+// - result: Testimonio
+// - videoUrl: Link embed del video (ejemplo YouTube: https://www.youtube.com/embed/ID)
 export const portfolioCategories = [
-  'Estrategias comerciales',
-  'Campañas integrales',
-  'Modelos de crecimiento',
-  'Gestión de equipos y procesos',
+  'Estrategia comercial',
+  'Marketing y conversion',
 ];
 
 export const portfolioItems = [
   {
     title: 'Escalamiento comercial B2B',
-    category: 'Estrategias comerciales',
-    image:
-      'https://images.unsplash.com/photo-1556740738-b6a63e27c4df?auto=format&fit=crop&w=1200&q=80',
-    problem: 'Pipeline estancado y baja conversión en etapas finales.',
-    strategy: 'Rediseño del funnel y alineación entre marketing y ventas.',
-    result: 'Mejora del cierre comercial y crecimiento sostenido del ingreso.',
+    category: 'Estrategia comercial',
+    image: '/case-estrategia.svg',
+    problem: 'La empresa buscaba mejorar su marketing digital, pero no tenía una estructura comercial clara.',
+    strategy: 'Se desarrolló un plan de acción que incluyó reorganización del proceso comercial y una estrategia de posicionamiento.',
+    result: '"Erika nos ayudó a entender que el problema no era solo marketing, sino la forma en que estábamos estructurando nuestro crecimiento."',
+    videoUrl: '',
   },
   {
-    title: 'Campaña 360 para marca regional',
-    category: 'Campañas integrales',
-    image:
-      'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80',
-    problem: 'Comunicación fragmentada entre canales y equipos.',
-    strategy: 'Plan integral con calendario de contenidos y performance tracking.',
-    result: 'Mayor consistencia de marca y optimización del presupuesto.',
-  },
-  {
-    title: 'Modelo de crecimiento por unidades',
-    category: 'Modelos de crecimiento',
-    image:
-      'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=80',
-    problem: 'Falta de visibilidad en rentabilidad por línea de negocio.',
-    strategy: 'Implementación de KPIs por unidad y tablero ejecutivo.',
-    result: 'Decisiones más ágiles y priorización de iniciativas rentables.',
-  },
-  {
-    title: 'Gestión de equipos por proyectos',
-    category: 'Gestión de equipos y procesos',
-    image:
-      'https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1200&q=80',
-    problem: 'Operación dispersa y entregables fuera de tiempo.',
-    strategy: 'Estructura de trabajo por sprints y coordinación interáreas.',
-    result: 'Mayor eficiencia operativa y mejor cumplimiento de objetivos.',
+    title: 'Campana integral orientada a conversion',
+    category: 'Marketing y conversion',
+    image: '/case-marketing.svg',
+    problem: 'La empresa tenía presencia digital pero no lograba convertir ese tráfico en ventas.',
+    strategy: 'Se realizó un diagnóstico comercial y se definió una estrategia de marketing alineada con los objetivos de crecimiento.',
+    result: '"Su capacidad para analizar el negocio completo nos permitió replantear nuestra estrategia."',
+    videoUrl: '',
   },
 ];

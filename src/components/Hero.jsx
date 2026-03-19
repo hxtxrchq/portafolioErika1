@@ -2,62 +2,77 @@ import { motion } from 'framer-motion';
 import styles from '../styles/Hero.module.css';
 
 function Hero() {
-  const fallbackPng =
-    'https://pngimg.com/d/woman_PNG100788.png';
-  const fallbackJpg =
-    'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1200&q=80';
+  const heroPhoto = '/erika-bardales.png';
+  const handleImageError = (event) => {
+    event.currentTarget.style.opacity = '0';
+  };
 
   return (
-    <section id="hero" className={styles.hero}>
+    <section
+      id="hero"
+      className={styles.hero}
+      aria-label="Portada editorial Erika Bardales"
+    >
       <div className={styles.canvas}>
-        <motion.h1
-          className={styles.headline}
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-        >
-          Soy <span>Erika</span>,<br />
-          Estratega Comercial y Marketing
-        </motion.h1>
-
-
         <motion.div
-          className={styles.stage}
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.75, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+          className={styles.editorialStage}
+          initial={{ opacity: 0, y: 22 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.95, ease: [0.22, 1, 0.36, 1] }}
         >
-          <aside className={styles.sideLeft}>
-            <p className={styles.sideKicker}>Lo que hago</p>
-            <p>
-              Diseño e implemento planes de estrategia comercial, marketing y
-              posicionamiento para marcas que quieren crecer con estructura.
+          <div className={styles.baseTexture} aria-hidden="true" />
+
+          <motion.div
+            className={styles.titleWrap}
+            initial={{ opacity: 0, y: 24, filter: 'blur(7px)' }}
+            animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+            transition={{ duration: 1, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
+          >
+            <h1 className={styles.mainTitle}>
+              <span className={styles.lineA}>Erika</span>
+              <span className={styles.lineB}>Bardales</span>
+            </h1>
+
+            <p className={styles.heroLead}>
+              No todo problema de marketing es un problema de marketing.
             </p>
-          </aside>
 
-          <div className={styles.photoWrap}>
-            <div className={styles.orbit} aria-hidden="true" />
+            <div className={styles.heroActions}>
+              <a href="#contacto" className="btn btnOrangeFill">Evaluar mi negocio</a>
+              <a href="#metodologia" className="btn btnLime">Ver cómo trabajo</a>
+            </div>
+          </motion.div>
+
+          <motion.div
+            className={styles.photoCluster}
+            initial={{ opacity: 0, x: 34 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.95, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+          >
             <img
-              src="/clienta.png"
-              alt="Erika, estratega comercial y marketing"
-              onError={(event) => {
-                if (event.currentTarget.dataset.fallbackStep === 'png') {
-                  event.currentTarget.src = fallbackJpg;
-                  event.currentTarget.dataset.fallbackStep = 'jpg';
-                  return;
-                }
-                event.currentTarget.src = fallbackPng;
-                event.currentTarget.dataset.fallbackStep = 'png';
-              }}
+              className={styles.ghostFar}
+              src={heroPhoto}
+              alt=""
+              aria-hidden="true"
+              onError={handleImageError}
             />
-          </div>
 
-          <aside className={styles.sideRight}>
-            <strong>10 Años</strong>
-            <p>de experiencia</p>
-            <div className={styles.line} aria-hidden="true" />
-            <small>Liderando estrategia comercial y marketing</small>
-          </aside>
+            <img
+              className={styles.ghostNear}
+              src={heroPhoto}
+              alt=""
+              aria-hidden="true"
+              onError={handleImageError}
+            />
+
+            <img
+              className={styles.mainPortrait}
+              src={heroPhoto}
+              alt="Retrato de Erika Bardales"
+              onError={handleImageError}
+            />
+          </motion.div>
+
         </motion.div>
       </div>
     </section>

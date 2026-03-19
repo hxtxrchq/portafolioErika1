@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">Caso Estrategia Comercial</title>
+  <desc id="desc">Ilustracion editorial para caso de estrategia comercial.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#efe3d2"/>
+      <stop offset="100%" stop-color="#f8f1e8"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#e05b2d"/>
+      <stop offset="100%" stop-color="#f2b39c"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#bg)"/>
+  <circle cx="1020" cy="160" r="180" fill="#e05b2d" opacity="0.16"/>
+  <circle cx="170" cy="650" r="220" fill="#bdc55f" opacity="0.16"/>
+  <rect x="90" y="90" width="6" height="620" fill="#e05b2d"/>
+  <rect x="90" y="130" width="200" height="8" rx="4" fill="url(#accent)"/>
+  <text x="140" y="290" fill="#15121a" font-family="Georgia, 'Times New Roman', serif" font-size="88">Estrategia</text>
+  <text x="140" y="380" fill="#15121a" font-family="Georgia, 'Times New Roman', serif" font-size="88">Comercial</text>
+  <text x="140" y="470" fill="#15121a" font-family="Arial, sans-serif" font-size="32" letter-spacing="3">CASO REAL</text>
+</svg>

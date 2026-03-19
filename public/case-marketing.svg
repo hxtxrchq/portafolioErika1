@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">Caso Marketing y Conversion</title>
+  <desc id="desc">Ilustracion editorial para caso de marketing y conversion.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f2e6d8"/>
+      <stop offset="100%" stop-color="#efe6db"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#bdc55f"/>
+      <stop offset="100%" stop-color="#e05b2d"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#bg)"/>
+  <rect x="0" y="0" width="1200" height="800" fill="url(#accent)" opacity="0.08"/>
+  <circle cx="980" cy="610" r="210" fill="#e05b2d" opacity="0.15"/>
+  <rect x="120" y="120" width="960" height="560" rx="28" fill="#fbf7f1" stroke="#d6c6b4"/>
+  <rect x="170" y="190" width="220" height="8" rx="4" fill="#e05b2d"/>
+  <text x="170" y="330" fill="#15121a" font-family="Georgia, 'Times New Roman', serif" font-size="82">Marketing</text>
+  <text x="170" y="410" fill="#15121a" font-family="Georgia, 'Times New Roman', serif" font-size="82">y Conversion</text>
+  <text x="170" y="500" fill="#15121a" font-family="Arial, sans-serif" font-size="30" letter-spacing="2">PROYECTO ESTRATEGICO</text>
+</svg>
