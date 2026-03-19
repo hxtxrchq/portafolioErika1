@@ -7,6 +7,11 @@ import styles from '../styles/PortfolioRecentWork.module.css';
 function PortfolioRecentWork() {
   const [activeCase, setActiveCase] = useState(-1);
 
+  const toggleVideo = (index, hasVideo) => {
+    if (!hasVideo) return;
+    setActiveCase(activeCase === index ? -1 : index);
+  };
+
   return (
     <motion.section
       id="portfolio"
@@ -37,8 +42,9 @@ function PortfolioRecentWork() {
               <button
                 type="button"
                 className={styles.imageWrap}
-                onClick={() => setActiveCase(activeCase === i ? -1 : i)}
-                aria-label={`Ver video de ${item.title}`}
+                onClick={() => toggleVideo(i, Boolean(item.videoUrl))}
+                aria-label={item.videoUrl ? `Ver video de ${item.title}` : `Imagen de ${item.title}`}
+                disabled={!item.videoUrl}
               >
                 {activeCase === i && item.videoUrl ? (
                   <iframe
@@ -51,7 +57,7 @@ function PortfolioRecentWork() {
                 ) : (
                   <>
                     <img src={item.image} alt={item.title} loading="lazy" />
-                    <span className={styles.playBadge}>Ver video</span>
+                    {item.videoUrl ? <span className={styles.playBadge}>Ver video</span> : null}
                   </>
                 )}
                 <span className={styles.categoryBadge}>{item.category}</span>
@@ -62,11 +68,6 @@ function PortfolioRecentWork() {
                 <p className={styles.result}><strong>Solución:</strong> {item.strategy}</p>
                 <p className={styles.result}><strong>Testimonio:</strong> {item.result}</p>
 
-                {activeCase === i && !item.videoUrl && (
-                  <div className={styles.videoWrap}>
-                    <p className={styles.videoPlaceholder}>Agrega el link del video en src/data/portfolio.js</p>
-                  </div>
-                )}
               </div>
             </motion.article>
           ))}
