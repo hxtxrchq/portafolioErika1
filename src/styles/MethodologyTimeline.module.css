@@ -1,7 +1,7 @@
 /* ── METHODOLOGY — contraste suave tras sección oscura ── */
 .section {
   padding: 6.4rem 0;
-  background: var(--bg);
+  background: linear-gradient(180deg, var(--bg), color-mix(in srgb, var(--peach) 40%, var(--paper)) 74%);
   /* sin border-top: el cambio de color de Experience ya separa */
   position: relative;
   overflow: hidden;
@@ -38,12 +38,11 @@
   max-width: none;
   min-height: clamp(130px, 16vw, 190px);
   margin-bottom: 2.2rem;
-  border: 1px solid color-mix(in srgb, var(--border) 80%, #fff);
-  border-radius: 20px;
-  border-left: 6px solid var(--orange);
-  background: linear-gradient(180deg, color-mix(in srgb, var(--paper) 92%, #fff), color-mix(in srgb, var(--paper) 84%, #fff));
-  box-shadow: 0 18px 42px -34px rgba(20, 17, 21, 0.36);
-  padding: clamp(1.05rem, 2.4vw, 1.85rem) clamp(1rem, 2.3vw, 2rem);
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  padding: 0 clamp(0rem, 1vw, 0.25rem) 0;
   display: flex;
   flex-direction: column;
   justify-content: center;

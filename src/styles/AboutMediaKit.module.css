@@ -1,6 +1,7 @@
 .section {
   position: relative;
   padding: 3rem 0 5.4rem;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--peach) 44%, var(--paper)), var(--paper));
 }
 
 .aboutShell {
@@ -12,7 +13,7 @@
   background: transparent;
   border-radius: 0;
   overflow: visible;
-  border: 1px solid var(--border-soft);
+  border: 1px solid color-mix(in srgb, var(--border-soft) 76%, #fff);
   box-shadow: none;
 }
 

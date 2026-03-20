@@ -15,7 +15,7 @@
 }
 
 .inner {
-  height: 62px;
+  height: 70px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -23,13 +23,18 @@
 }
 
 .logo {
-  font-family: 'Didot', 'Bodoni MT', serif;
-  font-size: 2rem;
-  font-style: italic;
-  line-height: 1;
-  color: var(--orange-deep);
-  letter-spacing: -0.03em;
-  font-weight: 400;
+  display: inline-flex;
+  align-items: center;
+  width: 176px;
+  height: 44px;
+  overflow: hidden;
+}
+
+.logoImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 .nav {
@@ -69,20 +74,20 @@
 }
 
 .bookNow {
-  background: var(--lime-accent);
-  color: var(--ink);
+  background: var(--orange);
+  color: #fff;
   border-radius: 999px;
   padding: 0.42rem 0.95rem;
   font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.09em;
-  border: 1.5px solid var(--lime-deep);
+  border: 1.5px solid var(--orange-deep);
   transition: background 0.22s ease, color 0.22s ease, border-color 0.22s ease;
 }
 
 .bookNow:hover {
-  background: var(--orange);
-  color: #fff;
+  background: var(--orange-deep);
+  color: #fff4ea;
   border-color: var(--orange-deep);
 }
 
@@ -91,10 +96,16 @@
     display: none;
   }
   .inner {
-    height: 56px;
+    height: 64px;
   }
 
   .logo {
-    font-size: 1.8rem;
+    width: 138px;
+    height: 34px;
+  }
+
+  .bookNow {
+    padding: 0.44rem 0.86rem;
+    font-size: 0.7rem;
   }
 }

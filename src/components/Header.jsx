@@ -2,11 +2,9 @@ import { useState, useEffect } from 'react';
 import styles from '../styles/Header.module.css';
 
 const navItems = [
-  { label: 'Enfoque', href: '#enfoque' },
-  { label: 'Metodología', href: '#metodologia' },
-  { label: 'Casos', href: '#portfolio' },
+  { label: 'Portafolio', href: '#portfolio' },
   { label: 'Servicios', href: '#servicios' },
-  { label: 'Sobre mí', href: '#sobre-mi' },
+  { label: 'Acerca', href: '#sobre-mi' },
 ];
 
 function Header() {
@@ -22,7 +20,11 @@ function Header() {
     <header className={`${styles.header} ${scrolled ? styles.scrolled : ''}`}>
       <div className={`container ${styles.inner}`}>
         <a href="#hero" className={styles.logo}>
-          Erika
+          <img
+            src="/logo-erika.png"
+            alt="Erika"
+            className={styles.logoImage}
+          />
         </a>
         <nav className={styles.nav} aria-label="Navegación principal">
           {navItems.map((item) => (

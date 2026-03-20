@@ -1,6 +1,8 @@
 .section {
   padding: 5rem 0 5.5rem;
-  background: linear-gradient(180deg, #f7f1e8 0%, var(--bg) 72%);
+  background:
+    radial-gradient(circle at 88% 12%, rgba(255, 77, 46, 0.2), transparent 33%),
+    linear-gradient(180deg, color-mix(in srgb, var(--paper) 74%, #fff) 0%, var(--bg) 72%);
   position: relative;
   overflow: hidden;
 }
@@ -28,12 +30,12 @@
   max-width: none;
   min-height: clamp(138px, 16vw, 196px);
   margin: 0;
-  border: 1px solid color-mix(in srgb, var(--border) 80%, #fff);
-  border-radius: 20px;
-  border-left: 6px solid var(--orange);
-  background: linear-gradient(180deg, color-mix(in srgb, var(--paper) 92%, #fff), color-mix(in srgb, var(--paper) 84%, #fff));
-  box-shadow: 0 18px 42px -34px rgba(20, 17, 21, 0.36);
-  padding: clamp(1.05rem, 2.4vw, 1.85rem) clamp(1rem, 2.3vw, 2rem);
+  border: 0;
+  border-radius: 0;
+  border-left: 0;
+  background: transparent;
+  box-shadow: none;
+  padding: 0;
   text-align: left;
   display: flex;
   flex-direction: column;
@@ -88,8 +90,8 @@
   border-radius: 16px;
   overflow: hidden;
   background:
-    radial-gradient(circle at 16% 8%, rgba(255, 77, 46, 0.1), transparent 35%),
-    color-mix(in srgb, var(--paper) 90%, #fff);
+    radial-gradient(circle at 16% 8%, rgba(255, 77, 46, 0.16), transparent 35%),
+    color-mix(in srgb, var(--paper) 92%, #fff);
   backdrop-filter: blur(6px);
   box-shadow: 0 20px 54px -38px rgba(21, 19, 23, 0.4);
   margin-top: 1.3rem;

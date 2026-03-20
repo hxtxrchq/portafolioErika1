@@ -8,7 +8,7 @@ function Testimonials() {
   const item = testimonials[active];
 
   return (
-    <section className={styles.section}>
+    <section id="voz" className={styles.section}>
       <div className="container">
         <span className={styles.sectionDivider} aria-hidden="true" />
 

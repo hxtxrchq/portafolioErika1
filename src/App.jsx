@@ -5,6 +5,7 @@ import ServicesAccordion from './components/ServicesAccordion';
 import Experience from './components/Experience';
 import MethodologyTimeline from './components/MethodologyTimeline';
 import PortfolioRecentWork from './components/PortfolioRecentWork';
+import Testimonials from './components/Testimonials';
 import FinalCTA from './components/FinalCTA';
 import Footer from './components/Footer';
 
@@ -19,6 +20,7 @@ function App() {
         <PortfolioRecentWork />
         <ServicesAccordion />
         <AboutMediaKit />
+        <Testimonials />
         <FinalCTA />
       </main>
       <Footer />

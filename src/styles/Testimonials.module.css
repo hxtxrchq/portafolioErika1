@@ -1,7 +1,9 @@
 /* ── TESTIMONIALS — crema clara, contrasta con la sección oscura anterior ── */
 .section {
   padding: 7rem 0;
-  background: var(--paper);
+  background:
+    radial-gradient(circle at 14% 22%, rgba(255, 77, 46, 0.12), transparent 34%),
+    linear-gradient(180deg, var(--paper), var(--bg));
   color: var(--ink);
 }
 

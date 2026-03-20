@@ -40,7 +40,12 @@ function FinalCTA() {
           Accept: 'application/json',
         },
         body: JSON.stringify({
-          ...formData,
+          name: formData.nombre,
+          company: formData.empresa,
+          email: formData.correo,
+          help: formData.ayuda,
+          message: formData.mensaje,
+          _replyto: formData.correo,
           _subject: `Consulta web - ${formData.nombre || 'Nuevo contacto'}`,
         }),
       });
@@ -95,7 +100,6 @@ function FinalCTA() {
           </div>
 
           <form className={styles.form} onSubmit={handleSubmit}>
-            <p className={styles.formTitle}>Formulario</p>
             <div className={styles.formGrid}>
               <input
                 type="text"

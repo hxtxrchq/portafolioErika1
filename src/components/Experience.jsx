@@ -55,7 +55,7 @@ function Experience() {
                 </motion.div>
               ))}
             </div>
-            <p className={styles.brandsNote}>+ proyectos en sectores gastronómicos, retail y servicios.</p>
+            <p></p>
           </div>
         </div>
       </div>

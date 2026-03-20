@@ -3,14 +3,15 @@
 @tailwind utilities;
 
 :root {
-  --bg:          #efe5d6;
-  --paper:       #f8efe2;
+  --bg:          #efe7dc;
+  --paper:       #fbf3e8;
   --ink:         #121114;
   --ink-soft:    #464046;
   --text:        #121114;
   --orange:      #e05b2d;
   --orange-deep: #bd4218;
   --orange-soft: #f5c5b0;
+  --peach:       #f7ded2;
   --lime-accent: #dfe57b;
   --lime-deep:   #bdc55f;
   --line-soft:   color-mix(in srgb, var(--lime-accent) 48%, rgba(18,17,20,0.18));
