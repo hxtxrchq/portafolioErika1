@@ -5,22 +5,38 @@ import ServicesAccordion from './components/ServicesAccordion';
 import Experience from './components/Experience';
 import MethodologyTimeline from './components/MethodologyTimeline';
 import PortfolioRecentWork from './components/PortfolioRecentWork';
-import Testimonials from './components/Testimonials';
 import FinalCTA from './components/FinalCTA';
 import Footer from './components/Footer';
+import LogosStrip from './components/LogosStrip';
+import ServiceDetailPage from './components/ServiceDetailPage';
 
 function App() {
+  const path = typeof window !== 'undefined' ? window.location.pathname : '/';
+  const serviceSlug = path.startsWith('/servicios/') ? path.replace('/servicios/', '') : null;
+
+  if (serviceSlug) {
+    return (
+      <>
+        <Header />
+        <main>
+          <ServiceDetailPage slug={serviceSlug} />
+        </main>
+        <Footer />
+      </>
+    );
+  }
+
   return (
     <>
       <Header />
       <main>
         <Hero />
         <Experience />
+        <LogosStrip />
         <MethodologyTimeline />
         <PortfolioRecentWork />
         <ServicesAccordion />
         <AboutMediaKit />
-        <Testimonials />
         <FinalCTA />
       </main>
       <Footer />

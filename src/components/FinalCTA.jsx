@@ -9,7 +9,7 @@ function FinalCTA() {
     nombre: '',
     empresa: '',
     correo: '',
-    ayuda: '',
+    telefono: '',
     mensaje: '',
   });
   const [submitState, setSubmitState] = useState('idle');
@@ -43,7 +43,7 @@ function FinalCTA() {
           name: formData.nombre,
           company: formData.empresa,
           email: formData.correo,
-          help: formData.ayuda,
+          phone: formData.telefono,
           message: formData.mensaje,
           _replyto: formData.correo,
           _subject: `Consulta web - ${formData.nombre || 'Nuevo contacto'}`,
@@ -55,17 +55,17 @@ function FinalCTA() {
       }
 
       setSubmitState('success');
-      setSubmitMessage('Gracias, recibí tu mensaje. Te responderé pronto.');
+      setSubmitMessage('Gracias, recibi tu mensaje. Te respondere pronto.');
       setFormData({
         nombre: '',
         empresa: '',
         correo: '',
-        ayuda: '',
+        telefono: '',
         mensaje: '',
       });
     } catch {
       setSubmitState('error');
-      setSubmitMessage('Hubo un problema al enviar. Inténtalo de nuevo en unos minutos.');
+      setSubmitMessage('Hubo un problema al enviar. Intentalo de nuevo en unos minutos.');
     }
   };
 
@@ -83,11 +83,11 @@ function FinalCTA() {
           <div className={styles.leftCol}>
             <span className={styles.sectionDivider} aria-hidden="true" />
             <h2 className={styles.heading}>
-              ¿Quieres evaluar el potencial de crecimiento de tu negocio?
+              Quieres evaluar el potencial de crecimiento de tu negocio?
             </h2>
             <p className={styles.sub}>
-              Podemos tener una conversación inicial para entender tu empresa,
-              identificar oportunidades y evaluar cómo trabajar juntos.
+              Podemos tener una conversacion inicial para entender tu empresa,
+              identificar oportunidades y evaluar como trabajar juntos.
             </p>
             <div className={styles.actions}>
               <a
@@ -119,17 +119,17 @@ function FinalCTA() {
               <input
                 type="email"
                 name="correo"
-                placeholder="Correo electrónico"
+                placeholder="Correo electronico"
                 required
                 value={formData.correo}
                 onChange={handleChange}
               />
               <input
                 type="text"
-                name="ayuda"
-                placeholder="¿En qué necesitas ayuda?"
+                name="telefono"
+                placeholder="Telefono"
                 required
-                value={formData.ayuda}
+                value={formData.telefono}
                 onChange={handleChange}
               />
             </div>

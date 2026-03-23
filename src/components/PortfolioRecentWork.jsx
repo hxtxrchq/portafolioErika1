@@ -18,7 +18,12 @@ function PortfolioRecentWork() {
       <div className="container">
         <div className={styles.header}>
           <span className={styles.sectionDivider} aria-hidden="true" />
-          <h2 className={styles.heading}>Portafolio</h2>
+          <p className={styles.eyebrow}>Seleccion curada</p>
+          <h2 className={styles.heading}>Mi trabajo</h2>
+          <p className={styles.intro}>
+            Proyectos donde la estrategia, la identidad y el contenido se alinean
+            para hacer que una marca se vea mas fuerte y se entienda mejor.
+          </p>
         </div>
 
         <div className={styles.carouselMask}>
@@ -27,7 +32,6 @@ function PortfolioRecentWork() {
               <article key={`${item.title}-${index}`} className={styles.card}>
                 <div className={styles.imageWrap}>
                   <img src={item.image} alt={item.title} loading="lazy" />
-                  <span className={styles.categoryBadge}>{item.category}</span>
                 </div>
                 <div className={styles.body}>
                   <h3 className={styles.title}>{item.title}</h3>

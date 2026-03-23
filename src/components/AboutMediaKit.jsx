@@ -15,15 +15,14 @@ function AboutMediaKit() {
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
         >
           <span className={styles.sectionDivider} aria-hidden="true" />
-          <h2 className={styles.heading}>
-            Visión estratégica con enfoque empresarial
-          </h2>
+          <p className={styles.kicker}>Sobre mi</p>
+          <h2 className={styles.heading}>Vision estrategica con enfoque empresarial</h2>
           <p className={styles.copy}>
-            Soy ingeniera empresarial con más de 6 años de experiencia diseñando
+            Soy ingeniera empresarial con mas de 6 anos de experiencia disenando
             estrategias comerciales y de marketing para empresas en crecimiento.
           </p>
           <p className={styles.copy}>
-            Trabajo conectando visión de negocio, procesos y comunicación para que
+            Trabajo conectando vision de negocio, procesos y comunicacion para que
             las decisiones de marketing realmente generen resultados.
           </p>
         </motion.div>
@@ -35,18 +34,12 @@ function AboutMediaKit() {
           viewport={{ once: true, amount: 0.25 }}
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
         >
-          <div className={styles.mediaPanel}>
-            <div className={styles.stripTop}>
-              <img src={erikaPortrait} alt="" aria-hidden="true" />
-            </div>
-
-            <div className={styles.cardMain}>
+          <div className={styles.visualStage}>
+            <div className={styles.portraitFrame}>
               <img src={erikaPortrait} alt="Retrato editorial de Erika" />
             </div>
-
-            <div className={styles.stripBottom}>
-              <img src={erikaPortrait} alt="" aria-hidden="true" />
-            </div>
+            <div className={styles.accentArc} aria-hidden="true" />
+            <div className={styles.accentDot} aria-hidden="true" />
           </div>
         </motion.div>
       </div>

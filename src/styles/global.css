@@ -9,11 +9,13 @@
   --ink-soft:    #464046;
   --text:        #121114;
   --orange:      #e05b2d;
+  --orange-hit:  #f16a21;
   --orange-deep: #bd4218;
   --orange-soft: #f5c5b0;
   --peach:       #f7ded2;
   --lime-accent: #dfe57b;
   --lime-deep:   #bdc55f;
+  --cream:       #fff5e8;
   --line-soft:   color-mix(in srgb, var(--lime-accent) 48%, rgba(18,17,20,0.18));
   --border-soft: color-mix(in srgb, var(--lime-accent) 34%, rgba(18,17,20,0.22));
   --border:      rgba(18,17,20,0.14);
@@ -32,9 +34,10 @@ html {
 }
 
 body {
-  background: var(--bg);
+  background:
+    linear-gradient(180deg, #f9f1e5 0%, #f3eadf 38%, #efe7dc 100%);
   color: var(--ink);
-  font-family: 'Sora', 'Avenir Next', 'Segoe UI', sans-serif;
+  font-family: 'Avenir Next', 'Sora', 'Segoe UI', sans-serif;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
@@ -62,8 +65,8 @@ p {
 
 /* === TYPOGRAPHY === */
 h1, h2, h3, h4 {
-  font-family: 'Didot', 'Bodoni MT', 'Playfair Display', 'Times New Roman', serif;
-  font-weight: 400;
+  font-family: 'Didot', 'Bodoni MT', 'Iowan Old Style', 'Times New Roman', serif;
+  font-weight: 500;
   letter-spacing: -0.03em;
   line-height: 0.9;
 }

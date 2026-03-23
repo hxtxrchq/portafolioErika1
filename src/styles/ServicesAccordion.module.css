@@ -1,45 +1,14 @@
 .section {
-  padding: 5rem 0 5.5rem;
+  padding: 5.2rem 0 5.4rem;
   background:
-    radial-gradient(circle at 88% 12%, rgba(255, 77, 46, 0.2), transparent 33%),
-    linear-gradient(180deg, color-mix(in srgb, var(--paper) 74%, #fff) 0%, var(--bg) 72%);
+    radial-gradient(circle at 88% 12%, rgba(224, 91, 45, 0.18), transparent 34%),
+    linear-gradient(180deg, color-mix(in srgb, var(--paper) 76%, #fff) 0%, var(--bg) 72%);
   position: relative;
   overflow: hidden;
 }
 
-.section::before {
-  content: '';
-  position: absolute;
-  width: 360px;
-  height: 360px;
-  border-radius: 50%;
-  background: rgba(255, 77, 46, 0.17);
-  filter: blur(40px);
-  top: -120px;
-  right: -110px;
-  pointer-events: none;
-}
-
-.headlineWrap {
-  text-align: center;
-  margin-bottom: 2rem;
-}
-
 .headerPanel {
-  width: 100%;
-  max-width: none;
-  min-height: clamp(138px, 16vw, 196px);
-  margin: 0;
-  border: 0;
-  border-radius: 0;
-  border-left: 0;
-  background: transparent;
-  box-shadow: none;
-  padding: 0;
-  text-align: left;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  max-width: 64rem;
 }
 
 .sectionDivider {
@@ -47,200 +16,84 @@
   width: 132px;
   height: 4px;
   border-radius: 999px;
-  margin: 0 0 1.05rem;
+  margin: 0 0 1rem;
   background: linear-gradient(90deg, transparent 2%, var(--orange) 34%, color-mix(in srgb, var(--orange-soft) 68%, #fff));
+}
+
+.headerPanel h2 {
+  font-size: clamp(2.2rem, 5.8vw, 5rem);
+  line-height: 0.9;
+  margin: 0;
 }
 
 .intro {
   margin: 0.9rem 0 0;
   max-width: 62ch;
   color: var(--ink-soft);
-  font-size: 0.96rem;
   line-height: 1.72;
 }
 
-.kicker {
-  font-size: 0.7rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--orange-deep);
-  background: color-mix(in srgb, var(--orange-soft) 62%, var(--paper));
-  border-radius: 999px;
-  border: 1px solid color-mix(in srgb, var(--orange) 36%, #fff);
-  padding: 0.25rem 0.78rem;
-  width: fit-content;
-  margin: 0 auto 0.7rem;
-  font-weight: 700;
+.grid {
+  margin-top: 1.35rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.9rem;
 }
 
-.headlineWrap h2 {
-  font-size: clamp(2rem, 5.2vw, 4.3rem);
-  line-height: 0.9;
-  margin: 0;
-  max-width: 13ch;
-}
-
-.headlineWrap em {
-  font-style: italic;
-  color: var(--orange);
-}
-
-.list {
-  border: 1px solid color-mix(in srgb, var(--border) 78%, #fff);
-  border-radius: 16px;
-  overflow: hidden;
+.card {
+  border-radius: 22px;
+  border: 1px solid color-mix(in srgb, var(--border) 68%, #fff);
   background:
-    radial-gradient(circle at 16% 8%, rgba(255, 77, 46, 0.16), transparent 35%),
+    radial-gradient(circle at 82% 18%, rgba(223, 229, 123, 0.28), transparent 25%),
     color-mix(in srgb, var(--paper) 92%, #fff);
-  backdrop-filter: blur(6px);
-  box-shadow: 0 20px 54px -38px rgba(21, 19, 23, 0.4);
-  margin-top: 1.3rem;
-}
-
-.item {
-  border-bottom: 1px solid color-mix(in srgb, var(--border) 88%, #fff);
-}
-
-.item:last-child {
-  border-bottom: 0;
-}
-
-.trigger {
-  width: 100%;
-  position: relative;
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  justify-content: space-between;
-  background: none;
-  border: 0;
-  padding: 1.1rem 1rem;
-  color: inherit;
-  text-align: left;
-  font-size: clamp(1.02rem, 2.1vw, 1.45rem);
-  font-family: 'Bodoni MT', 'Didot', serif;
-  cursor: pointer;
-}
-
-.trigger[aria-expanded='true'] {
-  background: color-mix(in srgb, var(--orange-soft) 28%, transparent);
+  padding: 1.05rem;
+  display: grid;
+  gap: 0.6rem;
 }
 
 .index {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 2rem;
-  height: 2rem;
+  width: fit-content;
   border-radius: 999px;
-  border: 1px solid color-mix(in srgb, var(--orange) 32%, #fff);
+  border: 1px solid color-mix(in srgb, var(--orange) 42%, #fff);
   color: var(--orange-deep);
-  font-family: 'IBM Plex Sans', sans-serif;
-  font-size: 0.74rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-}
-
-.icon {
-  color: var(--orange);
-  font-size: 1.35rem;
-  margin-left: auto;
-  line-height: 1;
-  transition: transform 0.2s ease;
-}
-
-.trigger[aria-expanded='true'] .icon {
-  transform: rotate(45deg);
-}
-
-.content {
-  overflow: hidden;
-  max-height: 0;
-  opacity: 0;
-  padding: 0 1rem 0 3.75rem;
-  transition: max-height 0.3s ease, opacity 0.2s ease, padding 0.2s ease;
-}
-
-.open {
-  max-height: 1200px;
-  opacity: 1;
-  padding: 0 1rem 1rem 3.75rem;
-}
-
-.content ul {
-  margin: 0;
-  padding: 0 0 0.8rem 1.1rem;
-  display: grid;
-  gap: 0.55rem;
-}
-
-.content li {
-  list-style: none;
-  position: relative;
-  padding-left: 1rem;
-}
-
-.content li.subheading {
-  padding-left: 0;
-  margin-top: 0.35rem;
-  font-weight: 700;
-  color: var(--ink);
-}
-
-.content li.subheading::before {
-  display: none;
-}
-
-.content li::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0.55rem;
-  width: 7px;
-  height: 7px;
-  border-radius: 999px;
-  background: var(--orange);
-}
-
-.cta {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 999px;
-  border: 1px solid var(--orange);
-  color: var(--orange-deep);
-  padding: 0.5rem 0.9rem;
   font-size: 0.72rem;
-  font-weight: 700;
+  letter-spacing: 0.1em;
+  padding: 0.2rem 0.55rem;
+}
+
+.card h3 {
+  margin: 0;
+  font-size: clamp(1.45rem, 2.7vw, 2rem);
+  line-height: 1.05;
+}
+
+.card p {
+  margin: 0;
+  color: var(--ink-soft);
+  line-height: 1.62;
+}
+
+.link {
+  width: fit-content;
+  margin-top: 0.2rem;
+  color: var(--orange-deep);
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--orange) 70%, #fff);
+  padding: 0.42rem 0.92rem;
+  font-size: 0.74rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  transition: background 0.2s ease, color 0.2s ease;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
 }
 
-.cta:hover {
+.link:hover {
   background: var(--orange);
   color: #fff;
+  transform: translateY(-1px);
 }
 
 @media (max-width: 860px) {
-  .headerPanel {
-    border-left-width: 4px;
-    border-radius: 16px;
-    padding: 1rem 0.9rem;
-  }
-
-  .sectionDivider {
-    width: 108px;
-    height: 3px;
-    margin-bottom: 0.9rem;
-  }
-
-  .trigger {
-    padding: 1rem 0.9rem;
-    font-size: clamp(1rem, 4.9vw, 1.28rem);
-  }
-
-  .content {
-    padding: 0 0.9rem 1rem 0.9rem;
+  .grid {
+    grid-template-columns: 1fr;
   }
 }

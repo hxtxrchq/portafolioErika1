@@ -1,14 +1,13 @@
-/* ─── PORTFOLIO — carrusel continuo ─── */
+/* PORTFOLIO - carrusel continuo */
 .section {
   padding: 5.5rem 0 6.3rem;
   background:
-    linear-gradient(90deg, color-mix(in srgb, var(--peach) 42%, transparent) 0 24%, transparent 24% 76%, color-mix(in srgb, var(--peach) 32%, transparent) 76% 100%),
-    linear-gradient(180deg, color-mix(in srgb, var(--paper) 82%, #fff), var(--bg));
+    linear-gradient(90deg, color-mix(in srgb, var(--orange-soft) 40%, transparent) 0 18%, transparent 18% 68%, color-mix(in srgb, var(--lime-accent) 24%, transparent) 68% 100%),
+    linear-gradient(180deg, color-mix(in srgb, var(--paper) 72%, #fff), var(--bg));
   position: relative;
   overflow: hidden;
 }
 
-/* texto fantasma de fondo — ruptura visual respecto al resto */
 .section::before {
   content: 'WORK';
   position: absolute;
@@ -25,9 +24,9 @@
   user-select: none;
 }
 
-/* ─── HEADER ─── */
 .header {
   margin-bottom: 1.8rem;
+  max-width: 54rem;
 }
 
 .sectionDivider {
@@ -39,18 +38,34 @@
   background: linear-gradient(90deg, var(--orange), color-mix(in srgb, var(--orange-soft) 68%, #fff));
 }
 
+.eyebrow {
+  margin-bottom: 0.45rem;
+  color: var(--orange-deep);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
 .heading {
   font-size: clamp(2.35rem, 5.7vw, 5.1rem);
   line-height: 0.9;
-  margin: 0;
+  margin: 0 0 0.7rem;
   color: var(--ink);
   max-width: 15ch;
+}
+
+.intro {
+  max-width: 58ch;
+  color: color-mix(in srgb, var(--ink-soft) 90%, #373337);
+  line-height: 1.7;
 }
 
 .carouselMask {
   position: relative;
   overflow: hidden;
-  border-radius: 20px;
+  border-radius: 28px;
+  padding: 1.15rem 0;
 }
 
 .carouselMask::before,
@@ -83,17 +98,17 @@
   will-change: transform;
 }
 
-/* ─── CARD ─── */
 .card {
   width: clamp(230px, 23vw, 345px);
   flex: 0 0 auto;
   display: flex;
   flex-direction: column;
-  background: #fff;
-  border-radius: 16px;
+  background: color-mix(in srgb, var(--cream) 96%, #fff);
+  border-radius: 24px;
   overflow: hidden;
   border: 1px solid var(--border);
   transition: box-shadow 0.35s ease, transform 0.35s ease;
+  box-shadow: 0 18px 36px rgba(18, 17, 20, 0.08);
 }
 
 .card:hover {
@@ -101,7 +116,6 @@
   transform: translateY(-6px) scale(1.01);
 }
 
-/* ─── IMAGEN ─── */
 .imageWrap {
   position: relative;
   overflow: hidden;
@@ -120,27 +134,12 @@
   transform: scale(1.05);
 }
 
-.categoryBadge {
-  position: absolute;
-  top: 0.9rem;
-  left: 0.9rem;
-  font-size: 0.62rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  font-weight: 700;
-  background: rgba(255, 250, 243, 0.96);
-  color: var(--ink);
-  padding: 0.28rem 0.78rem;
-  border-radius: 999px;
-}
-
-/* ─── BODY ─── */
 .body {
   padding: 1rem 1rem 1.15rem;
   display: flex;
   flex-direction: column;
   flex: 1;
-  border-top: 3px solid var(--orange);
+  border-top: 3px solid var(--orange-hit);
 }
 
 .title {
@@ -166,7 +165,6 @@
   }
 }
 
-/* ─── RESPONSIVE ─── */
 @media (max-width: 720px) {
   .sectionDivider {
     width: 108px;
@@ -186,5 +184,4 @@
   .carouselMask::after {
     width: 42px;
   }
-
 }

@@ -1,153 +1,200 @@
-/* ── EXPERIENCE / ENFOQUE + MARCAS UNIFICADO ── */
 .section {
-  padding: 5.8rem 0 3rem;
-  background: linear-gradient(180deg, color-mix(in srgb, var(--orange-soft) 28%, var(--paper)), var(--paper));
-  color: var(--ink);
+  position: relative;
+  padding: clamp(4.8rem, 8.8vw, 7rem) 0 clamp(3.6rem, 7vw, 5.2rem);
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--paper) 62%, #fff) 0%, color-mix(in srgb, var(--peach) 34%, #fff) 100%);
+  overflow: clip;
 }
 
-.unifiedPanel {
-  border: 1px solid color-mix(in srgb, var(--border) 65%, #fff);
-  border-left: 4px solid color-mix(in srgb, var(--orange) 88%, #fff);
-  border-radius: 24px;
-  padding: clamp(1.2rem, 2.6vw, 2.3rem);
-  background: linear-gradient(180deg, color-mix(in srgb, var(--paper) 90%, #fff), color-mix(in srgb, var(--paper) 98%, #fff));
-  box-shadow: 0 20px 48px -40px rgba(20, 17, 21, 0.42);
+.stage {
+  position: relative;
+  z-index: 2;
+  min-height: clamp(540px, 74vh, 760px);
+  border: 1px solid color-mix(in srgb, var(--border) 58%, #fff);
+  background:
+    linear-gradient(112deg, color-mix(in srgb, var(--paper) 96%, #fff) 0 58%, color-mix(in srgb, var(--paper) 84%, #fff) 58% 100%);
   display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
-  gap: clamp(1rem, 2.4vw, 2rem);
-  align-items: stretch;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  overflow: hidden;
+  box-shadow: 0 34px 60px -42px rgba(23, 16, 19, 0.56);
 }
 
-.leftCol {
-  min-width: 0;
+.stage::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-linear-gradient(
+      90deg,
+      transparent 0 114px,
+      color-mix(in srgb, var(--border) 26%, transparent) 114px 115px
+    );
+  opacity: 0.23;
+  pointer-events: none;
 }
 
-.sectionDivider {
-  display: block;
-  width: 132px;
-  height: 4px;
+.copyZone {
+  position: relative;
+  z-index: 2;
+  padding: clamp(1.2rem, 2.7vw, 2.5rem);
+  border-right: 1px solid color-mix(in srgb, var(--border) 45%, #fff);
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--paper) 96%, #fff), color-mix(in srgb, var(--paper) 92%, #fff));
+}
+
+.kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.66rem;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.72rem;
+  color: color-mix(in srgb, var(--orange-deep) 78%, #5d3528);
+}
+
+.kicker::before {
+  content: '';
+  width: 54px;
+  height: 3px;
   border-radius: 999px;
-  margin-bottom: 1.1rem;
-  background: linear-gradient(90deg, var(--orange), color-mix(in srgb, var(--orange-soft) 65%, #fff));
+  background: linear-gradient(90deg, var(--orange-hit), color-mix(in srgb, var(--orange) 60%, #fff));
 }
 
 .heading {
-  font-size: clamp(2.2rem, 6vw, 5.2rem);
-  margin-bottom: 1.1rem;
-  border-bottom: 1px solid var(--border);
-  padding-bottom: 1.05rem;
+  margin-top: 0.78rem;
+  max-width: 10ch;
+  font-size: clamp(2.3rem, 6.2vw, 5.2rem);
+  line-height: 0.92;
+  letter-spacing: -0.035em;
   color: var(--ink);
 }
 
-.aboutCopy {
-  max-width: 66ch;
-  color: var(--ink-soft);
-  line-height: 1.8;
-  margin-bottom: 1rem;
+.scriptWord {
+  font-style: italic;
+  font-weight: 500;
+  color: color-mix(in srgb, var(--orange-deep) 84%, #3f1f14);
 }
 
-.brandsBlock {
-  min-width: 0;
-  border: 1px solid color-mix(in srgb, var(--border) 82%, #fff);
-  border-radius: 18px;
-  padding: 1rem;
-  background:
-    radial-gradient(circle at 18% 10%, rgba(255, 77, 46, 0.12), transparent 34%),
-    color-mix(in srgb, var(--paper) 94%, #fff);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 0.9rem;
-}
-
-.brandsLabel {
-  margin: 0;
-  font-size: 0.72rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--orange-deep);
-  font-weight: 700;
-}
-
-.brandsGrid {
+.copyStack {
+  margin-top: 1.15rem;
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.95rem 0.8rem;
+  gap: 0.95rem;
+  max-width: 65ch;
 }
 
-.brandCard {
-  min-height: 74px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.2rem;
+.copyStack p {
+  font-size: clamp(1rem, 1.22vw, 1.08rem);
+  line-height: 1.76;
+  color: color-mix(in srgb, var(--ink-soft) 91%, #2f2b30);
 }
 
-.brandCard img {
-  width: 168px;
-  height: 62px;
-  object-fit: contain;
-  filter: saturate(0.98) contrast(1.04);
+.visualZone {
+  position: relative;
+  z-index: 2;
+  background:
+    radial-gradient(circle at 75% 24%, rgba(241, 106, 33, 0.22), transparent 34%),
+    radial-gradient(circle at 8% 92%, rgba(223, 229, 123, 0.3), transparent 34%),
+    linear-gradient(175deg, color-mix(in srgb, var(--paper) 92%, #fff), color-mix(in srgb, var(--cream) 84%, #fff));
 }
 
-.brandsNote {
-  margin: 0;
-  padding-top: 0.4rem;
-  border-top: 1px solid color-mix(in srgb, var(--border) 86%, #fff);
-  color: var(--ink-soft);
-  font-size: 0.83rem;
-  line-height: 1.5;
+.contextImage {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.88) contrast(1.02);
 }
 
-@media (max-width: 1000px) {
-  .unifiedPanel {
+.imageTint {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(170deg, rgba(251, 243, 232, 0.48) 0%, rgba(251, 243, 232, 0.24) 38%, rgba(224, 91, 45, 0.28) 100%),
+    linear-gradient(0deg, rgba(240, 100, 44, 0.36), rgba(240, 100, 44, 0));
+}
+
+.bigWord {
+  position: absolute;
+  right: -2.8rem;
+  top: 52%;
+  transform: translateY(-50%) rotate(-90deg);
+  font-family: 'Didot', 'Bodoni MT', 'Iowan Old Style', 'Times New Roman', serif;
+  font-size: clamp(4.4rem, 11vw, 8.8rem);
+  letter-spacing: -0.04em;
+  color: rgba(255, 255, 255, 0.66);
+  text-shadow: 0 10px 30px rgba(70, 28, 12, 0.1);
+  pointer-events: none;
+}
+
+.orangeWave,
+.limeWave {
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.orangeWave {
+  right: -8vw;
+  top: 4%;
+  width: clamp(200px, 30vw, 460px);
+  height: clamp(180px, 26vw, 340px);
+  border-radius: 54% 46% 64% 36% / 60% 54% 46% 40%;
+  background: radial-gradient(circle at 34% 42%, rgba(241, 106, 33, 0.36), rgba(189, 66, 24, 0));
+}
+
+.limeWave {
+  left: -8vw;
+  bottom: -3rem;
+  width: clamp(220px, 34vw, 480px);
+  height: clamp(150px, 24vw, 290px);
+  border-radius: 56% 44% 60% 40% / 58% 60% 40% 42%;
+  background: radial-gradient(circle at 52% 55%, rgba(223, 229, 123, 0.32), rgba(223, 229, 123, 0));
+}
+
+@media (max-width: 980px) {
+  .stage {
     grid-template-columns: 1fr;
-    gap: 1rem;
   }
 
-  .brandsGrid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+  .copyZone {
+    border-right: 0;
+    border-bottom: 1px solid color-mix(in srgb, var(--border) 45%, #fff);
   }
 
-  .brandCard {
-    min-height: 68px;
+  .visualZone {
+    min-height: 340px;
   }
 
-  .brandCard img {
-    width: 144px;
-    height: 54px;
+  .bigWord {
+    right: auto;
+    left: 1rem;
+    top: auto;
+    bottom: -1.4rem;
+    transform: none;
+    font-size: clamp(3.8rem, 15vw, 6rem);
+    line-height: 0.85;
+    opacity: 0.62;
   }
 }
 
-@media (max-width: 640px) {
-  .section {
-    padding-top: 4.2rem;
+@media (max-width: 720px) {
+  .stage {
+    min-height: 0;
   }
 
-  .unifiedPanel {
-    border-left-width: 4px;
-    border-radius: 16px;
-    padding: 0.95rem;
+  .heading {
+    max-width: 12ch;
+    font-size: clamp(2.06rem, 11vw, 3.35rem);
   }
 
-  .sectionDivider {
-    width: 102px;
-    height: 3px;
-    margin-bottom: 0.9rem;
+  .copyStack p {
+    line-height: 1.66;
   }
 
-  .brandsGrid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 0.55rem;
+  .visualZone {
+    min-height: 280px;
   }
 
-  .brandCard {
-    min-height: 60px;
-    padding: 0.2rem;
-  }
-
-  .brandCard img {
-    width: 124px;
-    height: 46px;
-  }
 }
