@@ -35,11 +35,13 @@ function AboutMediaKit() {
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
         >
           <div className={styles.visualStage}>
+            <div className={styles.glow} aria-hidden="true" />
             <div className={styles.portraitFrame}>
               <img src={erikaPortrait} alt="Retrato editorial de Erika" />
             </div>
-            <div className={styles.accentArc} aria-hidden="true" />
-            <div className={styles.accentDot} aria-hidden="true" />
+            <div className={styles.floatingNote} aria-hidden="true">
+              Vision de negocio + accion de marketing
+            </div>
           </div>
         </motion.div>
       </div>

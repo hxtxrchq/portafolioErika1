@@ -93,19 +93,30 @@
   position: relative;
   width: 100%;
   min-height: clamp(380px, 52vh, 540px);
-  border: 1px solid color-mix(in srgb, var(--border-soft) 80%, #fff);
-  background:
-    radial-gradient(circle at 90% 12%, rgba(223, 229, 123, 0.26), transparent 34%),
-    linear-gradient(180deg, color-mix(in srgb, var(--paper) 95%, #fff), color-mix(in srgb, var(--paper) 88%, #fff));
+  border: 1px solid color-mix(in srgb, var(--border-soft) 76%, #fff);
+  background: linear-gradient(160deg, color-mix(in srgb, var(--paper) 95%, #fff), color-mix(in srgb, var(--peach) 28%, #fff));
   overflow: hidden;
+}
+
+.glow {
+  position: absolute;
+  inset: -24% -12% auto auto;
+  width: clamp(180px, 32vw, 340px);
+  height: clamp(180px, 32vw, 340px);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(223, 229, 123, 0.34), rgba(223, 229, 123, 0));
+  z-index: 1;
 }
 
 .portraitFrame {
   position: absolute;
-  inset: 1rem;
-  border: 1px solid color-mix(in srgb, var(--border) 50%, #fff);
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.34), rgba(255, 255, 255, 0.08));
+  inset: 0.95rem;
+  border: 1px solid color-mix(in srgb, var(--border) 42%, #fff);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.42), rgba(255, 255, 255, 0.1)),
+    radial-gradient(circle at 80% 12%, rgba(223, 229, 123, 0.2), transparent 35%);
   overflow: hidden;
+  z-index: 2;
 }
 
 .portraitFrame img {
@@ -116,25 +127,19 @@
   filter: contrast(1.05) saturate(1.03);
 }
 
-.accentArc {
+.floatingNote {
   position: absolute;
-  left: -8%;
-  right: -6%;
-  bottom: -14%;
-  height: 33%;
-  transform: rotate(-6deg);
-  background: linear-gradient(90deg, rgba(241, 106, 33, 0.26), rgba(189, 66, 24, 0.55));
-}
-
-.accentDot {
-  position: absolute;
+  left: 1.2rem;
   right: 1.2rem;
-  top: 1.2rem;
-  width: 10px;
-  height: 10px;
-  border-radius: 999px;
-  background: var(--orange-hit);
-  box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.36);
+  bottom: 1.2rem;
+  border: 1px solid color-mix(in srgb, var(--orange) 56%, #fff);
+  background: rgba(255, 246, 236, 0.74);
+  padding: 0.65rem 0.78rem;
+  font-size: 0.74rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--orange-deep) 82%, #5d3528);
+  z-index: 3;
 }
 
 @media (max-width: 900px) {
