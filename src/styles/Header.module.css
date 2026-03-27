@@ -10,8 +10,9 @@
 }
 
 .homeTop {
-  background: rgba(224, 91, 45, 0.92);
+  background: transparent;
   border-bottom-color: transparent;
+  backdrop-filter: none;
 }
 
 .scrolled {
@@ -136,20 +137,40 @@
 
   .inner {
     height: 64px;
-    grid-template-columns: 1fr auto;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 0.6rem;
   }
 
   .logo {
-    width: 334px;
-    height: 56px;
+    width: clamp(118px, 39vw, 158px);
+    height: 38px;
+    min-width: 0;
   }
 
   .logoImage {
-    transform: scale(1.48);
+    transform: none;
   }
 
   .bookNow {
-    padding: 0.44rem 0.86rem;
-    font-size: 0.7rem;
+    padding: 0.44rem 0.78rem;
+    font-size: 0.68rem;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 420px) {
+  .inner {
+    gap: 0.45rem;
+  }
+
+  .logo {
+    width: 112px;
+    height: 34px;
+  }
+
+  .bookNow {
+    padding: 0.4rem 0.72rem;
+    font-size: 0.64rem;
   }
 }

@@ -16,23 +16,28 @@ function ServicesAccordion() {
       <div className="container">
         <div className={styles.headerPanel}>
           <span className={styles.sectionDivider} aria-hidden="true" />
-          <h2>Como puedo ayudarte</h2>
-          <p className={styles.intro}>
-            Servicios estrategicos en formato claro y accionable.
-            Puedes abrir cada servicio en una pagina dedicada.
-          </p>
+          <h2 className={styles.heading}>
+            <span className={styles.serifWord}>Cómo puedo</span>{' '}
+            <span className={styles.sansWord}>AYUDARTE</span>
+          </h2>
         </div>
 
-        <div className={styles.grid}>
+        <div className={styles.list}>
           {services.map((service, index) => (
-            <article key={service.slug} className={styles.card}>
-              <span className={styles.index}>{String(index + 1).padStart(2, '0')}</span>
-              <h3>{service.title}</h3>
-              <p>{service.short}</p>
-              <a className={styles.link} href={`/servicios/${service.slug}`}>
-                Ver detalle
-              </a>
-            </article>
+            <a
+              key={service.slug}
+              href={`/servicios/${service.slug}`}
+              className={styles.row}
+            >
+              <span className={styles.rowIndex}>
+                {String(index + 1).padStart(2, '0')}
+              </span>
+              <div className={styles.rowContent}>
+                <h3 className={styles.rowTitle}>{service.title}</h3>
+                <p className={styles.rowDesc}>{service.short}</p>
+              </div>
+              <span className={styles.rowArrow}>→</span>
+            </a>
           ))}
         </div>
       </div>

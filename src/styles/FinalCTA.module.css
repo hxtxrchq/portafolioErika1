@@ -16,11 +16,31 @@
 }
 
 .heading {
-  font-size: clamp(2rem, 5vw, 4.35rem);
   color: #fff;
   line-height: 0.98;
   margin-bottom: 1rem;
-  max-width: 13ch;
+  max-width: 16ch;
+}
+
+.serifWord {
+  font-family: 'Cormorant Garamond', 'Didot', 'Bodoni MT', serif;
+  font-size: clamp(2.2rem, 5.2vw, 4.5rem);
+  font-weight: 400;
+  font-style: italic;
+  line-height: 0.98;
+  letter-spacing: -0.03em;
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgba(255,247,236,0.55);
+}
+
+.sansWord {
+  font-family: 'Outfit', 'Sora', 'Segoe UI', sans-serif;
+  font-size: clamp(2rem, 5vw, 4.35rem);
+  font-weight: 900;
+  line-height: 0.98;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: #fff;
 }
 
 .sub {
@@ -33,9 +53,9 @@
 
 .contentGrid {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(380px, 560px);
-  gap: clamp(1rem, 2.6vw, 2rem);
-  align-items: start;
+  grid-template-columns: minmax(0, 1fr) minmax(420px, 620px);
+  gap: clamp(2rem, 4vw, 3.5rem);
+  align-items: center;
 }
 
 .leftCol {
@@ -50,18 +70,18 @@
 
 .form {
   display: grid;
-  gap: 0.75rem;
+  gap: 1rem;
   max-width: 100%;
   background: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(223, 229, 123, 0.5);
-  border-radius: 18px;
-  padding: 1.05rem;
+  border-radius: 22px;
+  padding: clamp(1.4rem, 2.5vw, 2.2rem);
   backdrop-filter: blur(6px);
 }
 
 .formGrid {
   display: grid;
-  gap: 0.72rem;
+  gap: 1rem;
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
@@ -71,9 +91,9 @@
   border: 1px solid rgba(255, 255, 255, 0.38);
   background: rgba(255, 255, 255, 0.08);
   color: #fff;
-  padding: 0.72rem 0.82rem;
-  font-size: 0.9rem;
-  border-radius: 10px;
+  padding: 1rem 1.1rem;
+  font-size: 1rem;
+  border-radius: 12px;
   transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
 }
 
@@ -92,11 +112,12 @@
 
 .form textarea {
   resize: vertical;
-  min-height: 128px;
+  min-height: 180px;
 }
 
 .form button {
   width: fit-content;
+  padding: 0.9rem 1.8rem;
 }
 
 .form button:disabled {

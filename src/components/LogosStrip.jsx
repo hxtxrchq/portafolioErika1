@@ -9,15 +9,21 @@ const logoImages = [
   { name: 'Kanagawa Nikkei', src: '/Kanagawa Nikkei.png' },
 ];
 
-const repeated = [...logoImages, ...logoImages, ...logoImages];
+const repeated = [...logoImages, ...logoImages, ...logoImages, ...logoImages];
 
 function LogosStrip() {
   return (
-    <div className={styles.strip} aria-label="Marcas en loop">
+    <div className={styles.strip} aria-label="Marcas que confían">
+      {/* Dual-typography heading */}
+      <div className={styles.heading}>
+        <span className={styles.serifWord}>Marcas</span>{' '}
+        <span className={styles.sansWord}>QUE CONFÍAN</span>
+      </div>
+
       <motion.div
         className={styles.track}
-        animate={{ x: ['0%', '-33.333%'] }}
-        transition={{ duration: 24, repeat: Infinity, ease: 'linear' }}
+        animate={{ x: ['0%', '-25%'] }}
+        transition={{ duration: 22, repeat: Infinity, ease: 'linear' }}
       >
         {repeated.map((logo, index) => (
           <div key={`${logo.name}-${index}`} className={styles.logoSlot}>

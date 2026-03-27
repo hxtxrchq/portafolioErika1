@@ -17,7 +17,8 @@ function Experience() {
           <div className={styles.copyZone}>
             <p className={styles.kicker}>ENFOQUE</p>
             <h2 className={styles.heading}>
-              Una mirada <span className={styles.scriptWord}>estratégica</span> del negocio
+              <span className={styles.serifWord}>Una mirada</span>{' '}
+              <span className={styles.sansWord}>ESTRATÉGICA</span>
             </h2>
             <div className={styles.copyStack}>
               <p>

@@ -83,20 +83,14 @@ function FinalCTA() {
           <div className={styles.leftCol}>
             <span className={styles.sectionDivider} aria-hidden="true" />
             <h2 className={styles.heading}>
-              Quieres evaluar el potencial de crecimiento de tu negocio?
+              <span className={styles.serifWord}>Hablemos</span>{' '}
+              <span className={styles.sansWord}>de tu negocio</span>
             </h2>
             <p className={styles.sub}>
               Podemos tener una conversacion inicial para entender tu empresa,
               identificar oportunidades y evaluar como trabajar juntos.
             </p>
-            <div className={styles.actions}>
-              <a
-                href="mailto:calonsoparedes1@gmail.com?subject=Consulta%20desde%20la%20web"
-                className="btn btnCream"
-              >
-                Evaluar mi negocio
-              </a>
-            </div>
+            
           </div>
 
           <form className={styles.form} onSubmit={handleSubmit}>
@@ -104,7 +98,7 @@ function FinalCTA() {
               <input
                 type="text"
                 name="nombre"
-                placeholder="Nombre"
+                placeholder="Nombre Completo"
                 required
                 value={formData.nombre}
                 onChange={handleChange}

@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import AboutMediaKit from './components/AboutMediaKit';
@@ -13,6 +14,17 @@ import ServiceDetailPage from './components/ServiceDetailPage';
 function App() {
   const path = typeof window !== 'undefined' ? window.location.pathname : '/';
   const serviceSlug = path.startsWith('/servicios/') ? path.replace('/servicios/', '') : null;
+
+  /* Auto-scroll to hash anchor after page load */
+  useEffect(() => {
+    const hash = window.location.hash;
+    if (hash) {
+      setTimeout(() => {
+        const el = document.querySelector(hash);
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      }, 400);
+    }
+  }, []);
 
   if (serviceSlug) {
     return (

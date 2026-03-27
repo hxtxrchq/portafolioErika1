@@ -19,7 +19,7 @@ function PortfolioRecentWork() {
         <div className={styles.header}>
           <span className={styles.sectionDivider} aria-hidden="true" />
           <p className={styles.eyebrow}>Seleccion curada</p>
-          <h2 className={styles.heading}>Mi trabajo</h2>
+          <h2 className={styles.heading}><span className={styles.serifWord}>Mi</span> <span className={styles.sansWord}>TRABAJO</span></h2>
           <p className={styles.intro}>
             Proyectos donde la estrategia, la identidad y el contenido se alinean
             para hacer que una marca se vea mas fuerte y se entienda mejor.

@@ -63,13 +63,29 @@
 }
 
 .heading {
-  font-size: clamp(2.2rem, 5.5vw, 4.7rem);
   margin-bottom: 0;
   max-width: 14ch;
+  line-height: 0.92;
 }
 
-.heading em {
+.serifWord {
+  font-family: 'Cormorant Garamond', 'Didot', 'Bodoni MT', serif;
+  font-size: clamp(2.4rem, 5.8vw, 5rem);
+  font-weight: 400;
   font-style: italic;
+  line-height: 0.92;
+  letter-spacing: -0.03em;
+  color: transparent;
+  -webkit-text-stroke: 1.5px var(--orange);
+}
+
+.sansWord {
+  font-family: 'Outfit', 'Sora', 'Segoe UI', sans-serif;
+  font-size: clamp(2.2rem, 5.5vw, 4.7rem);
+  font-weight: 900;
+  line-height: 0.92;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
   color: var(--orange);
 }
 

@@ -42,7 +42,8 @@ function MethodologyTimeline() {
         <div className={styles.headerPanel}>
           <span className={styles.sectionDivider} aria-hidden="true" />
           <h2 className={styles.heading}>
-            Cómo trabajo con las empresas
+            <span className={styles.serifWord}>Cómo</span>{' '}
+            <span className={styles.sansWord}>TRABAJO</span>
           </h2>
         </div>
         <div className={styles.timeline}>

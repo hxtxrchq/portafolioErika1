@@ -2,8 +2,10 @@
 .section {
   padding: 5.5rem 0 6.3rem;
   background:
-    linear-gradient(90deg, color-mix(in srgb, var(--orange-soft) 40%, transparent) 0 18%, transparent 18% 68%, color-mix(in srgb, var(--lime-accent) 24%, transparent) 68% 100%),
-    linear-gradient(180deg, color-mix(in srgb, var(--paper) 72%, #fff), var(--bg));
+    radial-gradient(ellipse 55% 70% at 5% 50%, color-mix(in srgb, var(--orange-soft) 30%, transparent), transparent 70%),
+    radial-gradient(ellipse 50% 65% at 95% 55%, color-mix(in srgb, var(--lime-accent) 18%, transparent), transparent 70%),
+    radial-gradient(ellipse 60% 50% at 50% 30%, color-mix(in srgb, var(--cream) 40%, transparent), transparent 70%),
+    linear-gradient(180deg, var(--paper), var(--bg));
   position: relative;
   overflow: hidden;
 }
@@ -48,11 +50,31 @@
 }
 
 .heading {
-  font-size: clamp(2.35rem, 5.7vw, 5.1rem);
-  line-height: 0.9;
+  line-height: 0.92;
   margin: 0 0 0.7rem;
   color: var(--ink);
   max-width: 15ch;
+}
+
+.serifWord {
+  font-family: 'Cormorant Garamond', 'Didot', 'Bodoni MT', serif;
+  font-size: clamp(2.5rem, 5.9vw, 5.3rem);
+  font-weight: 400;
+  font-style: italic;
+  line-height: 0.92;
+  letter-spacing: -0.03em;
+  color: transparent;
+  -webkit-text-stroke: 1.5px var(--orange);
+}
+
+.sansWord {
+  font-family: 'Outfit', 'Sora', 'Segoe UI', sans-serif;
+  font-size: clamp(2.35rem, 5.7vw, 5.1rem);
+  font-weight: 900;
+  line-height: 0.92;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: var(--orange);
 }
 
 .intro {

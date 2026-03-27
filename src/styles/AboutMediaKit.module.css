@@ -1,163 +1,241 @@
+/* ═══ ABOUT — Innovative Dual-Typography Editorial ═══ */
+
 .section {
   position: relative;
-  padding: 3rem 0 5.2rem;
-  background:
-    radial-gradient(circle at 90% 14%, rgba(224, 91, 45, 0.16), transparent 34%),
-    linear-gradient(180deg, color-mix(in srgb, var(--peach) 40%, var(--paper)), var(--paper));
-}
-
-.aboutShell {
-  position: relative;
-  display: grid;
-  grid-template-columns: minmax(0, 1.02fr) minmax(340px, 0.98fr);
-  gap: clamp(0.9rem, 2vw, 1.6rem);
-  align-items: stretch;
-  border: 1px solid color-mix(in srgb, var(--border-soft) 74%, #fff);
-  background: color-mix(in srgb, var(--paper) 93%, #fff);
-  box-shadow: 0 30px 60px -48px rgba(18, 16, 20, 0.42);
+  padding: clamp(5rem, 10vh, 8rem) 0 clamp(5rem, 10vh, 7rem);
+  background: var(--paper, #fbf3e8);
   overflow: hidden;
 }
 
-.aboutShell::before {
-  content: '';
+/* ── Giant typographic backdrop ── */
+
+.typoBackdrop {
   position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background:
-    repeating-linear-gradient(
-      90deg,
-      transparent 0 112px,
-      color-mix(in srgb, var(--border) 24%, transparent) 112px 113px
-    );
-  opacity: 0.2;
-}
-
-.introCard,
-.visualCard {
-  position: relative;
-  z-index: 2;
-}
-
-.introCard {
-  color: var(--ink);
-  padding: clamp(1.4rem, 3vw, 2.3rem) clamp(1rem, 2.2vw, 1.8rem);
-  border-right: 1px solid color-mix(in srgb, var(--border) 42%, #fff);
-}
-
-.sectionDivider {
-  display: block;
-  width: 74px;
-  height: 2px;
-  border-radius: 999px;
-  margin-bottom: 0.9rem;
-  background: linear-gradient(90deg, var(--orange), color-mix(in srgb, var(--orange-soft) 70%, #fff));
-}
-
-.kicker {
-  margin: 0 0 0.5rem;
-  text-transform: uppercase;
-  letter-spacing: 0.16em;
-  font-size: 0.68rem;
-  color: var(--orange-deep);
-}
-
-.heading {
-  font-family: 'Bodoni MT', 'Didot', 'Iowan Old Style', 'Baskerville', serif;
-  font-size: clamp(2.4rem, 5vw, 5rem);
-  line-height: 0.92;
-  letter-spacing: -0.04em;
-  max-width: 9.2ch;
-  margin: 0;
-  color: var(--ink);
-}
-
-.copy {
-  margin-top: 0.92rem;
-  max-width: 52ch;
-  font-size: 1rem;
-  line-height: 1.72;
-  color: var(--ink-soft);
-}
-
-.copy + .copy {
-  margin-top: 0.62rem;
-}
-
-.visualCard {
-  padding: clamp(0.9rem, 2vw, 1.4rem);
+  top: clamp(2rem, 6vh, 5rem);
+  left: 0;
+  right: 0;
   display: flex;
-  align-items: center;
+  align-items: baseline;
+  justify-content: center;
+  gap: clamp(0.6rem, 2vw, 1.6rem);
+  pointer-events: none;
+  z-index: 0;
+  user-select: none;
 }
 
-.visualStage {
+/* "Sobre" — elegant script/italic serif */
+.wordSobre {
+  font-family: 'Cormorant Garamond', 'Didot', 'Bodoni MT', 'Times New Roman', serif;
+  font-size: clamp(5rem, 14vw, 13rem);
+  font-weight: 400;
+  font-style: italic;
+  line-height: 0.85;
+  letter-spacing: -0.04em;
+  color: transparent;
+  -webkit-text-stroke: 1.5px var(--orange, #e05b2d);
+  text-stroke: 1.5px var(--orange, #e05b2d);
+  opacity: 0.35;
+}
+
+/* "Mí" — bold sans-serif, filled */
+.wordMi {
+  font-family: 'Outfit', 'Sora', 'Segoe UI', sans-serif;
+  font-size: clamp(5rem, 14vw, 13rem);
+  font-weight: 800;
+  line-height: 0.85;
+  letter-spacing: -0.06em;
+  text-transform: uppercase;
+  color: var(--orange, #e05b2d);
+  opacity: 0.08;
+}
+
+.shell {
   position: relative;
-  width: 100%;
-  min-height: clamp(380px, 52vh, 540px);
-  border: 1px solid color-mix(in srgb, var(--border-soft) 76%, #fff);
-  background: linear-gradient(160deg, color-mix(in srgb, var(--paper) 95%, #fff), color-mix(in srgb, var(--peach) 28%, #fff));
-  overflow: hidden;
-}
-
-.glow {
-  position: absolute;
-  inset: -24% -12% auto auto;
-  width: clamp(180px, 32vw, 340px);
-  height: clamp(180px, 32vw, 340px);
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(223, 229, 123, 0.34), rgba(223, 229, 123, 0));
   z-index: 1;
 }
 
-.portraitFrame {
-  position: absolute;
-  inset: 0.95rem;
-  border: 1px solid color-mix(in srgb, var(--border) 42%, #fff);
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.42), rgba(255, 255, 255, 0.1)),
-    radial-gradient(circle at 80% 12%, rgba(223, 229, 123, 0.2), transparent 35%);
-  overflow: hidden;
-  z-index: 2;
+/* ── Asymmetric layout ── */
+
+.layout {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: clamp(2rem, 4vw, 4rem);
+  align-items: center;
 }
 
-.portraitFrame img {
+/* ── Text block ── */
+
+.textBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding-top: clamp(2rem, 5vh, 4rem);
+}
+
+.intro {
+  font-family: 'Didot', 'Bodoni MT', 'Iowan Old Style', 'Times New Roman', serif;
+  font-size: clamp(1.35rem, 2.2vw, 2rem);
+  font-weight: 400;
+  line-height: 1.35;
+  letter-spacing: -0.02em;
+  color: var(--ink, #121114);
+  margin-bottom: clamp(1rem, 2vh, 1.5rem);
+  max-width: 38ch;
+}
+
+.body {
+  font-family: 'Avenir Next', 'Sora', 'Segoe UI', sans-serif;
+  font-size: clamp(0.88rem, 1vw, 1rem);
+  line-height: 1.8;
+  color: var(--ink-soft, #464046);
+  max-width: 44ch;
+}
+
+/* ── Photo block ── */
+
+.photoBlock {
+  position: relative;
+}
+
+.photoFrame {
+  position: relative;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  border-radius: 0 clamp(2rem, 4vw, 4rem) 0 0;
+}
+
+.photo {
   width: 100%;
   height: 100%;
-  object-fit: contain;
-  object-position: center bottom;
-  filter: contrast(1.05) saturate(1.03);
+  object-fit: cover;
+  object-position: center top;
+  filter: contrast(1.04) saturate(1.02);
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.floatingNote {
-  position: absolute;
-  left: 1.2rem;
-  right: 1.2rem;
-  bottom: 1.2rem;
-  border: 1px solid color-mix(in srgb, var(--orange) 56%, #fff);
-  background: rgba(255, 246, 236, 0.74);
-  padding: 0.65rem 0.78rem;
-  font-size: 0.74rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: color-mix(in srgb, var(--orange-deep) 82%, #5d3528);
-  z-index: 3;
+.photoFrame:hover .photo {
+  transform: scale(1.03);
 }
+
+/* ── Decorative abstract shapes ── */
+
+.decoShapes {
+  position: absolute;
+  top: 0;
+  right: clamp(-4rem, -8vw, -7rem);
+  bottom: 0;
+  width: clamp(100px, 14vw, 180px);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Large hollow ring */
+.decoRing {
+  position: absolute;
+  top: 8%;
+  right: 0;
+  width: clamp(70px, 10vw, 120px);
+  height: clamp(70px, 10vw, 120px);
+  border-radius: 50%;
+  border: 2px solid var(--orange, #e05b2d);
+  opacity: 0.3;
+}
+
+/* Diagonal lines cluster */
+.decoLines {
+  position: absolute;
+  top: 28%;
+  right: 10px;
+  width: clamp(60px, 8vw, 100px);
+  height: clamp(80px, 11vw, 140px);
+  color: var(--orange-soft, #f5c5b0);
+  opacity: 0.6;
+}
+
+/* Small solid dot */
+.decoDot {
+  position: absolute;
+  top: 55%;
+  right: clamp(30px, 5vw, 60px);
+  width: clamp(10px, 1.5vw, 16px);
+  height: clamp(10px, 1.5vw, 16px);
+  border-radius: 50%;
+  background: var(--lime-accent, #dfe57b);
+  opacity: 0.8;
+}
+
+/* Lime arc */
+.decoArc {
+  position: absolute;
+  bottom: 22%;
+  right: 0;
+  width: clamp(50px, 7vw, 90px);
+  height: clamp(50px, 7vw, 90px);
+  color: var(--lime-accent, #dfe57b);
+  opacity: 0.45;
+}
+
+/* Cross marker */
+.decoCross {
+  position: absolute;
+  bottom: 8%;
+  right: clamp(20px, 4vw, 50px);
+  width: clamp(16px, 2vw, 22px);
+  height: clamp(16px, 2vw, 22px);
+  color: var(--orange, #e05b2d);
+  opacity: 0.35;
+}
+
+/* ═══ RESPONSIVE ═══ */
 
 @media (max-width: 900px) {
-  .aboutShell {
+  .typoBackdrop {
+    top: clamp(1rem, 3vh, 2.5rem);
+  }
+
+  .wordSobre,
+  .wordMi {
+    font-size: clamp(3.5rem, 14vw, 7rem);
+  }
+
+  .layout {
     grid-template-columns: 1fr;
+    gap: 2rem;
   }
 
-  .introCard {
-    border-right: 0;
-    border-bottom: 1px solid color-mix(in srgb, var(--border) 42%, #fff);
+  .textBlock {
+    order: 2;
+    padding-top: 0;
   }
 
-  .heading {
-    max-width: 100%;
-    font-size: clamp(2.25rem, 9vw, 4.2rem);
+  .photoBlock {
+    order: 1;
+    max-width: 420px;
+    margin-inline: auto;
   }
 
-  .visualStage {
-    min-height: 340px;
+  .intro {
+    font-size: clamp(1.2rem, 4.5vw, 1.6rem);
+  }
+
+  .decoShapes {
+    right: clamp(-2rem, -4vw, -3rem);
+    width: clamp(60px, 10vw, 100px);
+  }
+}
+
+@media (max-width: 640px) {
+  .section {
+    padding: clamp(3.5rem, 8vh, 5rem) 0 clamp(3.5rem, 8vh, 5rem);
+  }
+
+  .wordSobre,
+  .wordMi {
+    font-size: clamp(2.8rem, 16vw, 4.5rem);
+  }
+
+  /* Hide decorative shapes on very small screens */
+  .decoShapes {
+    display: none;
   }
 }
