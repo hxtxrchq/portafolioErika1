@@ -188,6 +188,19 @@
 }
 
 @media (max-width: 720px) {
+  .section {
+    padding: 3.5rem 0 4.2rem;
+  }
+
+  .heading {
+    max-width: 100%;
+  }
+
+  .serifWord,
+  .sansWord {
+    display: inline-block;
+  }
+
   .sectionDivider {
     width: 108px;
     height: 3px;

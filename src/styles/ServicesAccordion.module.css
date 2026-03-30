@@ -157,9 +157,22 @@
 }
 
 @media (max-width: 640px) {
+  .section {
+    padding: 3.5rem 0 4rem;
+  }
+
   .row {
-    grid-template-columns: auto 1fr;
+    grid-template-columns: auto minmax(0, 1fr);
     gap: 0.8rem;
+  }
+
+  .rowContent {
+    min-width: 0;
+  }
+
+  .rowTitle {
+    white-space: normal;
+    word-break: break-word;
   }
 
   .rowArrow {

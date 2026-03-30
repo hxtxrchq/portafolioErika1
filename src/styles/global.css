@@ -186,6 +186,22 @@ button:focus-visible {
   :root {
     --container: min(100%, calc(100% - 1.6rem));
   }
+
+  section {
+    scroll-margin-top: 64px;
+  }
+
+  .btn {
+    white-space: normal;
+    line-height: 1.25;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --container: min(100%, calc(100% - 1rem));
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

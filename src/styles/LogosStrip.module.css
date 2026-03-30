@@ -89,6 +89,16 @@
 }
 
 @media (max-width: 640px) {
+  .strip {
+    padding: 2.2rem 0;
+  }
+  
+  .heading {
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    padding-inline: 1rem;
+  }
+
   .logoSlot,
   .logoSlot img {
     height: 40px;
