@@ -1,79 +1,44 @@
-import { motion } from 'framer-motion';
-import { fadeUp } from '../utils/motion';
 import styles from '../styles/MethodologyTimeline.module.css';
 
 const steps = [
   {
-    title: 'Diagnóstico',
-    intro: 'Analizo el negocio desde tres dimensiones:',
-    points: ['operación', 'ventas', 'marketing'],
-    desc: 'El objetivo es identificar qué está frenando el crecimiento.',
+    n: '01.',
+    title: 'Diagnostico',
+    text: 'Entendemos que esta frenando tus ventas y donde estas perdiendo dinero.',
   },
   {
-    title: 'Plan de acción',
-    intro: 'A partir del diagnóstico desarrollo un plan que define:',
-    points: [
-      'objetivos comerciales',
-      'prioridades estratégicas',
-      'acciones de marketing',
-      'mejoras en procesos',
-    ],
-    desc: '',
+    n: '02.',
+    title: 'Estructura',
+    text: 'Organizamos como tu negocio atrae clientes, vende y se sostiene.',
   },
   {
-    title: 'Implementación',
-    intro: '',
-    points: [],
-    desc: 'Dependiendo de lo que el negocio necesite, acompaño la ejecución en estrategia comercial, optimización de procesos o marketing. Cuando el plan requiere implementación en marketing, trabajo junto a mi equipo en la agencia.',
+    n: '03.',
+    title: 'Plan de accion',
+    text: 'Te dejo claro que hacer, como hacerlo y en que orden.',
   },
 ];
 
 function MethodologyTimeline() {
   return (
-    <motion.section
-      id="metodologia"
-      className={styles.section}
-      variants={fadeUp}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.15 }}
-    >
+    <section id="metodologia" className={styles.section}>
       <div className="container">
-        <div className={styles.headerPanel}>
-          <span className={styles.sectionDivider} aria-hidden="true" />
-          <h2 className={styles.heading}>
-            <span className={styles.serifWord}>Cómo</span>{' '}
-            <span className={styles.sansWord}>TRABAJO</span>
-          </h2>
-        </div>
-        <div className={styles.timeline}>
-          {steps.map((step, i) => (
-            <motion.article
-              key={step.title}
-              className={styles.step}
-              initial={{ opacity: 0, y: 28 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.5 }}
-              transition={{ duration: 0.55, delay: i * 0.1 }}
-            >
-              <span className={styles.number}>{String(i + 1).padStart(2, '0')}</span>
-              <div className={styles.content}>
-                <h3>{step.title}</h3>
-                {step.intro ? <p>{step.intro}</p> : null}
-                {step.points.length > 0 ? (
-                  <ul>
-                    {step.points.map((point) => (
-                      <li key={point}>{point}</li>
-                    ))}
-                  </ul>
-                ) : null}
-                {step.desc ? <p>{step.desc}</p> : null}
-              </div>
-            </motion.article>
+        <header className={styles.header}>
+          <h2>Nuestro proceso</h2>
+          <p>Un proceso de 45 dias para ordenar tu negocio desde la base</p>
+        </header>
+
+        <div className={styles.grid}>
+          {steps.map((step) => (
+            <article key={step.n} className={styles.card}>
+              <span className={styles.n}>{step.n}</span>
+              <h3>{step.title}</h3>
+              <span className={styles.dot} aria-hidden="true" />
+              <p>{step.text}</p>
+            </article>
           ))}
         </div>
       </div>
-    </motion.section>
+    </section>
   );
 }
 

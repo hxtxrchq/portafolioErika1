@@ -1,389 +1,151 @@
-/* ═══ HERO — Dual Typography Editorial Cover ═══ */
-
 .hero {
   position: relative;
+  background: var(--beige);
   padding-top: 72px;
-  min-height: max(680px, 100svh);
-  width: 100%;
-  background: var(--orange, #e05b2d);
+  padding-bottom: 0;
   overflow: hidden;
-}
-
-/* Texture */
-.hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background:
-    radial-gradient(ellipse 80% 50% at 10% 15%, rgba(255,210,170,0.18), transparent),
-    radial-gradient(ellipse 50% 50% at 90% 10%, rgba(255,250,240,0.06), transparent),
-    radial-gradient(ellipse 70% 55% at 50% 95%, rgba(110,22,0,0.12), transparent);
-}
-
-/* Bottom fade — seamless blend into next section */
-.hero::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 45%;
-  z-index: 0;
-  pointer-events: none;
-  background: linear-gradient(
-    to bottom,
-    transparent 0%,
-    rgba(251,243,232,0.08) 30%,
-    rgba(251,243,232,0.22) 50%,
-    rgba(251,243,232,0.48) 70%,
-    rgba(251,243,232,0.75) 85%,
-    rgba(251,243,232,1) 100%
-  );
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
 }
 
 .srOnly {
   position: absolute;
-  width: 1px; height: 1px;
-  padding: 0; margin: -1px;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  clip: rect(0, 0, 0, 0);
   overflow: hidden;
-  clip: rect(0,0,0,0);
-  white-space: nowrap; border: 0;
 }
 
-/* ── Layer 1: "Tu MARCA" — BEHIND photo ── */
+.heroContainer {
+  width: min(1120px, calc(100% - 2.4rem));
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.14fr 0.86fr;
+  align-items: center;
+  gap: clamp(0.75rem, 1.6vw, 1.5rem);
+  flex: 1;
+  padding-top: 0;
+}
 
-.textBehind {
-  position: absolute;
-  top: clamp(90px, 15vh, 180px); /* Lowered to bridge gap to photo */
-  left: 0;
-  right: 0;
-  z-index: 1;
-  pointer-events: none;
-  display: flex;
-  justify-content: center;
-  align-items: baseline;
-  gap: clamp(0.4rem, 1.2vw, 1rem);
+.textContent {
+  padding: 0;
+  display: grid;
+  gap: 0.75rem;
+  justify-self: start;
+}
+
+.subtitle {
+  font-family: 'ZalandoSans', sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.11em;
+  color: #705f66;
+}
+
+.subtitle strong {
+  color: #2c1e26;
+}
+
+.headline {
+  margin: 0;
+  font-family: 'ZalandoSans', sans-serif;
+  font-size: clamp(2rem, 3.85vw, 3.58rem);
+  font-weight: 510;
+  line-height: 1.02;
+  letter-spacing: -0.015em;
+  color: var(--orange);
+}
+
+.orangeHeadline {
+  display: inline-block;
   white-space: nowrap;
 }
 
-/* \"Tu\" — serif italic OUTLINE (like 'Sobre') */
-.wordTu {
-  font-family: 'Cormorant Garamond', 'Didot', 'Bodoni MT', serif;
-  font-size: clamp(3.5rem, 9vw, 9rem);
-  font-weight: 400;
-  font-style: italic;
-  line-height: 0.85;
-  letter-spacing: -0.03em;
-  color: transparent;
-  -webkit-text-stroke: 1.5px rgba(255,255,255,0.65);
-  text-transform: none;
+.highlight {
+  font-family: 'TypoSlabserif', serif;
+  font-size: clamp(1.92rem, 3.7vw, 3.08rem);
+  color: var(--violet);
+  font-weight: 300;
+  line-height: 1.06;
 }
 
-/* "MARCA" — serif italic OUTLINE (same as Tu) */
-.wordMarca {
-  font-family: 'Cormorant Garamond', 'Didot', 'Bodoni MT', serif;
-  font-size: clamp(3.5rem, 9vw, 9rem);
-  font-weight: 400;
-  font-style: italic;
-  line-height: 0.85;
-  letter-spacing: -0.03em;
-  color: transparent;
-  -webkit-text-stroke: 1.5px rgba(255,255,255,0.65);
+.description {
+  margin: 0;
+  color: #665e65;
+  font-size: 0.84rem;
+  max-width: 62ch;
 }
-
-/* ── Layer 2: Photo — centered, fills hero ── */
-
-.photoWrap {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 2;
-  height: calc(100% - 72px);
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-}
-
-.photo {
-  display: block;
-  width: auto !important;
-  max-width: clamp(540px, 72vw, 920px);
-  height: auto !important;
-  max-height: 100%;
-  object-fit: contain !important;
-  object-position: center bottom;
-  filter: drop-shadow(0 16px 42px rgba(50,10,0,0.16));
-  -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 60%, transparent 98%);
-  mask-image: linear-gradient(to bottom, #000 0%, #000 60%, transparent 98%);
-}
-
-/* ── Layer 3: "con [impacto]." — IN FRONT of photo ── */
-
-.textFront {
-  position: absolute;
-  bottom: clamp(68px, 14vh, 160px);
-  left: 0;
-  right: 0;
-  z-index: 3;
-  pointer-events: none;
-  display: flex;
-  justify-content: center;
-  align-items: baseline;
-  gap: clamp(0.4rem, 1vw, 0.8rem);
-  white-space: nowrap;
-}
-
-/* "con" — italic serif outline, small */
-.wordCon {
-  font-family: 'Cormorant Garamond', 'Didot', 'Bodoni MT', serif;
-  font-size: clamp(1.2rem, 2.4vw, 2.2rem);
-  font-weight: 400;
-  font-style: italic;
-  color: transparent;
-  -webkit-text-stroke: 1px rgba(255,247,236,0.35);
-  letter-spacing: 0.02em;
-}
-
-.wordRotating {
-  position: relative;
-  display: inline-block;
-}
-
-/* Rotating word — bold sans filled (like 'MI') */
-.rotWord {
-  display: inline-block;
-  font-family: 'Outfit', 'Sora', 'Segoe UI', sans-serif;
-  font-size: clamp(2.8rem, 7vw, 6.5rem);
-  font-weight: 900;
-  text-transform: uppercase;
-  color: #fff7ee;
-  letter-spacing: -0.02em;
-  line-height: 0.88;
-  text-shadow: 0 4px 24px rgba(80,18,0,0.18);
-}
-
-/* ── Tagline ── */
-
-.tagline {
-  position: absolute;
-  bottom: clamp(50px, 11vh, 125px);
-  left: 0;
-  right: 0;
-  z-index: 3;
-  text-align: center;
-  pointer-events: none;
-  font-family: 'Outfit', 'Sora', sans-serif;
-  font-size: clamp(0.5rem, 0.75vw, 0.65rem);
-  font-weight: 400;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: rgba(255,247,236,0.30);
-}
-
-/* ── CTAs ── */
 
 .ctas {
-  position: absolute;
-  bottom: clamp(1rem, 2.5vh, 2rem);
-  left: 0;
-  right: 0;
-  z-index: 4;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.65rem;
-  padding-inline: 1rem;
+  margin-top: 0.1rem;
 }
 
 .btnPrimary {
-  background: #fff7ee;
-  color: var(--orange-deep, #bd4218);
-  border: 1.5px solid rgba(255,247,237,0.90);
-  border-radius: 999px;
-  font-family: 'Outfit', sans-serif;
-  font-size: 0.78rem;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  padding: 0.88rem 1.7rem;
-  font-weight: 600;
-  transition: transform 0.22s, box-shadow 0.22s, background 0.22s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--orange) !important;
+  color: var(--orange);
+  background: transparent;
+  padding: 0.72rem 1.5rem;
+  border-radius: 0;
+  font-size: 0.84rem;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  cursor: pointer;
+  transition: all 0.22s ease;
 }
 
 .btnPrimary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 12px 30px rgba(65,16,4,0.25);
-  background: #fff;
-}
-
-.btnGhost {
   background: transparent;
-  color: rgba(255,247,236,0.88);
-  border: 1.5px solid rgba(255,247,236,0.35);
-  border-radius: 999px;
-  font-family: 'Outfit', sans-serif;
-  font-size: 0.76rem;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  padding: 0.82rem 1.5rem;
-  font-weight: 600;
-  transition: transform 0.22s, box-shadow 0.22s, background 0.22s, border-color 0.22s;
+  color: var(--orange);
+  border-color: var(--orange);
 }
 
-.btnGhost:hover {
-  transform: translateY(-2px);
-  background: rgba(255,247,236,0.10);
-  border-color: rgba(255,247,236,0.60);
+.photoWrap {
+  display: flex;
+  align-items: flex-end;
+  justify-content: end;
+  height: 100%;
+  padding-right: 0;
+  overflow: visible;
 }
 
-/* ═══ RESPONSIVE ═══ */
-
-@media (max-width: 980px) {
-  .wordTu { font-size: clamp(3rem, 9vw, 6rem); }
-  .wordMarca { font-size: clamp(2.8rem, 8.5vw, 5.5rem); }
-  .rotWord { font-size: clamp(2.5rem, 7vw, 4.5rem); }
-  .wordCon { font-size: clamp(1rem, 2.4vw, 1.5rem); }
+.photo {
+  width: clamp(400px, 52vw, 500px);
+  height: auto;
+  max-width: none;
+  max-height: calc(100svh - 2px);
+  object-fit: contain;
+  object-position: center bottom;
 }
 
-@media (max-width: 640px) {
-  .hero {
-    padding-top: 64px;
-    padding-bottom: 2rem;
-    min-height: max(600px, 100svh);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+@media (max-width: 1024px) {
+  .heroContainer {
+    grid-template-columns: 1fr;
+    gap: 1rem;
     align-items: center;
+    padding-top: 0;
   }
 
-  .hero::after {
-    height: 48%; /* Adjust bottom fade a bit */
+  .orangeHeadline {
+    white-space: normal;
   }
 
-  .textBehind {
-    position: relative;
-    top: auto;
-    left: auto;
-    right: auto;
-    margin-top: 35px; /* Push the text down */
-    margin-bottom: -100px; /* Pull the photo up to meet the text */
-    gap: 0.6rem;
-    padding-inline: 1rem;
-    z-index: 1; /* Keep the layer logic intact */
-  }
-
-  .wordTu {
-    font-size: clamp(2.8rem, 15vw, 4rem);
-    -webkit-text-stroke-width: 1.2px;
-  }
-
-  .wordMarca {
-    font-size: clamp(2.6rem, 14vw, 3.8rem);
-    -webkit-text-stroke-width: 1.2px;
+  .textContent {
+    padding: 0;
   }
 
   .photoWrap {
-    position: relative;
-    bottom: auto;
-    left: auto;
-    right: auto;
-    height: auto;
     justify-content: center;
     align-items: center;
-    width: 100%;
-    z-index: 2;
   }
 
   .photo {
-    max-width: clamp(280px, 85vw, 400px);
-    max-height: 55vh; /* Enough room to grow */
-    -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 60%, transparent 95%);
-    mask-image: linear-gradient(to bottom, #000 0%, #000 60%, transparent 95%);
-    margin: 0 auto;
-  }
-
-  .textFront {
-    position: relative;
-    bottom: auto;
-    left: auto;
-    right: auto;
-    margin-top: -65px;
-    padding-inline: 1rem;
-    text-align: center;
-    z-index: 3;
-    gap: 0.5rem; /* Gap between 'con' and word */
-  }
-
-  .wordCon {
-    font-size: clamp(0.9rem, 3vw, 1.2rem);
-  }
-
-  .rotWord {
-    font-size: clamp(2.3rem, 12vw, 3.5rem);
-    text-align: center;
-    line-height: 0.95;
-  }
-
-  .tagline {
-    display: none; /* Hide tagline on mobile as it adds clutter */
-  }
-
-  .ctas {
-    position: relative;
-    bottom: auto;
-    left: auto;
-    right: auto;
-    flex-direction: column;
-    gap: 0.6rem;
-    width: min(100%, 300px);
-    margin-top: 1.5rem;
-    z-index: 4;
-  }
-
-  .btnPrimary, .btnGhost {
-    width: 100%;
-    justify-content: center;
-    font-size: 0.76rem;
-    padding: 0.85rem 1rem;
-    min-height: 48px;
-    white-space: normal;
-    text-align: center;
-  }
-}
-
-@media (max-width: 420px) {
-  .hero {
-    min-height: max(550px, 100svh);
-  }
-
-  .textBehind {
-    margin-top: 25px;
-    margin-bottom: -90px; /* Tighter on tiny screens */
-  }
-
-  .wordTu {
-    font-size: clamp(2.4rem, 14vw, 3.2rem);
-  }
-
-  .wordMarca {
-    font-size: clamp(2.2rem, 13vw, 3rem);
-  }
-
-  .photo {
-    max-width: min(92vw, 350px);
-    max-height: 48vh;
-  }
-
-  .textFront {
-    margin-top: -55px; /* Tighter */
-  }
-
-  .rotWord {
-    font-size: clamp(1.9rem, 11vw, 2.8rem);
-  }
-
-  .ctas {
-    width: min(100%, 280px);
+    width: min(92vw, 430px);
+    max-width: min(92vw, 430px);
+    max-height: 380px;
+    transform: none;
   }
 }

@@ -7,7 +7,6 @@ import Experience from './components/Experience';
 import MethodologyTimeline from './components/MethodologyTimeline';
 import PortfolioRecentWork from './components/PortfolioRecentWork';
 import FinalCTA from './components/FinalCTA';
-import Footer from './components/Footer';
 import LogosStrip from './components/LogosStrip';
 import ServiceDetailPage from './components/ServiceDetailPage';
 
@@ -33,7 +32,6 @@ function App() {
         <main>
           <ServiceDetailPage slug={serviceSlug} />
         </main>
-        <Footer />
       </>
     );
   }
@@ -44,14 +42,13 @@ function App() {
       <main>
         <Hero />
         <Experience />
-        <LogosStrip />
         <MethodologyTimeline />
-        <PortfolioRecentWork />
         <ServicesAccordion />
+        <PortfolioRecentWork />
         <AboutMediaKit />
+        <LogosStrip />
         <FinalCTA />
       </main>
-      <Footer />
     </>
   );
 }

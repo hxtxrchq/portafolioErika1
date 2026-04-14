@@ -1,48 +1,43 @@
-import { motion } from 'framer-motion';
-import { fadeUp } from '../utils/motion';
-import { portfolioItems } from '../data/portfolio';
 import styles from '../styles/PortfolioRecentWork.module.css';
 
+const items = [
+  'Diagnostico comercial completo',
+  'Estructura de ventas definida',
+  'Plan comercial accionable',
+  'Estrategia de precios',
+  'Organizacion del equipo',
+  'Indicadores clave',
+  'Guion de ventas',
+];
+
 function PortfolioRecentWork() {
-  const carouselItems = [...portfolioItems, ...portfolioItems, ...portfolioItems];
-
   return (
-    <motion.section
-      id="portfolio"
-      className={styles.section}
-      variants={fadeUp}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.08 }}
-    >
+    <section id="sistema-base" className={styles.section}>
       <div className="container">
-        <div className={styles.header}>
-          <span className={styles.sectionDivider} aria-hidden="true" />
-          <p className={styles.eyebrow}>Seleccion curada</p>
-          <h2 className={styles.heading}><span className={styles.serifWord}>Mi</span> <span className={styles.sansWord}>TRABAJO</span></h2>
-          <p className={styles.intro}>
-            Proyectos donde la estrategia, la identidad y el contenido se alinean
-            para hacer que una marca se vea mas fuerte y se entienda mejor.
+        <header className={styles.header}>
+          <h2>
+            Sistema Base Comercial <span>(45 dias)</span>
+          </h2>
+          <p>
+            Ordenamos tu negocio, definimos como vender mejor y te dejamos una
+            estructura clara para que puedas ejecutarlo sin improvisar.
           </p>
+        </header>
+
+        <div className={styles.listGrid}>
+          {items.map((item, index) => (
+            <div key={item} className={styles.row}>
+              <span>{String(index + 1).padStart(2, '0')}.</span>
+              <p>{item}</p>
+            </div>
+          ))}
         </div>
 
-        <div className={styles.carouselMask}>
-          <div className={styles.carouselTrack}>
-            {carouselItems.map((item, index) => (
-              <article key={`${item.title}-${index}`} className={styles.card}>
-                <div className={styles.imageWrap}>
-                  <img src={item.image} alt={item.title} loading="lazy" />
-                </div>
-                <div className={styles.body}>
-                  <h3 className={styles.title}>{item.title}</h3>
-                  <p className={styles.result}>{item.strategy}</p>
-                </div>
-              </article>
-            ))}
-          </div>
-        </div>
+        <a href="#contacto" className={`btn ${styles.inlineCta}`}>
+          Quiero ordenar mi negocio
+        </a>
       </div>
-    </motion.section>
+    </section>
   );
 }
 

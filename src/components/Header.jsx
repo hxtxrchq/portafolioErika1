@@ -2,9 +2,9 @@ import { useState, useEffect } from 'react';
 import styles from '../styles/Header.module.css';
 
 const navItems = [
-  { label: 'Mi trabajo', href: '#portfolio' },
-  { label: 'Servicios', href: '#servicios' },
-  { label: 'Acerca', href: '#sobre-mi' },
+  { label: 'Nuestro proceso', href: '#metodologia' },
+  { label: 'Sistema Base Comercial', href: '#servicios' },
+  { label: 'Portafolio', href: '#portfolio' },
 ];
 
 function Header() {
@@ -63,7 +63,7 @@ function Header() {
           ))}
         </nav>
         <a href={resolveHash('#contacto')} className={styles.bookNow}>
-          Contacto
+          Trabajemos juntos
         </a>
         <button
           type="button"
@@ -98,7 +98,7 @@ function Header() {
             className={`${styles.bookNow} ${styles.mobileBookNow}`}
             onClick={handleNavClick}
           >
-            Evaluar mi negocio
+            Trabajemos juntos
           </a>
         </nav>
       </div>

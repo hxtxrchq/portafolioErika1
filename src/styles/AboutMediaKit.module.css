@@ -1,241 +1,91 @@
-/* ═══ ABOUT — Innovative Dual-Typography Editorial ═══ */
-
 .section {
-  position: relative;
-  padding: clamp(5rem, 10vh, 8rem) 0 clamp(5rem, 10vh, 7rem);
-  background: var(--paper, #fbf3e8);
+  background: var(--beige);
+  padding: 5rem 0;
+}
+
+.ribbon {
+  background: var(--green);
+  color: var(--orange);
+  font-size: 2.45rem;
+  line-height: 1;
+  white-space: nowrap;
   overflow: hidden;
-}
-
-/* ── Giant typographic backdrop ── */
-
-.typoBackdrop {
-  position: absolute;
-  top: clamp(2rem, 6vh, 5rem);
-  left: 0;
-  right: 0;
   display: flex;
-  align-items: baseline;
-  justify-content: center;
-  gap: clamp(0.6rem, 2vw, 1.6rem);
-  pointer-events: none;
-  z-index: 0;
-  user-select: none;
-}
-
-/* "Sobre" — elegant script/italic serif */
-.wordSobre {
-  font-family: 'Cormorant Garamond', 'Didot', 'Bodoni MT', 'Times New Roman', serif;
-  font-size: clamp(5rem, 14vw, 13rem);
-  font-weight: 400;
-  font-style: italic;
-  line-height: 0.85;
-  letter-spacing: -0.04em;
-  color: transparent;
-  -webkit-text-stroke: 1.5px var(--orange, #e05b2d);
-  text-stroke: 1.5px var(--orange, #e05b2d);
-  opacity: 0.35;
-}
-
-/* "Mí" — bold sans-serif, filled */
-.wordMi {
-  font-family: 'Outfit', 'Sora', 'Segoe UI', sans-serif;
-  font-size: clamp(5rem, 14vw, 13rem);
-  font-weight: 800;
-  line-height: 0.85;
-  letter-spacing: -0.06em;
-  text-transform: uppercase;
-  color: var(--orange, #e05b2d);
-  opacity: 0.08;
-}
-
-.shell {
-  position: relative;
-  z-index: 1;
-}
-
-/* ── Asymmetric layout ── */
-
-.layout {
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: clamp(2rem, 4vw, 4rem);
-  align-items: center;
-}
-
-/* ── Text block ── */
-
-.textBlock {
-  display: flex;
-  flex-direction: column;
   gap: 0;
-  padding-top: clamp(2rem, 5vh, 4rem);
+  padding: 0.3rem 0;
+  margin-bottom: 2.2rem;
 }
 
-.intro {
-  font-family: 'Didot', 'Bodoni MT', 'Iowan Old Style', 'Times New Roman', serif;
-  font-size: clamp(1.35rem, 2.2vw, 2rem);
-  font-weight: 400;
-  line-height: 1.35;
-  letter-spacing: -0.02em;
-  color: var(--ink, #121114);
-  margin-bottom: clamp(1rem, 2vh, 1.5rem);
-  max-width: 38ch;
+.ribbonTrack {
+  display: flex;
+  flex: 0 0 auto;
+  min-width: max-content;
+  gap: 1.8rem;
+  padding-right: 1.8rem;
+  animation: ribbonLoop 22s linear infinite;
 }
 
-.body {
-  font-family: 'Avenir Next', 'Sora', 'Segoe UI', sans-serif;
-  font-size: clamp(0.88rem, 1vw, 1rem);
-  line-height: 1.8;
-  color: var(--ink-soft, #464046);
-  max-width: 44ch;
+.ribbon span {
+  font-family: 'TypoSlabserif', serif;
+  font-weight: 300;
 }
 
-/* ── Photo block ── */
-
-.photoBlock {
-  position: relative;
+.ribbon span strong {
+  font-family: 'ZalandoSans', sans-serif;
+  font-weight: 700;
 }
 
-.photoFrame {
-  position: relative;
-  aspect-ratio: 3 / 4;
-  overflow: hidden;
-  border-radius: 0 clamp(2rem, 4vw, 4rem) 0 0;
+@keyframes ribbonLoop {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-100%);
+  }
 }
 
-.photo {
+.content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.45rem;
+  max-width: 940px;
+}
+
+.leftCard {
+  min-height: 280px;
+  background: var(--orange);
+  display: grid;
+  place-items: center;
+  padding: 1.1rem;
+}
+
+.leftCard p {
+  color: #fff;
+  font-size: 0.78rem;
+  text-align: center;
+  max-width: 25ch;
+}
+
+.rightCard img {
   width: 100%;
   height: 100%;
+  min-height: 280px;
   object-fit: cover;
-  object-position: center top;
-  filter: contrast(1.04) saturate(1.02);
-  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.photoFrame:hover .photo {
-  transform: scale(1.03);
-}
-
-/* ── Decorative abstract shapes ── */
-
-.decoShapes {
-  position: absolute;
-  top: 0;
-  right: clamp(-4rem, -8vw, -7rem);
-  bottom: 0;
-  width: clamp(100px, 14vw, 180px);
-  pointer-events: none;
-  z-index: 1;
-}
-
-/* Large hollow ring */
-.decoRing {
-  position: absolute;
-  top: 8%;
-  right: 0;
-  width: clamp(70px, 10vw, 120px);
-  height: clamp(70px, 10vw, 120px);
-  border-radius: 50%;
-  border: 2px solid var(--orange, #e05b2d);
-  opacity: 0.3;
-}
-
-/* Diagonal lines cluster */
-.decoLines {
-  position: absolute;
-  top: 28%;
-  right: 10px;
-  width: clamp(60px, 8vw, 100px);
-  height: clamp(80px, 11vw, 140px);
-  color: var(--orange-soft, #f5c5b0);
-  opacity: 0.6;
-}
-
-/* Small solid dot */
-.decoDot {
-  position: absolute;
-  top: 55%;
-  right: clamp(30px, 5vw, 60px);
-  width: clamp(10px, 1.5vw, 16px);
-  height: clamp(10px, 1.5vw, 16px);
-  border-radius: 50%;
-  background: var(--lime-accent, #dfe57b);
-  opacity: 0.8;
-}
-
-/* Lime arc */
-.decoArc {
-  position: absolute;
-  bottom: 22%;
-  right: 0;
-  width: clamp(50px, 7vw, 90px);
-  height: clamp(50px, 7vw, 90px);
-  color: var(--lime-accent, #dfe57b);
-  opacity: 0.45;
-}
-
-/* Cross marker */
-.decoCross {
-  position: absolute;
-  bottom: 8%;
-  right: clamp(20px, 4vw, 50px);
-  width: clamp(16px, 2vw, 22px);
-  height: clamp(16px, 2vw, 22px);
-  color: var(--orange, #e05b2d);
-  opacity: 0.35;
-}
-
-/* ═══ RESPONSIVE ═══ */
-
-@media (max-width: 900px) {
-  .typoBackdrop {
-    top: clamp(1rem, 3vh, 2.5rem);
+@media (max-width: 860px) {
+  .ribbon {
+    font-size: 1.9rem;
   }
 
-  .wordSobre,
-  .wordMi {
-    font-size: clamp(3.5rem, 14vw, 7rem);
+  .ribbonTrack {
+    gap: 1.2rem;
+    padding-right: 1.2rem;
+    animation-duration: 18s;
   }
 
-  .layout {
+  .content {
     grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-
-  .textBlock {
-    order: 2;
-    padding-top: 0;
-  }
-
-  .photoBlock {
-    order: 1;
-    max-width: 420px;
-    margin-inline: auto;
-  }
-
-  .intro {
-    font-size: clamp(1.2rem, 4.5vw, 1.6rem);
-  }
-
-  .decoShapes {
-    right: clamp(-2rem, -4vw, -3rem);
-    width: clamp(60px, 10vw, 100px);
-  }
-}
-
-@media (max-width: 640px) {
-  .section {
-    padding: clamp(3.5rem, 8vh, 5rem) 0 clamp(3.5rem, 8vh, 5rem);
-  }
-
-  .wordSobre,
-  .wordMi {
-    font-size: clamp(2.8rem, 16vw, 4.5rem);
-  }
-
-  /* Hide decorative shapes on very small screens */
-  .decoShapes {
-    display: none;
   }
 }

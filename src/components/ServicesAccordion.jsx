@@ -1,47 +1,57 @@
-import { motion } from 'framer-motion';
-import { services } from '../data/services';
-import { fadeUp } from '../utils/motion';
 import styles from '../styles/ServicesAccordion.module.css';
+
+const points = [
+  {
+    lead: 'VAS A ENTENDER',
+    text: 'por que hoy no estas vendiendo mas.',
+  },
+  {
+    lead: 'VAS A DETECTAR',
+    text: 'donde estas perdiendo dinero.',
+  },
+  {
+    lead: 'VAS A TENER CLARO',
+    text: 'que hacer cada mes para generar ventas.',
+  },
+  {
+    lead: 'VAS A DEJAR DE IMPROVISAR',
+    text: 'en marketing y ventas.',
+  },
+  {
+    lead: 'TU NEGOCIO VA A ATRAER CLIENTES',
+    text: 'y vender con una estructura clara.',
+  },
+];
 
 function ServicesAccordion() {
   return (
-    <motion.section
-      id="servicios"
-      className={styles.section}
-      variants={fadeUp}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.22 }}
-    >
+    <section id="servicios" className={styles.section}>
       <div className="container">
-        <div className={styles.headerPanel}>
-          <span className={styles.sectionDivider} aria-hidden="true" />
-          <h2 className={styles.heading}>
-            <span className={styles.serifWord}>Cómo puedo</span>{' '}
-            <span className={styles.sansWord}>AYUDARTE</span>
+        <header className={styles.header}>
+          <h2>
+            <span>Que cambia </span>
+            <strong>en tu negocio?</strong>
           </h2>
-        </div>
+        </header>
 
-        <div className={styles.list}>
-          {services.map((service, index) => (
-            <a
-              key={service.slug}
-              href={`/servicios/${service.slug}`}
-              className={styles.row}
-            >
-              <span className={styles.rowIndex}>
-                {String(index + 1).padStart(2, '0')}
-              </span>
-              <div className={styles.rowContent}>
-                <h3 className={styles.rowTitle}>{service.title}</h3>
-                <p className={styles.rowDesc}>{service.short}</p>
-              </div>
-              <span className={styles.rowArrow}>→</span>
-            </a>
-          ))}
+        <div className={styles.grid}>
+          <div className={styles.imageWrap}>
+            <img src="/que cambia en tu negocio-8.png" alt="Equipo en sesion de trabajo" />
+          </div>
+
+          <div className={styles.orangeBox}>
+            <ul>
+              {points.map((point) => (
+                <li key={point.lead}>
+                  <strong>{point.lead}</strong>
+                  <span>{point.text}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
-    </motion.section>
+    </section>
   );
 }
 

@@ -2,6 +2,14 @@
   padding: 5rem 0 0;
 }
 
+.section h2 {
+  text-decoration: underline;
+  text-decoration-color: var(--orange);
+  text-underline-offset: 0.35em;
+  text-decoration-thickness: 3px;
+  margin-bottom: 1rem;
+}
+
 .bullets {
   margin: 0;
   padding: 0;
