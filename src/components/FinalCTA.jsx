@@ -2,6 +2,12 @@ import { useState } from 'react';
 import styles from '../styles/FinalCTA.module.css';
 
 const web3FormsAccessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || '';
+const calendlyUrl = import.meta.env.VITE_CALENDLY_URL || 'https://calendly.com/calonsoparedes1/pixel-pruebas';
+const isSuccessValue = (value) => value === true || value === 'true' || value === 1 || value === '1';
+
+const redirectToCalendly = () => {
+  window.location.href = calendlyUrl;
+};
 
 const sendWithWeb3FormsClient = async ({ nombre, empresa, correo, celular, mensaje }) => {
   if (!web3FormsAccessKey) {
@@ -29,7 +35,7 @@ const sendWithWeb3FormsClient = async ({ nombre, empresa, correo, celular, mensa
 
   const payload = await response.json().catch(() => ({}));
 
-  if (!response.ok || payload?.success !== true) {
+  if (!response.ok || !isSuccessValue(payload?.success)) {
     throw new Error(payload?.message || 'Web3Forms no aceptó el envio.');
   }
 };
@@ -87,7 +93,7 @@ function FinalCTA() {
         throw new Error(payload?.details || payload?.error || 'No se pudo enviar el formulario.');
       }
 
-      setSubmitMessage('Mensaje enviado. Te responderemos pronto.');
+      setSubmitMessage('Mensaje enviado. Redirigiendo a Calendly para agendar tu reunion...');
       setSubmitError(false);
       setFormData({
         nombre: '',
@@ -96,6 +102,7 @@ function FinalCTA() {
         celular: '',
         mensaje: '',
       });
+      setTimeout(redirectToCalendly, 700);
     } catch (error) {
       try {
         await sendWithWeb3FormsClient({
@@ -106,7 +113,7 @@ function FinalCTA() {
           mensaje: formData.mensaje,
         });
 
-        setSubmitMessage('Mensaje enviado. Te responderemos pronto.');
+        setSubmitMessage('Mensaje enviado. Redirigiendo a Calendly para agendar tu reunion...');
         setSubmitError(false);
         setFormData({
           nombre: '',
@@ -115,6 +122,7 @@ function FinalCTA() {
           celular: '',
           mensaje: '',
         });
+        setTimeout(redirectToCalendly, 700);
       } catch (clientError) {
         setSubmitMessage(clientError?.message || error?.message || 'No se pudo enviar en este momento. Intenta nuevamente.');
         setSubmitError(true);
