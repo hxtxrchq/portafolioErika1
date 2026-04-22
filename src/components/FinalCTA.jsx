@@ -5,7 +5,7 @@ const web3FormsAccessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || '';
 const schedulerUrl =
   import.meta.env.VITE_SCHEDULER_URL ||
   import.meta.env.VITE_CALENDLY_URL ||
-  'https://cal.com';
+  'https://cal.com/erikabardales.mkt/hablemos?overlayCalendar=true';
 const isSuccessValue = (value) => value === true || value === 'true' || value === 1 || value === '1';
 
 const redirectToScheduler = () => {
