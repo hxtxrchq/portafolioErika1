@@ -2,24 +2,24 @@ import styles from '../styles/ServicesAccordion.module.css';
 
 const points = [
   {
-    lead: 'VAS A ENTENDER',
-    text: 'por que hoy no estas vendiendo mas.',
-  },
-  {
-    lead: 'VAS A DETECTAR',
-    text: 'donde estas perdiendo dinero.',
-  },
-  {
-    lead: 'VAS A TENER CLARO',
-    text: 'que hacer cada mes para generar ventas.',
+    lead: 'VAS A TENER CLARIDAD',
+    text: 'sobre qué comunicar.',
   },
   {
     lead: 'VAS A DEJAR DE IMPROVISAR',
-    text: 'en marketing y ventas.',
+    text: 'tu contenido.',
   },
   {
-    lead: 'TU NEGOCIO VA A ATRAER CLIENTES',
-    text: 'y vender con una estructura clara.',
+    lead: 'VAS A ATRAER',
+    text: 'clientes más calificados.',
+  },
+  {
+    lead: 'VAS A ENTENDER',
+    text: 'cómo convertir consultas en proyectos.',
+  },
+  {
+    lead: 'TU CONTENIDO VA A EMPEZAR',
+    text: 'a generar oportunidades reales.',
   },
 ];
 
@@ -29,8 +29,8 @@ function ServicesAccordion() {
       <div className="container">
         <header className={styles.header}>
           <h2>
-            <span>Que cambia </span>
-            <strong>en tu negocio?</strong>
+            <span>¿Qué cambia en tu </span>
+            <strong>estudio o marca personal?</strong>
           </h2>
         </header>
 

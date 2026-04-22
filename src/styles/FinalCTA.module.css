@@ -68,6 +68,25 @@
   cursor: pointer;
 }
 
+.form button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.formStatus {
+  margin: 0.1rem 0 0;
+  font-size: 0.82rem;
+  font-family: 'ZalandoSans', sans-serif;
+}
+
+.success {
+  color: #2f6b2f;
+}
+
+.error {
+  color: #9f2d2d;
+}
+
 .bottomBrand {
   background: #f3f3f3;
   min-height: 126px;

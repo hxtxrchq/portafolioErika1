@@ -1,6 +1,133 @@
+import { useState } from 'react';
 import styles from '../styles/BusinessLanding.module.css';
 
+const web3FormsAccessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || '';
+const isSuccessValue = (value) => value === true || value === 'true' || value === 1 || value === '1';
+
+const sendWithWeb3FormsClient = async ({ nombre, empresa, correo, mensaje }) => {
+  if (!web3FormsAccessKey) {
+    throw new Error('Falta VITE_WEB3FORMS_ACCESS_KEY para usar el envio directo desde navegador.');
+  }
+
+  const response = await fetch('https://api.web3forms.com/submit', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      Accept: 'application/json',
+    },
+    body: JSON.stringify({
+      access_key: web3FormsAccessKey,
+      subject: 'Nuevo lead desde tu Portafolio | Revisar y agendar reunion',
+      from_name: nombre,
+      email: correo,
+      nombre,
+      empresa: empresa || 'No indicada',
+      celular: 'No indicado',
+      mensaje,
+      fuente: 'Formulario ErikaPortafolio',
+    }),
+  });
+
+  const payload = await response.json().catch(() => ({}));
+
+  if (!response.ok || !isSuccessValue(payload?.success)) {
+    throw new Error(payload?.message || 'Web3Forms no aceptó el envio.');
+  }
+};
+
 function BusinessLanding() {
+  const [formData, setFormData] = useState({
+    nombre: '',
+    empresa: '',
+    correo: '',
+    ayuda: '',
+    mensaje: '',
+  });
+  const [isSending, setIsSending] = useState(false);
+  const [submitMessage, setSubmitMessage] = useState('');
+  const [submitError, setSubmitError] = useState(false);
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    if (isSending) return;
+
+    setIsSending(true);
+    setSubmitMessage('Enviando tu mensaje...');
+    setSubmitError(false);
+
+    const fullMessage = formData.ayuda
+      ? `Necesita ayuda en: ${formData.ayuda}\n\n${formData.mensaje}`
+      : formData.mensaje;
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          nombre: formData.nombre,
+          empresa: formData.empresa,
+          correo: formData.correo,
+          celular: '',
+          mensaje: fullMessage,
+        }),
+      });
+
+      const contentType = response.headers.get('content-type') || '';
+      const payload = contentType.includes('application/json')
+        ? await response.json().catch(() => ({}))
+        : {};
+
+      if (!response.ok || !payload?.ok) {
+        if (!contentType.includes('application/json')) {
+          throw new Error('El endpoint de correo no respondio en JSON. Revisa la configuracion en Vercel.');
+        }
+        throw new Error(payload?.details || payload?.error || 'No se pudo enviar el formulario.');
+      }
+
+      setSubmitMessage('Mensaje enviado. Te responderemos pronto.');
+      setSubmitError(false);
+      setFormData({
+        nombre: '',
+        empresa: '',
+        correo: '',
+        ayuda: '',
+        mensaje: '',
+      });
+    } catch (error) {
+      try {
+        await sendWithWeb3FormsClient({
+          nombre: formData.nombre,
+          empresa: formData.empresa,
+          correo: formData.correo,
+          mensaje: fullMessage,
+        });
+
+        setSubmitMessage('Mensaje enviado. Te responderemos pronto.');
+        setSubmitError(false);
+        setFormData({
+          nombre: '',
+          empresa: '',
+          correo: '',
+          ayuda: '',
+          mensaje: '',
+        });
+      } catch (clientError) {
+        setSubmitMessage(clientError?.message || error?.message || 'No se pudo enviar en este momento. Intenta nuevamente.');
+        setSubmitError(true);
+      }
+    } finally {
+      setIsSending(false);
+    }
+  };
+
   return (
     <div className={styles.page}>
       <section id="hero" className={styles.hero}>
@@ -187,33 +314,40 @@ function BusinessLanding() {
       <section id="contacto" className={styles.section}>
         <div className={`container ${styles.block}`}>
           <h2>Formulario</h2>
-          <form className={styles.form}>
+          <form className={styles.form} onSubmit={handleSubmit}>
             <label>
               Nombre
-              <input type="text" name="nombre" />
+              <input type="text" name="nombre" value={formData.nombre} onChange={handleChange} required />
             </label>
 
             <label>
               Empresa
-              <input type="text" name="empresa" />
+              <input type="text" name="empresa" value={formData.empresa} onChange={handleChange} />
             </label>
 
             <label>
               Correo electrónico
-              <input type="email" name="correo" />
+              <input type="email" name="correo" value={formData.correo} onChange={handleChange} required />
             </label>
 
             <label>
               ¿En qué necesitas ayuda?
-              <input type="text" name="ayuda" />
+              <input type="text" name="ayuda" value={formData.ayuda} onChange={handleChange} />
             </label>
 
             <label>
               Mensaje
-              <textarea name="mensaje" rows="5" />
+              <textarea name="mensaje" rows="5" value={formData.mensaje} onChange={handleChange} required />
             </label>
 
-            <button className="btn btnOrangeFill" type="submit">Evaluar mi negocio</button>
+            <button className="btn btnOrangeFill" type="submit" disabled={isSending}>
+              {isSending ? 'Enviando...' : 'Evaluar mi negocio'}
+            </button>
+            {submitMessage && (
+              <p style={{ marginTop: '10px', color: submitError ? '#b42318' : '#1f7a3d' }}>
+                {submitMessage}
+              </p>
+            )}
           </form>
         </div>
       </section>

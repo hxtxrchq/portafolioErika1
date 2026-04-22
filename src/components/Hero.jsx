@@ -40,16 +40,16 @@ function Hero() {
         >
           {/* Subtitle */}
           <motion.p className={styles.subtitle} variants={itemVariants}>
-            SISTEMA BASE COMERCIAL PARA{' '}
-            <strong>DARK KITCHENS Y CAFETERÍAS</strong>
+            SISTEMA DE MARKETING Y VENTAS PARA{' '}
+            <strong>ARQUITECTOS Y DISEÑADORES</strong>
           </motion.p>
 
           {/* Main Headline */}
           <motion.h1 className={styles.headline} variants={itemVariants}>
             <span className={styles.orangeHeadline}>
-              Optimizo cómo tu negocio
+              Optimiza cómo atraes 
               <br />
-              atrae clientes y vende,
+              y conviertes clientes
             </span>
             <br />
             <span className={styles.highlight}>toma el control en 45 días.</span>
@@ -57,8 +57,7 @@ function Hero() {
 
           {/* Description */}
           <motion.p className={styles.description} variants={itemVariants}>
-            Para que dejes de improvisar y empieces a vender con control y
-            visibilidad.
+            Deja de depender del boca en boca con un sistema claro
           </motion.p>
 
           {/* CTA */}

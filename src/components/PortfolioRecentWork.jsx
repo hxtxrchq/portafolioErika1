@@ -1,13 +1,13 @@
 import styles from '../styles/PortfolioRecentWork.module.css';
 
 const items = [
-  'Diagnostico comercial completo',
-  'Estructura de ventas definida',
-  'Plan comercial accionable',
-  'Estrategia de precios',
-  'Organizacion del equipo',
-  'Indicadores clave',
-  'Guion de ventas',
+  'Diagnóstico estratégico completo',
+  'Posicionamiento y propuesta de valor',
+  'Sistema de contenido estructurado',
+  'Plan de acción mensual',
+  'Optimización de perfil',
+  'Guía de ventas y seguimiento',
+  'Estructura de conversión',
 ];
 
 function PortfolioRecentWork() {
@@ -16,11 +16,11 @@ function PortfolioRecentWork() {
       <div className="container">
         <header className={styles.header}>
           <h2>
-            Sistema Base Comercial <span>(45 dias)</span>
+            Sistema de Atracción y Conversión <span>(90 días)</span>
           </h2>
           <p>
-            Ordenamos tu negocio, definimos como vender mejor y te dejamos una
-            estructura clara para que puedas ejecutarlo sin improvisar.
+            Construimos un sistema para que puedas atraer y convertir clientes
+            de forma constante.
           </p>
         </header>
 
@@ -34,7 +34,7 @@ function PortfolioRecentWork() {
         </div>
 
         <a href="#contacto" className={`btn ${styles.inlineCta}`}>
-          Quiero ordenar mi negocio
+          Quiero mi sistema
         </a>
       </div>
     </section>

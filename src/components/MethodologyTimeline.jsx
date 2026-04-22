@@ -4,17 +4,17 @@ const steps = [
   {
     n: '01.',
     title: 'Diagnostico',
-    text: 'Entendemos que esta frenando tus ventas y donde estas perdiendo dinero.',
+    text: 'Analizamos tu perfil, contenido y proceso comercial para detectar por qué no estás generando clientes constantes.',
   },
   {
     n: '02.',
     title: 'Estructura',
-    text: 'Organizamos como tu negocio atrae clientes, vende y se sostiene.',
+    text: 'Definimos tu posicionamiento, mensaje y sistema de contenido para atraer clientes correctos.',
   },
   {
     n: '03.',
     title: 'Plan de accion',
-    text: 'Te dejo claro que hacer, como hacerlo y en que orden.',
+    text: 'Te guiamos para transformar tu contenido en consultas reales y oportunidades de venta.',
   },
 ];
 
@@ -24,7 +24,8 @@ function MethodologyTimeline() {
       <div className="container">
         <header className={styles.header}>
           <h2>Nuestro proceso</h2>
-          <p>Un proceso de 45 dias para ordenar tu negocio desde la base</p>
+          <p>Subtítulo:
+Un sistema para estructurar tu marketing y convertirlo en clientes</p>
         </header>
 
         <div className={styles.grid}>
