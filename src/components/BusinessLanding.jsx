@@ -2,11 +2,14 @@ import { useState } from 'react';
 import styles from '../styles/BusinessLanding.module.css';
 
 const web3FormsAccessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || '';
-const calendlyUrl = import.meta.env.VITE_CALENDLY_URL || 'https://calendly.com/calonsoparedes1/pixel-pruebas';
+const schedulerUrl =
+  import.meta.env.VITE_SCHEDULER_URL ||
+  import.meta.env.VITE_CALENDLY_URL ||
+  'https://cal.com';
 const isSuccessValue = (value) => value === true || value === 'true' || value === 1 || value === '1';
 
-const redirectToCalendly = () => {
-  window.location.href = calendlyUrl;
+const redirectToScheduler = () => {
+  window.location.href = schedulerUrl;
 };
 
 const sendWithWeb3FormsClient = async ({ nombre, empresa, correo, mensaje }) => {
@@ -97,7 +100,7 @@ function BusinessLanding() {
         throw new Error(payload?.details || payload?.error || 'No se pudo enviar el formulario.');
       }
 
-      setSubmitMessage('Mensaje enviado. Redirigiendo a Calendly para agendar tu reunion...');
+      setSubmitMessage('Mensaje enviado. Redirigiendo para agendar tu reunion...');
       setSubmitError(false);
       setFormData({
         nombre: '',
@@ -106,7 +109,7 @@ function BusinessLanding() {
         ayuda: '',
         mensaje: '',
       });
-      setTimeout(redirectToCalendly, 700);
+      setTimeout(redirectToScheduler, 700);
     } catch (error) {
       try {
         await sendWithWeb3FormsClient({
@@ -116,7 +119,7 @@ function BusinessLanding() {
           mensaje: fullMessage,
         });
 
-        setSubmitMessage('Mensaje enviado. Redirigiendo a Calendly para agendar tu reunion...');
+        setSubmitMessage('Mensaje enviado. Redirigiendo para agendar tu reunion...');
         setSubmitError(false);
         setFormData({
           nombre: '',
@@ -125,7 +128,7 @@ function BusinessLanding() {
           ayuda: '',
           mensaje: '',
         });
-        setTimeout(redirectToCalendly, 700);
+        setTimeout(redirectToScheduler, 700);
       } catch (clientError) {
         setSubmitMessage(clientError?.message || error?.message || 'No se pudo enviar en este momento. Intenta nuevamente.');
         setSubmitError(true);
