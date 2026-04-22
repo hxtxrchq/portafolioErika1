@@ -9,8 +9,8 @@ function LogosStrip() {
         <p className={styles.eyebrow}>MARCAS QUE CONFIAN</p>
 
         <div className={styles.logos}>
-          <img src="/Kanagawa Nikkei.png" alt="Kanagawa" />
-          <img src="/Elevaria Logo.png" alt="Elevaria" />
+          <img src="/Design Market.png" alt="Design Market" />
+          <img src="/GMS.png" alt="GMS" />
         </div>
       </div>
     </section>
