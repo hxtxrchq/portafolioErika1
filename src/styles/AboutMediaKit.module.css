@@ -1,6 +1,6 @@
 .section {
   background: var(--beige);
-  padding: 5rem 0;
+  padding: 3.8rem 0;
 }
 
 .ribbon {
@@ -13,7 +13,7 @@
   display: flex;
   gap: 0;
   padding: 0.3rem 0;
-  margin-bottom: 2.2rem;
+  margin-bottom: 1.4rem;
 }
 
 .ribbonTrack {
@@ -55,64 +55,107 @@
 
 .leftCard {
   min-height: 280px;
-  background: var(--orange);
+  background: linear-gradient(168deg, #ef4d0d 0%, #e74809 100%);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  padding: 1.35rem 1.25rem;
+  padding: 1.1rem 1.1rem;
   color: #fff;
+  position: relative;
+  overflow: hidden;
 }
 
-.kicker {
-  margin: 0 0 0.6rem;
-  font-size: 0.78rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  opacity: 0.9;
+.leftCard::before {
+  content: '';
+  position: absolute;
+  top: -40px;
+  right: -18px;
+  width: 180px;
+  height: 180px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.16) 0%, rgba(255, 255, 255, 0) 70%);
+  pointer-events: none;
 }
 
-.leftCard h3 {
-  margin: 0 0 0.6rem;
-  font-family: 'TypoSlabserif', serif;
-  font-weight: 300;
-  font-size: clamp(1.15rem, 2vw, 1.5rem);
-  line-height: 1.25;
+.caseOverline {
+  margin: 0 0 0.28rem;
+  font-size: 0.66rem;
+  letter-spacing: 0.13em;
+  font-weight: 700;
+  color: rgba(255, 244, 237, 0.9);
 }
 
-.company {
-  margin: 0 0 0.95rem;
-  font-size: 0.86rem;
-  font-weight: 600;
-  line-height: 1.4;
+.caseTitle {
+  margin: 0 0 0.4rem;
+  font-family: 'ZalandoSans', sans-serif;
+  font-weight: 560;
+  font-size: clamp(1.08rem, 1.85vw, 1.35rem);
+  line-height: 1.16;
+  max-width: 24ch;
+}
+
+.caseIntro {
+  margin: 0 0 0.55rem;
+  font-size: 0.8rem;
+  line-height: 1.36;
+  color: rgba(255, 243, 236, 0.96);
+  max-width: 44ch;
+}
+
+.companyLogoWrap {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.42rem;
+}
+
+.companyLogo {
+  width: min(150px, 48%);
+  padding: 0;
+}
+
+.companyLogo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  filter: brightness(0) saturate(100%) invert(100%);
+  opacity: 0.96;
 }
 
 .block {
-  margin: 0 0 0.8rem;
+  margin: 0 0 0.45rem;
+  width: 100%;
+  background: transparent;
+  border-left: none;
+  padding: 0;
 }
 
 .block h4 {
   margin: 0 0 0.2rem;
-  font-size: 0.86rem;
-  letter-spacing: 0.04em;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
+  color: #fff3eb;
 }
 
 .block p {
   margin: 0 0 0.18rem;
-  font-size: 0.84rem;
-  line-height: 1.4;
+  font-size: 0.8rem;
+  line-height: 1.36;
+  color: #fff8f3;
 }
 
 .block ul {
-  margin: 0.2rem 0 0;
+  margin: 0.1rem 0 0;
   padding-left: 1.05rem;
 }
 
 .block li {
   margin: 0 0 0.25rem;
-  font-size: 0.83rem;
+  font-size: 0.8rem;
   line-height: 1.38;
+  color: #fff8f3;
 }
 
 .rightCard {
@@ -173,8 +216,12 @@
     padding: 1.1rem;
   }
 
-  .leftCard h3 {
-    font-size: 1.18rem;
+  .caseTitle {
+    font-size: 1.08rem;
+  }
+
+  .companyLogo {
+    width: min(142px, 52%);
   }
 
   .rightCard {

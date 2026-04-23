@@ -1,7 +1,7 @@
 .section {
   background: var(--orange);
   color: #fff;
-  padding: 6.2rem 0 0;
+  padding: 4.9rem 0 0;
   min-height: clamp(420px, 58vh, 640px);
   position: relative;
   overflow: hidden;
@@ -27,7 +27,7 @@
   grid-template-columns: 1.1fr 0.9fr;
   gap: 2rem;
   align-items: center;
-  padding-bottom: 4.8rem;
+  padding-bottom: 3.6rem;
   position: relative;
   z-index: 1;
 }
@@ -109,14 +109,14 @@
 
 @media (max-width: 900px) {
   .section {
-    padding: 4.4rem 0 3rem;
+    padding: 3.5rem 0 2.4rem;
     min-height: auto;
   }
 
   .inner {
     grid-template-columns: 1fr;
     gap: 1.4rem;
-    padding-bottom: 3.4rem;
+    padding-bottom: 2.6rem;
   }
 
   .kicker {

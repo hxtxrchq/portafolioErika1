@@ -57,7 +57,9 @@ function Hero() {
 
           {/* Description */}
           <motion.p className={styles.description} variants={itemVariants}>
-            Deja de depender del boca en boca con un sistema claro
+            Deja de depender del boca en boca
+            <br />
+            con un sistema claro
           </motion.p>
 
           {/* CTA */}

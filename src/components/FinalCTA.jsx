@@ -1,5 +1,7 @@
 import { useState } from 'react';
+import { motion } from 'framer-motion';
 import styles from '../styles/FinalCTA.module.css';
+import { fadeUp } from '../utils/motion';
 
 const web3FormsAccessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || '';
 const schedulerUrl =
@@ -136,21 +138,51 @@ function FinalCTA() {
   };
 
   return (
-    <section id="contacto" className={styles.section}>
+    <motion.section
+      id="contacto"
+      className={styles.section}
+      variants={fadeUp}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.18 }}
+    >
       <div className="container">
         <div className={styles.grid}>
-          <div className={styles.left}>
-            <h2>
+          <motion.div
+            className={styles.left}
+            initial={{ opacity: 0, x: -16 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.25 }}
+            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          >
+            <motion.h2
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.35 }}
+              transition={{ duration: 0.45, delay: 0.1 }}
+            >
               <span>Hablemos</span>
               <strong> de tu negocio</strong>
-            </h2>
-            <p>
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.35 }}
+              transition={{ duration: 0.45, delay: 0.16 }}
+            >
               Podemos tener una conversacion inicial para entender tu empresa,
               identificar oportunidades y evaluar como trabajar juntos.
-            </p>
-          </div>
+            </motion.p>
+          </motion.div>
 
-          <form className={styles.form} onSubmit={handleSubmit}>
+          <motion.form
+            className={styles.form}
+            onSubmit={handleSubmit}
+            initial={{ opacity: 0, x: 16 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.25 }}
+            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: 0.08 }}
+          >
             <div className={styles.row2}>
               <input
                 name="nombre"
@@ -188,14 +220,28 @@ function FinalCTA() {
                 {submitMessage}
               </p>
             )}
-          </form>
+          </motion.form>
         </div>
       </div>
 
       <div className={styles.bottomBrand}>
-        <img src="/escalemos tu negocio-8.png" alt="Escalemos tu negocio" className={styles.seal} />
+        <motion.div
+          className={styles.sealOrbit}
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+        >
+          <motion.img
+            src="/escalemos tu negocio-8.png"
+            alt="Escalemos tu negocio"
+            className={styles.seal}
+            animate={{ rotate: 360 }}
+            transition={{ duration: 14, repeat: Infinity, ease: 'linear' }}
+          />
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 }
 

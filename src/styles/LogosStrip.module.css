@@ -1,83 +1,96 @@
 .section {
   background: var(--violet);
-  padding: 0 0 2.6rem;
+  padding: 0 0 1.2rem;
   text-align: center;
   overflow: hidden;
 }
 
 .section :global(.container) {
   position: relative;
-  min-height: 270px;
+  min-height: 232px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-end;
-  padding-top: 4.1rem;
-  padding-bottom: 0.4rem;
+  padding-top: 2.85rem;
+  padding-bottom: 0.45rem;
 }
 
 .word {
-  width: min(860px, 118vw);
+  width: min(940px, 122vw);
   position: absolute;
-  top: 0;
-  left: 50%;
-  opacity: 1;
-  transform: translate(-50%, -57%);
+  top: -130px;
+  left: 12%;
+  opacity: 0.98;
+  transform: translate(-550%, -2000%);
+  z-index: 0;
 }
 
 .eyebrow {
   position: absolute;
-  top: 72px;
-  left: 50%;
+  top: 35px;
+  left: 40%;
   transform: translateX(-50%);
   margin: 0;
   font-size: 0.8rem;
   letter-spacing: 0.34em;
   color: #d7ccd0;
-  z-index: 1;
+  z-index: 2;
 }
 
 .logos {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 3.8rem;
+  gap: 3.4rem;
   flex-wrap: wrap;
   margin-top: auto;
+  position: relative;
+  z-index: 2;
+  width: 100%;
 }
 
 .logos img {
-  height: 118px;
+  height: 142px;
   width: auto;
   object-fit: contain;
   filter: brightness(0) invert(1);
   opacity: 1;
+  transition: transform 0.28s ease;
+}
+
+.logos img:hover {
+  transform: translateY(-2px) scale(1.02);
 }
 
 @media (max-width: 680px) {
   .section {
-    padding-bottom: 2rem;
+    padding-bottom: 0.95rem;
   }
 
   .section :global(.container) {
-    min-height: 220px;
-    padding-top: 3.4rem;
+    min-height: 186px;
+    padding-top: 2.35rem;
     justify-content: flex-end;
-    padding-bottom: 0.3rem;
+    padding-bottom: 0.35rem;
   }
 
   .word {
-    width: min(860px, 186vw);
-    transform: translate(-50%, -49%);
-  }
+  width: 140vw;           /* tamaño controlado */
+  left: 0%;              /* centrado real */
+  top: -95px;             /* ajusta altura */
+  transform: translate(-50%, -60%); /* posición fina */
+  opacity: 0.2;           /* opcional: más suave */
+}
 
   .eyebrow {
-    top: 60px;
+    top: 20px;
+    left: 30%;
     font-size: 0.74rem;
     letter-spacing: 0.3em;
   }
 
   .logos img {
-    height: 88px;
+    height: 120px;
   }
 }

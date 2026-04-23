@@ -119,13 +119,14 @@
   max-height: calc(100svh - 2px);
   object-fit: contain;
   object-position: center bottom;
+  filter: drop-shadow(0 10px 20px rgba(40, 28, 34, 0.14));
 }
 
 @media (max-width: 1024px) {
   .heroContainer {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-    align-items: center;
+    grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+    gap: 0.75rem;
+    align-items: end;
     padding-top: 0;
   }
 
@@ -138,14 +139,97 @@
   }
 
   .photoWrap {
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-end;
+    align-items: flex-end;
   }
 
   .photo {
-    width: min(92vw, 430px);
-    max-width: min(92vw, 430px);
-    max-height: 380px;
+    width: min(44vw, 340px);
+    max-width: min(44vw, 340px);
+    max-height: 460px;
     transform: none;
+  }
+}
+
+@media (max-width: 680px) {
+  .hero {
+    min-height: auto;
+    padding-top: 78px;
+    padding-bottom: 1.15rem;
+  }
+
+  .heroContainer {
+    width: min(100%, calc(100% - 1rem));
+    grid-template-columns: minmax(0, 1.38fr) minmax(0, 0.62fr);
+    gap: 0.45rem;
+    align-items: end;
+    padding-bottom: 0.2rem;
+  }
+
+  .textContent {
+    gap: 0.58rem;
+  }
+
+  .subtitle {
+    font-size: 0.66rem;
+    letter-spacing: 0.085em;
+    line-height: 1.35;
+    color: #5a4e54;
+  }
+
+  .headline {
+    font-size: clamp(1.46rem, 7.8vw, 1.9rem);
+    line-height: 1.07;
+  }
+
+  .highlight {
+    font-size: clamp(1.32rem, 6.9vw, 1.72rem);
+    line-height: 1.14;
+    color: #4e2b39;
+  }
+
+  .description {
+    font-size: 0.81rem;
+    line-height: 1.42;
+    color: #51484e;
+    max-width: 26ch;
+  }
+
+  .btnPrimary {
+    padding: 0.6rem 1rem;
+    font-size: 0.78rem;
+  }
+
+  .photo {
+    width: min(44vw, 210px);
+    max-width: min(44vw, 210px);
+    max-height: 318px;
+    object-position: 56% bottom;
+  }
+}
+
+@media (max-width: 420px) {
+  .hero {
+    padding-top: 82px;
+    padding-bottom: 1.3rem;
+  }
+
+  .heroContainer {
+    grid-template-columns: minmax(0, 1.45fr) minmax(0, 0.55fr);
+    gap: 0.34rem;
+  }
+
+  .subtitle {
+    font-size: 0.64rem;
+  }
+
+  .description {
+    font-size: 0.8rem;
+    max-width: 24ch;
+  }
+
+  .photo {
+    width: min(41vw, 180px);
+    max-width: min(41vw, 180px);
   }
 }

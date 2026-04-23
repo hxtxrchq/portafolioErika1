@@ -1,4 +1,6 @@
+import { motion } from 'framer-motion';
 import styles from '../styles/MethodologyTimeline.module.css';
+import { fadeUp } from '../utils/motion';
 
 const steps = [
   {
@@ -20,26 +22,46 @@ const steps = [
 
 function MethodologyTimeline() {
   return (
-    <section id="metodologia" className={styles.section}>
+    <motion.section
+      id="metodologia"
+      className={styles.section}
+      variants={fadeUp}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }}
+    >
       <div className="container">
-        <header className={styles.header}>
+        <motion.header
+          className={styles.header}
+          initial={{ opacity: 0, y: 14 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.35 }}
+          transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+        >
           <h2>Nuestro proceso</h2>
           <p>Subtítulo:
 Un sistema para estructurar tu marketing y convertirlo en clientes</p>
-        </header>
+        </motion.header>
 
         <div className={styles.grid}>
-          {steps.map((step) => (
-            <article key={step.n} className={styles.card}>
+          {steps.map((step, index) => (
+            <motion.article
+              key={step.n}
+              className={styles.card}
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.4 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+            >
               <span className={styles.n}>{step.n}</span>
               <h3>{step.title}</h3>
               <span className={styles.dot} aria-hidden="true" />
               <p>{step.text}</p>
-            </article>
+            </motion.article>
           ))}
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }
 

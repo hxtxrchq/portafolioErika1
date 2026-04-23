@@ -1,4 +1,6 @@
+import { motion } from 'framer-motion';
 import styles from '../styles/AboutMediaKit.module.css';
+import { fadeUp } from '../utils/motion';
 
 function AboutMediaKit() {
   const ribbonItems = Array.from({ length: 6 }, (_, i) => (
@@ -8,7 +10,14 @@ function AboutMediaKit() {
   ));
 
   return (
-    <section id="portfolio" className={styles.section}>
+    <motion.section
+      id="portfolio"
+      className={styles.section}
+      variants={fadeUp}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }}
+    >
       <div className={styles.ribbon}>
         <div className={styles.ribbonTrack} aria-hidden="true">
           {ribbonItems}
@@ -18,49 +27,71 @@ function AboutMediaKit() {
         </div>
       </div>
 
-      <div className={`container ${styles.content}`}>
+      <motion.div
+        className={`container ${styles.content}`}
+        initial={{ opacity: 0, y: 14 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.22 }}
+        transition={{ duration: 0.55 }}
+      >
         <article className={styles.leftCard}>
-          <p className={styles.kicker}>Caso de estudio</p>
-          <h3>Cómo pasamos de contenido sin dirección a generar +150 consultas mensuales</h3>
-          <p className={styles.company}>Empresa: GMS (showroom de superficies)</p>
+          <div className={styles.companyLogoWrap}>
+            <div className={styles.companyLogo} aria-label="Marca del caso">
+              <img src="/GMS.png" alt="Logo del caso" />
+            </div>
+          </div>
+
+          <p className={styles.caseOverline}>RESULTADO REAL</p>
+          <h3 className={styles.caseTitle}>De contenido sin dirección a +150 consultas mensuales</h3>
+          <p className={styles.caseIntro}>
+            Reordenamos mensaje, contenido y seguimiento comercial para convertir alcance en oportunidades.
+          </p>
 
           <div className={styles.block}>
-            <h4>Antes</h4>
-            <p>No había una estructura clara para atraer clientes desde redes.</p>
-            <p>El contenido no estaba enfocado en generar consultas ni ventas.</p>
+            <h4>Situación inicial</h4>
+            <p>El contenido no tenía una estructura clara para atraer consultas.</p>
           </div>
 
           <div className={styles.block}>
-            <h4>Durante</h4>
+            <h4>Qué hicimos</h4>
             <p>
-              Se trabajó el mensaje, la dirección de marca, el contenido y el
-              proceso de captación y seguimiento de clientes.
+              Ajustamos mensaje, dirección de marca y proceso de captación y seguimiento.
             </p>
           </div>
 
           <div className={styles.block}>
-            <h4>Después</h4>
+            <h4>Resultado</h4>
             <ul>
               <li>+150 mensajes mensuales generados a través de campañas.</li>
-              <li>Consultas por servicios de diseño de interiores y por productos.</li>
-              <li>Mejora en la comunicación y percepción de marca.</li>
-              <li>Mayor claridad en el proceso de ventas.</li>
-              <li>Incremento en la intención de compra de los clientes.</li>
+              <li>Más consultas por servicios y productos.</li>
+              <li>Mejor comunicación de marca y mayor claridad comercial.</li>
             </ul>
           </div>
         </article>
 
         <article className={styles.rightCard}>
-          <figure className={styles.heroImage}>
+          <motion.figure
+            className={styles.heroImage}
+            initial={{ opacity: 0, scale: 1.02 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.7 }}
+          >
             <img src="/DSC04908.png" alt="Showroom GMS con superficies expuestas" />
-          </figure>
+          </motion.figure>
 
-          <figure className={styles.detailImage}>
+          <motion.figure
+            className={styles.detailImage}
+            initial={{ opacity: 0, y: 14, scale: 0.96 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 0.55, delay: 0.18 }}
+          >
             <img src="/Capa%200.png" alt="Detalle de marca y presentación visual de GMS" />
-          </figure>
+          </motion.figure>
         </article>
-      </div>
-    </section>
+      </motion.div>
+    </motion.section>
   );
 }
 
