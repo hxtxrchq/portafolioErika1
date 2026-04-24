@@ -208,7 +208,7 @@ button:focus-visible {
 
 @media (max-width: 768px) {
   :root {
-    --container: min(100%, calc(100% - 1.6rem));
+    --container: min(100%, calc(100% - 2.4rem));
   }
 
   section {
@@ -224,7 +224,7 @@ button:focus-visible {
 
 @media (max-width: 480px) {
   :root {
-    --container: min(100%, calc(100% - 1rem));
+    --container: min(100%, calc(100% - 2rem));
   }
 }
 

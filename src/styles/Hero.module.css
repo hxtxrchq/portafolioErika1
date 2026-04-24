@@ -155,7 +155,7 @@
   .hero {
     min-height: auto;
     padding-top: 78px;
-    padding-bottom: 1.15rem;
+    padding-bottom: 0;
   }
 
   .heroContainer {
@@ -163,11 +163,12 @@
     grid-template-columns: minmax(0, 1.38fr) minmax(0, 0.62fr);
     gap: 0.45rem;
     align-items: end;
-    padding-bottom: 0.2rem;
+    padding-bottom: 0;
   }
 
   .textContent {
     gap: 0.58rem;
+    padding-bottom: 0.55rem;
   }
 
   .subtitle {
@@ -205,18 +206,23 @@
     max-width: min(44vw, 210px);
     max-height: 318px;
     object-position: 56% bottom;
+    margin-bottom: -12px;
   }
 }
 
 @media (max-width: 420px) {
   .hero {
     padding-top: 82px;
-    padding-bottom: 1.3rem;
+    padding-bottom: 0;
   }
 
   .heroContainer {
     grid-template-columns: minmax(0, 1.45fr) minmax(0, 0.55fr);
     gap: 0.34rem;
+  }
+
+  .textContent {
+    padding-bottom: 0.45rem;
   }
 
   .subtitle {
@@ -231,5 +237,6 @@
   .photo {
     width: min(41vw, 180px);
     max-width: min(41vw, 180px);
+    margin-bottom: -10px;
   }
 }

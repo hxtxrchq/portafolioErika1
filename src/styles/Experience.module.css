@@ -47,9 +47,13 @@
   font-family: 'ZalandoSans', sans-serif;
   font-size: clamp(2.35rem, 5vw, 3.8rem);
   font-weight: 520;
-  line-height: 0.95;
+  line-height: 0.98;
   color: var(--violet);
   letter-spacing: -0.015em;
+}
+
+.keepTogether {
+  white-space: nowrap;
 }
 
 .subtitle {
@@ -109,14 +113,25 @@
 
 @media (max-width: 900px) {
   .section {
-    padding: 3.5rem 0 2.4rem;
+    padding: 2.8rem 0 2.2rem;
     min-height: auto;
   }
 
   .inner {
     grid-template-columns: 1fr;
-    gap: 1.4rem;
-    padding-bottom: 2.6rem;
+    gap: 1.2rem;
+    padding-bottom: 1.8rem;
+  }
+
+  .left h2 {
+    font-size: clamp(2rem, 8.8vw, 3rem);
+    line-height: 1.03;
+  }
+
+  .subtitle {
+    margin-top: 0.7rem;
+    font-size: clamp(1.8rem, 7.4vw, 2.5rem);
+    line-height: 1;
   }
 
   .kicker {
@@ -129,6 +144,7 @@
 
   .right li {
     font-size: 1rem;
+    line-height: 1.35;
   }
 
   .ctaButton {
@@ -141,5 +157,26 @@
     background-size: min(112vw, 760px);
     background-position: center 48%;
     opacity: 0.34;
+  }
+}
+
+@media (max-width: 520px) {
+  .left h2 {
+    font-size: clamp(2.7rem, 12.5vw, 3.2rem);
+    line-height: 0.97;
+    letter-spacing: -0.01em;
+  }
+
+  .sideTitle {
+    font-size: 1.08rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .right ul {
+    gap: 0.24rem;
+  }
+
+  .ctaButton {
+    margin-top: 1rem;
   }
 }

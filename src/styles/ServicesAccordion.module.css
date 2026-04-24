@@ -96,6 +96,15 @@
 }
 
 @media (max-width: 860px) {
+  .header h2 {
+    line-height: 1.12;
+    text-decoration: underline;
+    text-decoration-color: var(--orange);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.22em;
+    text-decoration-skip-ink: auto;
+  }
+
   .grid {
     grid-template-columns: 1fr;
     min-height: 0;

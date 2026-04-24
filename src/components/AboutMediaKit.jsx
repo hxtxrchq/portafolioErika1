@@ -5,7 +5,7 @@ import { fadeUp } from '../utils/motion';
 function AboutMediaKit() {
   const ribbonItems = Array.from({ length: 6 }, (_, i) => (
     <span key={`ribbon-${i}`}>
-      Portafolio y <strong>resultados</strong>
+      Caso de <strong>estudio</strong>
     </span>
   ));
 
@@ -41,7 +41,6 @@ function AboutMediaKit() {
             </div>
           </div>
 
-          <p className={styles.caseOverline}>RESULTADO REAL</p>
           <h3 className={styles.caseTitle}>De contenido sin dirección a +150 consultas mensuales</h3>
           <p className={styles.caseIntro}>
             Reordenamos mensaje, contenido y seguimiento comercial para convertir alcance en oportunidades.

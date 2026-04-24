@@ -22,7 +22,7 @@ function Experience() {
         >
           
           <h2>
-            Si no sabes cuándo llegará tu próximo cliente, no es falta de talento
+            Si no sabes cuándo llegará tu próximo cliente, no es falta <span className={styles.keepTogether}>de talento</span>
           </h2>
           <p className={styles.subtitle}>Es falta de un sistema</p>
         </motion.div>
