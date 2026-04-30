@@ -55,15 +55,14 @@ function Hero() {
             <span className={styles.highlight}>toma el control en 45 días.</span>
           </motion.h1>
 
-          {/* Description */}
-          <motion.p className={styles.description} variants={itemVariants}>
-            Deja de depender del boca en boca
-            <br />
-            con un sistema claro
-          </motion.p>
+          {/* Description + CTA */}
+          <motion.div className={styles.descriptionRow} variants={itemVariants}>
+            <motion.p className={styles.description} variants={itemVariants}>
+              Deja de depender del boca en boca
+              <br />
+              con un sistema claro
+            </motion.p>
 
-          {/* CTA */}
-          <motion.div className={styles.ctas} variants={itemVariants}>
             <a href="#contacto" className={`btn ${styles.btnPrimary}`}>
               Agendar diagnóstico
             </a>

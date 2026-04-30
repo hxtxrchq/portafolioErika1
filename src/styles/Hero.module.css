@@ -77,8 +77,17 @@
   max-width: 62ch;
 }
 
-.ctas {
+.descriptionRow {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
   margin-top: 0.1rem;
+}
+
+.descriptionRow .description {
+  flex: 1 1 18rem;
+  max-width: 34ch;
 }
 
 .btnPrimary {
@@ -196,6 +205,11 @@
     max-width: 26ch;
   }
 
+  .descriptionRow {
+    align-items: flex-start;
+    gap: 0.65rem;
+  }
+
   .btnPrimary {
     padding: 0.6rem 1rem;
     font-size: 0.78rem;
@@ -232,6 +246,10 @@
   .description {
     font-size: 0.8rem;
     max-width: 24ch;
+  }
+
+  .descriptionRow {
+    gap: 0.55rem;
   }
 
   .photo {
