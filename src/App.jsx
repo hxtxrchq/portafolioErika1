@@ -9,6 +9,7 @@ import PortfolioRecentWork from './components/PortfolioRecentWork';
 import FinalCTA from './components/FinalCTA';
 import LogosStrip from './components/LogosStrip';
 import ServiceDetailPage from './components/ServiceDetailPage';
+import WhatsAppFab from './components/WhatsAppFab';
 
 function App() {
   const path = typeof window !== 'undefined' ? window.location.pathname : '/';
@@ -49,6 +50,7 @@ function App() {
         <LogosStrip />
         <FinalCTA />
       </main>
+      <WhatsAppFab />
     </>
   );
 }

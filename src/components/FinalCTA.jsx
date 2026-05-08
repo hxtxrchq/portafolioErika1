@@ -75,14 +75,6 @@ function FinalCTA() {
           />
         </motion.div>
       </div>
-      {/* WhatsApp floating button */}
-      <a
-        className={styles.whatsappFab}
-        href="https://wa.me/51959212496?text=Hablemos%2C%20quiero%20agendar%20una%20cita"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Chatear por WhatsApp"
-      />
     </motion.section>
   );
 }

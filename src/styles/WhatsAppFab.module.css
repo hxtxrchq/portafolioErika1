@@ -1,0 +1,26 @@
+.whatsappFab {
+  position: fixed;
+  right: 20px;
+  bottom: 24px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #25d366;
+  background-image: url('/whatsapp-icon.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 56%;
+  box-shadow: 0 8px 18px rgba(37, 211, 102, 0.18);
+  z-index: 9999;
+  display: grid;
+  place-items: center;
+}
+
+@media (max-width: 560px) {
+  .whatsappFab {
+    right: 14px;
+    bottom: 14px;
+    width: 48px;
+    height: 48px;
+  }
+}
