@@ -10,6 +10,7 @@ import FinalCTA from './components/FinalCTA';
 import LogosStrip from './components/LogosStrip';
 import ServiceDetailPage from './components/ServiceDetailPage';
 import WhatsAppFab from './components/WhatsAppFab';
+import ScrollZoomEffect from './components/ScrollZoomEffect';
 
 function App() {
   const path = typeof window !== 'undefined' ? window.location.pathname : '/';
@@ -40,15 +41,31 @@ function App() {
   return (
     <>
       <Header />
-      <main>
-        <Hero />
-        <Experience />
-        <MethodologyTimeline />
-        <ServicesAccordion />
-        <PortfolioRecentWork />
-        <AboutMediaKit />
-        <LogosStrip />
-        <FinalCTA />
+      <main style={{ overflowX: 'hidden' }}>
+        <ScrollZoomEffect isFirst>
+          <Hero />
+        </ScrollZoomEffect>
+        <ScrollZoomEffect>
+          <Experience />
+        </ScrollZoomEffect>
+        <ScrollZoomEffect>
+          <MethodologyTimeline />
+        </ScrollZoomEffect>
+        <ScrollZoomEffect>
+          <ServicesAccordion />
+        </ScrollZoomEffect>
+        <ScrollZoomEffect>
+          <PortfolioRecentWork />
+        </ScrollZoomEffect>
+        <ScrollZoomEffect>
+          <AboutMediaKit />
+        </ScrollZoomEffect>
+        <ScrollZoomEffect>
+          <LogosStrip />
+        </ScrollZoomEffect>
+        <ScrollZoomEffect>
+          <FinalCTA />
+        </ScrollZoomEffect>
       </main>
       <WhatsAppFab />
     </>
