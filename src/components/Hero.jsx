@@ -2,7 +2,8 @@ import { motion } from 'framer-motion';
 import styles from '../styles/Hero.module.css';
 
 function Hero() {
-  const heroPhoto = '/erika-bardales.png';
+  const heroPhotoPng = '/erika-bardales.png';
+  const heroPhotoWebp = '/erika-bardales.webp';
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -80,11 +81,16 @@ function Hero() {
             delay: 0.2,
           }}
         >
-          <img
-            src={heroPhoto}
-            alt="Erika Bardales"
-            className={styles.photo}
-          />
+          <picture>
+            <source srcSet={heroPhotoWebp} type="image/webp" />
+            <img
+              src={heroPhotoPng}
+              alt="Erika Bardales"
+              className={styles.photo}
+              fetchPriority="high"
+              loading="eager"
+            />
+          </picture>
         </motion.div>
       </div>
     </section>
