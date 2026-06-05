@@ -1,8 +1,8 @@
 .section {
   background: var(--orange);
   color: #fff;
-  padding: 4.9rem 0 0;
-  min-height: clamp(420px, 58vh, 640px);
+  padding: 3.2rem 0 0;
+  min-height: clamp(360px, 50vh, 580px);
   position: relative;
   overflow: hidden;
 }
@@ -27,7 +27,7 @@
   grid-template-columns: 1.1fr 0.9fr;
   gap: 2rem;
   align-items: center;
-  padding-bottom: 3.6rem;
+  padding-bottom: 2.6rem;
   position: relative;
   z-index: 1;
 }

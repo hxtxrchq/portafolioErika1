@@ -129,6 +129,8 @@
   object-fit: contain;
   object-position: center bottom;
   filter: drop-shadow(0 10px 20px rgba(40, 28, 34, 0.14));
+  -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent 99%);
+  mask-image: linear-gradient(to bottom, black 85%, transparent 99%);
 }
 
 @media (max-width: 1024px) {
